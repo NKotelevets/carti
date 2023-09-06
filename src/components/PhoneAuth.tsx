@@ -22,12 +22,16 @@ export const PhoneAuth: FC<Props> = ({
   subtitleLinkPath,
   stepsCount,
 }) => {
-  const [value, setValue] = useState()
+  const [value, setValue] = useState();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const handleNext = () => {
-    setCurrentIndex(1)
-  }
+    setCurrentIndex(1);
+  };
+
+  const handleCreateAccount = () => {
+    setCurrentIndex(1);
+  };
 
   return (
     <StyledPhoneAuth>
@@ -55,8 +59,9 @@ export const PhoneAuth: FC<Props> = ({
             onChange={() => setValue}
             smartCaret={false}
           />
-          <Button type="button" onClick={handleNext}>
-            Next
+
+          <Button type="button" onClick={stepsCount === 2 ? handleNext : handleCreateAccount}>
+            {stepsCount === 2 ? 'Next' : 'create account'}
           </Button>
         </div>
       ) : (
