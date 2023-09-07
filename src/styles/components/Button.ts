@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { HTMLProps } from 'react';
 
 interface StyledButtonProps extends HTMLProps<HTMLButtonElement> {
@@ -14,7 +14,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   width: ${({ width }) => (width ? width : '100%')};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : '0px')};
   margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : '0px')};
-  color: ${({ flat, theme }) => (flat ? theme.black : '#19191B')};
+  color: ${({ flat, theme }) => (flat ? theme.white : theme.dark)};
   border: none;
   font-size: 14px;
   font-style: normal;
@@ -30,11 +30,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
   background: linear-gradient(to right, black 50%, white 50%);
   background-size: 200% 100%;
   background-position: right bottom;
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
   box-sizing: border-box;
 
   &:hover {
     background-position: left bottom;
-    color: #fff;
+    color: ${({ theme }) => theme.white};
   }
 `;

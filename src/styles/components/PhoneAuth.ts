@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from 'styled-components';
 
 interface StyledProps {
   marginBottom?: string;
@@ -28,7 +28,7 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
     font-weight: 800;
     line-height: 150%;
     letter-spacing: 0.26px;
-    color: #fff;
+    color: ${({ theme }) => theme.white};
     text-transform: uppercase;
     text-align: center;
   }
@@ -39,11 +39,11 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
     font-weight: 500;
     line-height: 150%;
     letter-spacing: 0.14px;
-    color: #fff;
+    color: ${({ theme }) => theme.white};
     text-align: center;
 
     a {
-      color: #fff;
+      color: ${({ theme }) => theme.white};
       font-weight: 800;
     }
   }
@@ -54,25 +54,25 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
     .PhoneInputCountry {
       margin: 0;
       padding: 5px 10px;
-      border: 1px solid #fff;
+      border: 1px solid ${({ theme }) => theme.white};
       border-right: none;
 
       .PhoneInputCountrySelectArrow {
-        border-color: #fff;
+        border-color: ${({ theme }) => theme.white};
         opacity: 1;
       }
     }
 
     .PhoneInputInput {
       padding: 11px 15px;
-      border: 1px solid #fff;
+      border: 1px solid ${({ theme }) => theme.white};
       background: transparent;
       font-size: 12px;
       font-style: normal;
       font-weight: 600;
       line-height: 17px;
       letter-spacing: 0.12px;
-      color: #fff;
+      color: ${({ theme }) => theme.white};
 
       &:focus-visible {
         outline: none;
@@ -95,12 +95,12 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
     }
 
     .label {
-      color: #fff;
+      color: ${({ theme }) => theme.white};
       text-transform: uppercase;
     }
 
     .error {
-      color: #F32837;
+      color: ${({ theme }) => theme.red};
     }
   }
 
@@ -110,7 +110,7 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
     .input-text {
       width: 100%;
       padding: 11px 15px;
-      border: 1px solid #fff;
+      border: 1px solid ${({ theme }) => theme.white};
       background: transparent;
       font-family: 'Manrope', sans-serif;
       font-size: 12px;
@@ -119,7 +119,7 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
       line-height: 17px;
       letter-spacing: 0.12px;
       text-transform: uppercase;
-      color: #fff;
+      color: ${({ theme }) => theme.white};
       box-sizing: border-box;
       margin-bottom: 24px;
 
@@ -138,16 +138,16 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
     .tile {
       width: 30px;
       height: 8px;
-      border: 1px solid #AFAFB6;
+      border: 1px solid ${({ theme }) => theme.grey};
       background: transparent;
       background: linear-gradient(to right, white 50%, transparent 50%);
       background-size: 200% 100%;
       background-position: right bottom;
-      transition: all .5s ease-out;
+      transition: all 0.5s ease-out;
 
       &.active {
         background-position: left bottom;
-        border-color: #fff;
+        border-color: ${({ theme }) => theme.white};
       }
     }
   }
