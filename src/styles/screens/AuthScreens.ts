@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from 'styled-components';
 
 interface StyledProps {
   marginBottom?: string;
@@ -21,11 +21,7 @@ export const StyledAuthScreens = styled.div<StyledProps>`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.4) 100%
-    );
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
 
     .form-wrapper {
       display: flex;
@@ -38,7 +34,7 @@ export const StyledAuthScreens = styled.div<StyledProps>`
     .footer-wrapper {
       width: 100%;
       height: 56px;
-      border-top: 1px solid #fff;
+      border-top: 1px solid ${({ theme }) => theme.white};
       display: flex;
       align-items: center;
       justify-content: center;
@@ -50,7 +46,7 @@ export const StyledAuthScreens = styled.div<StyledProps>`
         font-weight: 400;
         line-height: 150%;
         letter-spacing: 0.12px;
-        color: #fff;
+        color: ${({ theme }) => theme.white};
         text-decoration: none;
       }
     }

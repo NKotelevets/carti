@@ -4,7 +4,7 @@ import { StyledAuthScreens } from '../styles/screens/AuthScreens';
 import { PhoneAuth } from '../components/PhoneAuth';
 import { Link } from 'react-router-dom';
 
-export const SignIn: FC = () => {
+export const SignUp: FC = () => {
   return (
     <StyledAuthScreens>
       <ReactPlayer
@@ -14,7 +14,7 @@ export const SignIn: FC = () => {
         }
         width="100%"
         height="100%"
-        playing
+        // playing
         loop
         muted
         playsinline
@@ -23,11 +23,11 @@ export const SignIn: FC = () => {
       <div className="content-wrapper">
         <div className="form-wrapper">
           <PhoneAuth
-            title={'LOG IN TO YOUR ACCOUNT'}
-            subtitle={'Don’t have an account? '}
-            subtitleLinkText={'Create Account'}
-            subtitleLinkPath={'/sign-up'}
-            stepsCount={2}
+            title={'CREATE AN ACCOUNT'}
+            subtitle={'Already have an account? '}
+            subtitleLinkText={'Sign In'}
+            subtitleLinkPath={'/sign-in'}
+            stepsCount={3}
           />
         </div>
         <div className="footer-wrapper">
@@ -39,4 +39,4 @@ export const SignIn: FC = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import { styled } from 'styled-components';
 
 export const StyledHeader = styled.div`
   width: 100%;
   height: 56px;
-  background-color: #19191b;
+  background-color: ${({ theme }) => theme.dark};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,7 +23,7 @@ export const StyledHeader = styled.div`
       font-size: 14px;
       font-weight: 600;
       line-height: 21px;
-      color: #ffffff;
+      color: ${({ theme }) => theme.white};
       text-decoration: none;
     }
   }
@@ -41,7 +41,7 @@ export const StyledHeader = styled.div`
       font-size: 14px;
       font-weight: 600;
       line-height: 21px;
-      color: #ffffff;
+      color: ${({ theme }) => theme.white};
       margin-left: 5px;
     }
   }

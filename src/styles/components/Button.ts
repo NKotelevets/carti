@@ -1,23 +1,23 @@
-import styled from "styled-components";
-import { HTMLProps } from "react";
+import { styled } from 'styled-components';
+import { HTMLProps } from 'react';
 
 interface StyledButtonProps extends HTMLProps<HTMLButtonElement> {
-  flat?: boolean;
+  $flat?: boolean;
   marginBottom?: string;
   borderRadius?: string;
   width?: string;
   transparent?: boolean;
+  $textButton?: boolean;
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
   align-self: center;
-  height: 42px;
-  width: ${({ width }) => (width ? width : "100%")};
-  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "0px")};
-  margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : "0px")};
-  color: ${({ flat, theme, transparent }) =>
-    transparent ? "#fff" : flat ? theme.black : "#19191B"};
-  border: ${({ transparent }) => (transparent ? "1px solid #FFF" : "none")};
+  height: ${({ $textButton }) => ($textButton ? 'auto' : '42px')};
+  width: ${({ width }) => (width ? width : '100%')};
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : '0px')};
+  margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : '0px')};
+  border: ${({ transparent }) => (transparent ? '1px solid #FFF' : 'none')};
+  color: ${({ $flat, theme, transparent }) => (transparent ? '#fff' : $flat ? theme.white : theme.dark)};
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -29,11 +29,12 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    to right,
-    ${({ transparent, theme }) => (transparent ? "white" : theme.black)} 50%,
-    ${({ transparent }) => (transparent ? "transparent" : "white")} 50%
-  );
+  background: ${({ $textButton, transparent, theme }) =>
+    $textButton
+      ? 'transparent'
+      : transparent
+      ? `linear-gradient(to right, ${theme.white} 50%, transparent 50%)`
+      : `linear-gradient(to right, ${theme.black} 50%, ${theme.white} 50%)`};
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease-out;
@@ -41,6 +42,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   &:hover {
     background-position: left bottom;
-    color: ${({ transparent, theme }) => (transparent ? theme.black : "#fff")};
+    color: ${({ transparent, theme }) => (transparent ? theme.black : theme.white)};
   }
 `;

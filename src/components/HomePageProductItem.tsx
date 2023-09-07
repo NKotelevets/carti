@@ -1,6 +1,6 @@
-import { StyledHomePageProductItem } from "../styles/components/HomePageProductItem";
-import { FC, HTMLProps } from "react";
-import { Button } from "./Button";
+import { StyledHomePageProductItem } from '../styles/components/HomePageProductItem';
+import { FC, HTMLProps } from 'react';
+import { Button } from './Button';
 
 interface HomePageProductItemProps extends HTMLProps<HTMLElement> {
   image: string;
@@ -8,14 +8,10 @@ interface HomePageProductItemProps extends HTMLProps<HTMLElement> {
   name: string;
 }
 
-export const HomePageProductItem: FC<HomePageProductItemProps> = ({
-  image,
-  price,
-  name,
-}) => {
+export const HomePageProductItem: FC<HomePageProductItemProps> = ({ image, price, name }) => {
   return (
     <StyledHomePageProductItem>
-      <img src={image} />
+      <img src={image} alt={name} />
       <div className="description-container">
         <p className="name">{name}</p>
         <p className="price">{price}</p>
@@ -23,7 +19,7 @@ export const HomePageProductItem: FC<HomePageProductItemProps> = ({
       <div className="item-overlay">
         <Button
           onClick={() => {
-            console.log("go to prosuct");
+            console.log('go to prosuct');
           }}
           transparent
         >

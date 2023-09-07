@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from 'styled-components';
 
 export const StyledHomePageProductItem = styled.div`
   width: 21%;
@@ -24,7 +24,7 @@ export const StyledHomePageProductItem = styled.div`
   }
 
   .name {
-    color: #fff;
+    color: ${({ theme }) => theme.white};
     text-align: center;
     font-size: 20px;
     font-weight: 600;
@@ -33,7 +33,7 @@ export const StyledHomePageProductItem = styled.div`
   }
 
   .price {
-    color: #fff;
+    color: ${({ theme }) => theme.white};
     font-size: 16px;
     font-weight: 400;
     text-align: center;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from 'styled-components';
 
 export const StyledHomeScreens = styled.div`
   .player-container {
@@ -41,7 +41,7 @@ export const StyledHomeScreens = styled.div`
       font-weight: 400;
       line-height: 18px;
       letter-spacing: 0.01em;
-      color: #ffffff;
+      color: ${({ theme }) => theme.white};
     }
 
     .price-event {
@@ -49,7 +49,7 @@ export const StyledHomeScreens = styled.div`
       font-weight: 500;
       line-height: 18px;
       letter-spacing: 0.01em;
-      color: #ffffff;
+      color: ${({ theme }) => theme.white};
       text-align: center;
       width: 100%;
       display: inline-block;
@@ -61,7 +61,7 @@ export const StyledHomeScreens = styled.div`
       font-weight: 600;
       line-height: 33px;
       letter-spacing: 0em;
-      color: #ffffff;
+      color: ${({ theme }) => theme.white};
     }
 
     .event-date {
@@ -73,7 +73,7 @@ export const StyledHomeScreens = styled.div`
       }
 
       span {
-        color: #fff;
+        color: ${({ theme }) => theme.white};
         font-size: 12px;
         font-style: normal;
         font-weight: 600;
@@ -82,7 +82,7 @@ export const StyledHomeScreens = styled.div`
     }
 
     .event-name-container {
-      border-bottom: 1px solid #ffffff;
+      border-bottom: 1px solid ${({ theme }) => theme.white};
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -102,7 +102,7 @@ export const StyledHomeScreens = styled.div`
     }
   }
   .products-container {
-    background-color: #19191b;
+    background-color: ${({ theme }) => theme.dark};
     padding: 120px 40px 80px 40px;
 
     .title {

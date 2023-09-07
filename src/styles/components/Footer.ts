@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import { styled } from 'styled-components';
 
 export const StyledFooter = styled.div`
   width: 100%;
   padding: 40px 52px;
-  background: #19191b;
+  background: ${({ theme }) => theme.dark};
   box-sizing: border-box;
 
   .logo {
@@ -11,7 +11,7 @@ export const StyledFooter = styled.div`
   }
 
   .links-container {
-    border-bottom: 1px solid #afafb6;
+    border-bottom: 1px solid ${({ theme }) => theme.grey};
   }
 
   .bottom-container,
@@ -27,7 +27,7 @@ export const StyledFooter = styled.div`
 
     span,
     a {
-      color: #afafb6;
+      color: ${({ theme }) => theme.grey};
       text-align: center;
       font-size: 12px;
       font-weight: 400;
@@ -39,7 +39,7 @@ export const StyledFooter = styled.div`
   }
 
   .web-links a {
-    color: #fff;
+    color: ${({ theme }) => theme.white};
     text-align: center;
     font-size: 14px;
     font-weight: 600;
@@ -48,7 +48,7 @@ export const StyledFooter = styled.div`
     text-decoration: none;
 
     &:hover {
-      color: #afafb6;
+      color: ${({ theme }) => theme.grey};
     }
   }
 
