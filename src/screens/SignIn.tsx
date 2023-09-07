@@ -14,7 +14,7 @@ export const SignIn: FC = () => {
         }
         width="100%"
         height="100%"
-        // playing
+        playing
         loop
         muted
         playsinline

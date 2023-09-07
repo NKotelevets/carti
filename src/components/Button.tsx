@@ -10,6 +10,7 @@ interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   marginBottom?: string;
   borderRadius?: string;
   width?: string;
+  transparent?: boolean;
   textButton?: boolean;
 }
 
@@ -25,6 +26,7 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   type,
   width,
+  transparent,
   textButton,
 }) => {
   return (
@@ -38,6 +40,7 @@ export const Button: FC<ButtonProps> = ({
       onClick={onClick}
       width={width}
       $textButton={textButton ? textButton : undefined}
+      transparent={transparent}
     >
       {leftIcon}
       <span>{children}</span>

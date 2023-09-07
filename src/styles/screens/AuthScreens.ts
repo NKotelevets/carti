@@ -8,7 +8,6 @@ interface StyledProps {
 export const StyledAuthScreens = styled.div<StyledProps>`
   width: 100%;
   height: calc(100vh - 56px);
-  margin-top: 56px;
   position: relative;
   overflow: hidden;
 

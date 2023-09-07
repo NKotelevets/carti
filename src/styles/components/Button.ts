@@ -6,6 +6,7 @@ interface StyledButtonProps extends HTMLProps<HTMLButtonElement> {
   marginBottom?: string;
   borderRadius?: string;
   width?: string;
+  transparent?: boolean;
   $textButton?: boolean;
 }
 
@@ -15,8 +16,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   width: ${({ width }) => (width ? width : '100%')};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : '0px')};
   margin-bottom: ${({ marginBottom }) => (marginBottom ? marginBottom : '0px')};
-  color: ${({ $flat, theme }) => ($flat ? theme.white : theme.dark)};
-  border: none;
+  border: ${({ transparent }) => (transparent ? '1px solid #FFF' : 'none')};
+  color: ${({ $flat, theme, transparent }) => (transparent ? '#fff' : $flat ? theme.white : theme.dark)};
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -28,7 +29,12 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${({ $textButton }) => ($textButton ? 'transparent' : 'linear-gradient(to right, black 50%, white 50%)')};
+  background: ${({ $textButton, transparent, theme }) =>
+    $textButton
+      ? 'transparent'
+      : transparent
+      ? `linear-gradient(to right, ${theme.white} 50%, transparent 50%)`
+      : `linear-gradient(to right, ${theme.black} 50%, ${theme.white} 50%)`};
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease-out;
@@ -36,6 +42,6 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
   &:hover {
     background-position: left bottom;
-    color: ${({ theme }) => theme.white};
+    color: ${({ transparent, theme }) => (transparent ? theme.black : theme.white)};
   }
 `;
