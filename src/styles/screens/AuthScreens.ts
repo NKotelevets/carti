@@ -8,7 +8,6 @@ interface StyledProps {
 export const StyledAuthScreens = styled.div<StyledProps>`
   width: 100%;
   height: calc(100vh - 56px);
-  margin-top: 56px;
   position: relative;
   overflow: hidden;
 
@@ -22,8 +21,12 @@ export const StyledAuthScreens = styled.div<StyledProps>`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
-    
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+
     .form-wrapper {
       display: flex;
       align-items: center;

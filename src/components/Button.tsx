@@ -1,15 +1,16 @@
-import { StyledButton } from '../styles/components/Button';
-import { FC, HTMLProps } from 'react';
+import { StyledButton } from "../styles/components/Button";
+import { FC, HTMLProps } from "react";
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
   onClick?: () => void;
   flat?: boolean;
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   marginBottom?: string;
   borderRadius?: string;
   width?: string;
+  transparent?: boolean;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -24,6 +25,7 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   type,
   width,
+  transparent,
 }) => {
   return (
     <StyledButton
@@ -35,6 +37,7 @@ export const Button: FC<ButtonProps> = ({
       borderRadius={borderRadius}
       onClick={onClick}
       width={width}
+      transparent={transparent}
     >
       {leftIcon}
       <span>{children}</span>
