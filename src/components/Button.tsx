@@ -10,6 +10,7 @@ interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   marginBottom?: string;
   borderRadius?: string;
   width?: string;
+  textButton?: boolean;
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -24,17 +25,19 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   type,
   width,
+  textButton,
 }) => {
   return (
     <StyledButton
       type={type}
       className={className}
       disabled={disabled}
-      flat={flat}
+      $flat={flat ? flat : undefined}
       marginBottom={marginBottom}
       borderRadius={borderRadius}
       onClick={onClick}
       width={width}
+      $textButton={textButton ? textButton : undefined}
     >
       {leftIcon}
       <span>{children}</span>
