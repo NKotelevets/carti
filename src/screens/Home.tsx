@@ -5,6 +5,7 @@ import { Button } from '../components/Button';
 import { ClockIcon, CameraIcon } from '../assets/svg';
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import { Footer } from '../components/Footer';
+import HomeVideo from '../assets/video/home_video.mp4';
 
 const products = [
   {
@@ -67,9 +68,7 @@ export const Home: FC = () => {
       <div className="player-container">
         <ReactPlayer
           className="player"
-          url={
-            'https://s3-figma-videos-production-sig.figma.com/video/978649961378621333/TEAM/af98/3fb8/-fcf3-41ac-86ae-780ecf0dbb0a?Expires=1694995200&Signature=Zwso5hNUudsuTUc9yxG9blqVbsKlDAX0saTHBlvUHHZx5wjq~FnpRisOdkmZeil8azq7MEnM60xoIiDg4elimMiJxdA0ERa36ORn7eErO0OZsvzsv7VQWheeJknpKHQdGDWwJ0GtzqbS9~pjIAuseHL-JVgp3~OKj61toM70oHdYa0OqBbpr5usqUNrf19eNZzurYhQahHFhgi5V3IlUj7LQSwxjS8GAhW0FTbCYQiLsWfaHbK5VhQprzrg9AYl-vXG9PFJok-pgizKcAVGFKn~hna5syLKd34XynbCdfG1Ol7kOmzN2PM1TebyPMAO-eRVVqxUlnuVPDq7NkGOvyA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
-          }
+          url={HomeVideo}
           width="100%"
           height="100%"
           playing
@@ -110,7 +109,7 @@ export const Home: FC = () => {
         </div>
       </div>
       <div className="products-container">
-        <p className="title">Products</p>
+        <h1 className="title">Products</h1>
         <div className="products-list">
           {products.map((item, index) => (
             <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} />

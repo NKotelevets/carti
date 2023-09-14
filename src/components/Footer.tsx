@@ -4,7 +4,7 @@ import { StyledFooter } from '../styles/components/Footer';
 import logo from '../assets/images/Logo.png';
 import { Link } from 'react-router-dom';
 
-import { Facebook, Instagram, Pinterest, Tiktok, Twitter, Youtube } from '../assets/svg';
+// import { Facebook, Instagram, Pinterest, Tiktok, Twitter, Youtube } from '../assets/svg';
 
 export const Footer: FC = () => {
   return (
@@ -16,7 +16,7 @@ export const Footer: FC = () => {
           <Link to="/">Contact Us</Link>
           <Link to="/">My Account</Link>
         </div>
-        <div className="social-links">
+        {/* <div className="social-links">
           <a target="_blank" rel="noreferrer" href={'/'}>
             <img src={Facebook} alt="Facebook" />
           </a>
@@ -35,7 +35,7 @@ export const Footer: FC = () => {
           <a target="_blank" rel="noreferrer" href={'/'}>
             <img src={Tiktok} alt="Tiktok" />
           </a>
-        </div>
+        </div> */}
       </div>
       <div className="bottom-container">
         <span>© ALL RIGHTS RESERVED</span>

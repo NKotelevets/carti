@@ -3,12 +3,18 @@ import { styled } from 'styled-components';
 export const StyledHeader = styled.div`
   width: 100%;
   height: 56px;
-  background-color: ${({ theme }) => theme.dark};
+  // background-color: ${({ theme }) => theme.dark};
+  position: absolute;
+  top: 0;
+  background: rgba(25, 25, 27, 0.1);
+  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   box-sizing: border-box;
+  z-index: 100;
+  border-bottom: 1px solid ${({ theme }) => theme.white};
 
   .left-side,
   .right-side {

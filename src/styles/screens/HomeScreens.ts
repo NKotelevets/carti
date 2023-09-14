@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const StyledHomeScreens = styled.div`
   .player-container {
     width: 100%;
-    height: calc(100vh - 56px);
+    height: 100vh;
     position: relative;
     overflow: hidden;
   }
@@ -30,6 +30,27 @@ export const StyledHomeScreens = styled.div`
       display: flex;
       justify-content: space-between;
       padding: 0 40px 40px 40px;
+      opacity: 0;
+      position: relative;
+      bottom: -250px;
+      animation: fadeIn 3s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          bottom: -250px;
+        }
+        50% {
+          opacity: 0.5;
+          bottom: 0px;
+        }
+        100% {
+          bottom: 0px;
+          opacity: 1;
+        }
+      }
 
       .event-info-block {
         width: 30%;
@@ -70,6 +91,11 @@ export const StyledHomeScreens = styled.div`
 
       div:first-child {
         margin-right: 50px;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
       }
 
       span {

@@ -44,7 +44,7 @@ export const StyledFooter = styled.div`
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    margin: 0 14px;
+    margin-left: 14px;
     text-decoration: none;
 
     &:hover {
