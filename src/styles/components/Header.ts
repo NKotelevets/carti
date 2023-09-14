@@ -4,7 +4,7 @@ export const StyledHeader = styled.div`
   width: 100%;
   height: 56px;
   // background-color: ${({ theme }) => theme.dark};
-  position: absolute;
+  position: fixed;
   top: 0;
   background: rgba(25, 25, 27, 0.1);
   backdrop-filter: blur(5px);
@@ -24,6 +24,7 @@ export const StyledHeader = styled.div`
   .right-side {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
     a {
       font-size: 14px;
@@ -50,5 +51,10 @@ export const StyledHeader = styled.div`
       color: ${({ theme }) => theme.white};
       margin-left: 5px;
     }
+  }
+
+  .join-event-button {
+    height: 30px;
+    margin-right: 20px;
   }
 `;
