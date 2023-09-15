@@ -6,6 +6,7 @@ import { ClockIcon, CameraIcon } from '../assets/svg';
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import { Footer } from '../components/Footer';
 import HomeVideo from '../assets/video/home_video.mp4';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const products = [
   {
@@ -110,11 +111,13 @@ export const Home: FC = () => {
       </div>
       <div className="products-container">
         <h1 className="title">Products</h1>
-        <div className="products-list">
-          {products.map((item, index) => (
-            <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} />
-          ))}
-        </div>
+        <AnimationOnScroll animateIn="fadeIn" delay={40} duration={5000}>
+          <div className="products-list">
+            {products.map((item, index) => (
+              <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} />
+            ))}
+          </div>
+        </AnimationOnScroll>
       </div>
       <Footer />
     </StyledHomeScreens>
