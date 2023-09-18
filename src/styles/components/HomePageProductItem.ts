@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 export const StyledHomePageProductItem = styled.div`
   width: 21%;
-  height: 360px;
+  height: 300px;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -26,7 +26,7 @@ export const StyledHomePageProductItem = styled.div`
   .name {
     color: ${({ theme }) => theme.white};
     text-align: center;
-    font-size: 20px;
+    font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -34,7 +34,7 @@ export const StyledHomePageProductItem = styled.div`
 
   .price {
     color: ${({ theme }) => theme.white};
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     text-align: center;
   }

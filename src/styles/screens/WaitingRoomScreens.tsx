@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const StyledHomeScreens = styled.div`
+export const StyledWaitingRoomScreens = styled.div`
   .player-container {
     width: 100%;
     height: 100vh;
@@ -26,7 +26,7 @@ export const StyledHomeScreens = styled.div`
 
     .event-info {
       width: 100%;
-      height: 100px;
+      height: auto;
       display: flex;
       justify-content: space-between;
       padding: 0 40px 40px 40px;
@@ -65,16 +65,16 @@ export const StyledHomeScreens = styled.div`
       color: ${({ theme }) => theme.white};
     }
 
-    .price-event {
-      font-size: 14px;
-      font-weight: 500;
+    .start-event {
+      font-size: 16px;
+      font-weight: 400;
       line-height: 18px;
       letter-spacing: 0.01em;
       color: ${({ theme }) => theme.white};
-      text-align: center;
+      // text-align: center;
       width: 100%;
       display: inline-block;
-      margin-bottom: 15px;
+      text-transform: uppercase;
     }
 
     .event-name {
@@ -83,11 +83,15 @@ export const StyledHomeScreens = styled.div`
       line-height: 33px;
       letter-spacing: 0em;
       color: ${({ theme }) => theme.white};
+      margin-bottom: 12px;
     }
 
     .event-date {
       display: flex;
       width: 100%;
+      border-bottom: 1px solid ${({ theme }) => theme.white};
+      margin-bottom: 30px;
+      padding-bottom: 12px;
 
       div:first-child {
         margin-right: 50px;
@@ -108,62 +112,45 @@ export const StyledHomeScreens = styled.div`
     }
 
     .event-name-container {
-      border-bottom: 1px solid ${({ theme }) => theme.white};
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
     }
 
     .event-info-block-right {
-      justify-content: space-between;
+      justify-content: flex-start;
       display: flex;
       flex-direction: column;
-      padding-top: 20px;
     }
 
     .event-info-block-center {
-      justify-content: center;
+      justify-content: flex-start;
       display: flex;
       flex-direction: column;
     }
   }
-  .products-container {
-    background-color: ${({ theme }) => theme.dark};
-    padding: 120px 40px 80px 40px;
 
-    .title {
-      color: #fff;
-      font-size: 26px;
-      font-style: normal;
-      font-weight: 700;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 60px;
+  .text-button {
+    text-transform: none;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    span {
+      margin-left: 6px;
     }
+  }
 
-    .products-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      row-gap: 80px;
-      column-gap: 53px;
-      opacity: 0;
-    }
+  .invite-friend {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+  }
 
-    .show-products {
-      animation: showProducts 6s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-
-      @keyframes showProducts {
-        0% {
-          opacity: 0;
-        }
-
-        100% {
-          opacity: 1;
-        }
-      }
-    }
+  .select-sizes-button {
+    margin-bottom: 16px;
   }
 `;

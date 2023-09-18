@@ -21,7 +21,7 @@ export const HomePageProductItem: FC<HomePageProductItemProps> = ({ image, price
           onClick={() => {
             console.log('go to prosuct');
           }}
-          transparent
+          transparent={true}
         >
           View Details
         </Button>
