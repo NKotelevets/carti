@@ -147,6 +147,23 @@ export const StyledHomeScreens = styled.div`
       justify-content: space-between;
       row-gap: 80px;
       column-gap: 53px;
+      opacity: 0;
+    }
+
+    .show-products {
+      animation: showProducts 6s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+
+      @keyframes showProducts {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
     }
   }
 `;

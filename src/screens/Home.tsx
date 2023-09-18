@@ -6,7 +6,7 @@ import { ClockIcon, CameraIcon } from '../assets/svg';
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import { Footer } from '../components/Footer';
 import HomeVideo from '../assets/video/home_video.mp4';
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { useInView } from 'react-intersection-observer';
 import Image_1 from '../assets/images/1.png';
 import Image_2 from '../assets/images/2.png';
 import Image_3 from '../assets/images/3.png';
@@ -64,6 +64,11 @@ export const Home: FC = () => {
     console.log('Join Event');
   };
 
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+
   return (
     <StyledHomeScreens>
       <div className="player-container">
@@ -111,13 +116,11 @@ export const Home: FC = () => {
       </div>
       <div className="products-container">
         <h1 className="title">Products</h1>
-        <AnimationOnScroll animateIn="fadeIn" delay={40} duration={5000}>
-          <div className="products-list">
-            {products.map((item, index) => (
-              <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} />
-            ))}
-          </div>
-        </AnimationOnScroll>
+        <div className={`products-list ${inView && 'show-products'}`} ref={ref}>
+          {products.map((item, index) => (
+            <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} />
+          ))}
+        </div>
       </div>
       <Footer />
     </StyledHomeScreens>
