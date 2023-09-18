@@ -23,15 +23,10 @@ export const WaitingRoom: FC = () => {
   useEffect(() => {
     setInterval(() => {
       const countdown = () => {
-        // Getting the Current Date
         const dateAtm = new Date();
-
-        // Getitng Current Time
         const currentTime = dateAtm.getTime();
-        // Getting Birthdays Time
         const eventTime = new Date('2025-01-26').getTime();
 
-        // Time remaining for the Birthday
         const timeRemaining = eventTime - currentTime;
 
         let seconds = Math.floor(timeRemaining / 1000);
