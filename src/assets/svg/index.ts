@@ -10,3 +10,4 @@ export { default as Tiktok } from './Tiktok.svg';
 export { default as Twitter } from './Twitter.svg';
 export { default as Youtube } from './Youtube.svg';
 export { default as InviteFriendIcon } from './InviteFriendIcon.svg';
+export { default as HelperIcon } from './HelperIcon.svg';

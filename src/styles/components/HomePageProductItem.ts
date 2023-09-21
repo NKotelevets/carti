@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 export const StyledHomePageProductItem = styled.div`
-  width: 21%;
+  // width: 21%;
   height: 300px;
   text-align: center;
   display: flex;

@@ -25,25 +25,16 @@ export const StyledProductScreens = styled.div`
     text-align: center;
     font-size: 18px;
     background: #fff;
-
-    /* Center slide text vertically */
     display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // width: 40%;
     background-color: ${({ theme }) => theme.dark};
   }
 
   .swiper-slide img {
-    // display: block;
     width: 100%;
-    // height: 100%;
-
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .swiper {
-    // width: 40%;
     height: 100%;
   }
 
@@ -191,6 +182,10 @@ export const StyledProductScreens = styled.div`
   .carousel__slide-overlay strong {
     display: block;
     flex: 0 0 100%;
+  }
+
+  .carousel__slide:hover .carousel__slide-overlay {
+    opacity: 1;
   }
 
   .carousel__slide:hover .carousel__slide-overlay {

@@ -151,7 +151,7 @@ export const StyledHomeScreens = styled.div`
     }
 
     .show-products {
-      animation: showProducts 6s;
+      animation: showProducts 3s;
       animation-delay: 1s;
       animation-fill-mode: forwards;
 
