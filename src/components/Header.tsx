@@ -40,7 +40,7 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
   }, []);
 
   return (
-    <StyledHeader>
+    <StyledHeader fixed={location.pathname === '/checkout'}>
       <div className="left-side">
         {showBackButton && (
           <button className="back-arrow" onClick={() => navigate(-1)}>

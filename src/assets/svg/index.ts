@@ -16,3 +16,5 @@ export { default as DownArrow } from './DownArrow.svg';
 export { default as TrashIcon } from './TrashIcon.svg';
 export { default as MinusIcon } from './MinusIcon.svg';
 export { default as PlusIcon } from './PlusIcon.svg';
+export { default as Fedex } from './Fedex.svg';
+export { default as Ups } from './Ups.svg';
