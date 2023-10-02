@@ -6,6 +6,7 @@ export const StyledPickedItemsScreens = styled.div`
   height: 100vh;
   padding: 80px 0px 24px 0px;
   box-sizing: border-box;
+  overflow: hidden;
 
   .cardContainer {
     background-color: blue;
@@ -54,10 +55,11 @@ export const StyledPickedItemsScreens = styled.div`
   .title {
     color: ${({ theme }) => theme.white};
     text-align: center;
-    font-size: 26px;
+    font-size: 24px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: 0.26px;
+    margin-bottom: 26px;
   }
 
   .counter {
@@ -68,7 +70,6 @@ export const StyledPickedItemsScreens = styled.div`
     font-weight: 500;
     line-height: 150%; /* 24px */
     letter-spacing: 0.16px;
-    margin-bottom: 26px;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -79,16 +80,55 @@ export const StyledPickedItemsScreens = styled.div`
   }
 
   .slider-container {
-    height: 60vh;
-    border-bottom: 1px solid ${({ theme }) => theme.grey};
-    margin-bottom: 35px;
-
-    div {
-      max-height: 60vh;
-    }
+    height: 100%;
+    overflow: hidden;
+    //   height: 75vh;
+    //   // border-bottom: 1px solid ${({ theme }) => theme.grey};
+    //   // margin-bottom: 35px;
+    //   // position: relative;
+    //   // padding-top: 50%;
+    //   div {
+    //     // max-height: 65vh;
+    //     // top: 0;
+    //     // transform: scale(0.9) !important;
+    //     height: 100% !important;
+    //     img {
+    //       // height: 300px;
+    //     }
+    //   }
   }
 
   .event-button {
     margin: 0 auto;
+  }
+
+  .bottom-navigation {
+    padding: 30px;
+    border-top: 1px solid ${({ theme }) => theme.grey};
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: ${({ theme }) => theme.dark};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // .jiaanf {
+  //   height: 350px;
+  //   width: 500px;
+
+  //   img {
+  //     height: 300px;
+  //     margin-bottom: 0px;
+  //   }
+  // }
+
+  // .css-1fzpoyk {
+  //   top: 45%;
+  // }
+
+  .css-doq0dk {
+    top: -16vh;
   }
 `;

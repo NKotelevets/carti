@@ -1,11 +1,11 @@
 import { FC, HTMLProps, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { StyledHeader } from '../styles/components/Header';
 
 import logo from '../assets/images/Logo.png';
 import { LeftArrow } from '../assets/svg';
 import { Button } from './Button';
+import { MyCard } from './MyCard';
 
 interface HeaderProps extends HTMLProps<HTMLElement> {
   showBackButton?: boolean;
@@ -13,7 +13,11 @@ interface HeaderProps extends HTMLProps<HTMLElement> {
 
 export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [isVisible, setIsVisible] = useState(false);
+  const [showMyCard, setShowMyCard] = useState(false);
+
   const handleJoinEvent = () => {
     console.log('join event');
   };
@@ -52,8 +56,22 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
             JOIN EVENT
           </Button>
         )}
-        <Link to="/">My Account</Link>
+        {location.pathname !== '/missed-items' ? (
+          <Link to="/">My Account</Link>
+        ) : (
+          <Button
+            flat
+            textButton
+            width="auto"
+            type="button"
+            onClick={() => setShowMyCard((prev) => !prev)}
+            className="text-button select-sizes-button"
+          >
+            My Cart (2)
+          </Button>
+        )}
       </div>
+      {showMyCard && <MyCard />}
     </StyledHeader>
   );
 };

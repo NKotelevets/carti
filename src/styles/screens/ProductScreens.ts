@@ -110,6 +110,7 @@ export const StyledProductScreens = styled.div`
     top: 50%;
     transform: translate(0, -50%);
     width: 10px;
+    z-index: 100;
   }
 
   .swiper-pagination-bullet {
@@ -249,5 +250,21 @@ export const StyledProductScreens = styled.div`
 
   .carousel__control--prev::after {
     transform: rotate(45deg);
+  }
+
+  .swiper-slide-active {
+    animation: showProducts 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    @keyframes showProducts {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
   }
 `;

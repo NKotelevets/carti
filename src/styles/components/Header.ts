@@ -15,6 +15,23 @@ export const StyledHeader = styled.div`
   box-sizing: border-box;
   z-index: 100;
   border-bottom: 1px solid ${({ theme }) => theme.white};
+  top: -60px;
+  animation: fadeIn 3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      top: -60px;
+    }
+
+    100% {
+      top: 0px;
+
+      opacity: 1;
+    }
+  }
 
   .left-side,
   .right-side {

@@ -13,6 +13,7 @@ import Image_7 from '../assets/images/7.png';
 import Image_8 from '../assets/images/8.png';
 import { Button } from '../components/Button';
 import HelperIcon from '../assets/images/question-mark-circle.png';
+import { useNavigate } from 'react-router-dom';
 
 const products = [
   {
@@ -57,28 +58,43 @@ const products = [
   },
 ];
 
-const goToMisseditems = () => {
-  console.log('To missed items');
-};
-
 const selectedProducts = products.map((item, index) => ({
   key: uuidv4(),
-  content: <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} hideDetailsButton />,
+  content: (
+    <HomePageProductItem
+      image={item.image}
+      price={item.price}
+      name={item.name}
+      key={index}
+      hideDetailsButton
+      width={'30vw'}
+      height={'45vh'}
+    />
+  ),
 }));
 
 export const PickedItems: FC = () => {
+  const navigate = useNavigate();
+
+  const goToMisseditems = () => {
+    navigate('/missed-items');
+  };
+
   return (
     <StyledPickedItemsScreens>
+      <h3 className="title">CONGRATULATIONS! YOUR PICKS ARE IN</h3>
       <p className="counter">
         09:59 min left <img src={HelperIcon} alt="Helper" />
       </p>
-      <h3 className="title">CONGRATULATIONS! YOUR PICKS ARE IN</h3>
       <div className="slider-container">
-        <Carroussel cards={selectedProducts} height="500px" width="90%" margin="0 auto" offset={2} showArrows={false} />
+        <Carroussel cards={selectedProducts} height="100%" width="90%" margin="0 auto" offset={2} showArrows={false} />
       </div>
-      <Button type="button" onClick={goToMisseditems} width={'400px'} className="event-button">
-        ITEMS YOU MISSED
-      </Button>
+
+      <div className="bottom-navigation">
+        <Button type="button" onClick={goToMisseditems} width={'400px'} className="event-button">
+          ITEMS YOU MISSED
+        </Button>
+      </div>
     </StyledPickedItemsScreens>
   );
 };

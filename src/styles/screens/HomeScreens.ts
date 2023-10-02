@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 
 export const StyledHomeScreens = styled.div`
+  scroll-behavior: smooth;
   .player-container {
     width: 100%;
     height: 100vh;
@@ -125,17 +126,22 @@ export const StyledHomeScreens = styled.div`
       justify-content: center;
       display: flex;
       flex-direction: column;
+
+      a {
+        margin-top: 20px;
+        text-align: center;
+      }
     }
   }
   .products-container {
     background-color: ${({ theme }) => theme.dark};
-    padding: 120px 40px 80px 40px;
+    padding: 100px 40px 80px 40px;
 
     .title {
       color: #fff;
-      font-size: 26px;
+      font-size: 24px;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 400;
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 60px;
@@ -152,7 +158,6 @@ export const StyledHomeScreens = styled.div`
 
     .show-products {
       animation: showProducts 3s;
-      animation-delay: 1s;
       animation-fill-mode: forwards;
 
       @keyframes showProducts {
@@ -165,5 +170,11 @@ export const StyledHomeScreens = styled.div`
         }
       }
     }
+  }
+
+  .mute-button {
+    position: absolute;
+    top: 50%;
+    left: 40px;
   }
 `;

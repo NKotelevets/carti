@@ -153,4 +153,10 @@ export const StyledWaitingRoomScreens = styled.div`
   .select-sizes-button {
     margin-bottom: 16px;
   }
+
+  .mute-button {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+  }
 `;

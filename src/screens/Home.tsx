@@ -2,7 +2,7 @@ import { FC } from 'react';
 import ReactPlayer from 'react-player';
 import { StyledHomeScreens } from '../styles/screens/HomeScreens';
 import { Button } from '../components/Button';
-import { ClockIcon, CameraIcon } from '../assets/svg';
+import { ClockIcon, CameraIcon, Mute, DownArrow } from '../assets/svg';
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import { Footer } from '../components/Footer';
 import HomeVideo from '../assets/video/home_video.mp4';
@@ -83,6 +83,7 @@ export const Home: FC = () => {
           playsinline
           stopOnUnmount
         />
+        <img src={Mute} alt="Mute" className="mute-button" />
         <div className="content-wrapper">
           <div className="event-info">
             <div className="event-name-container event-info-block">
@@ -104,6 +105,9 @@ export const Home: FC = () => {
                 the notion of true freedom. SPENCER BADU’s modular design and interchangeable accessories empower you to
                 create a style that is uniquely yours.
               </span>
+              <a href="#products">
+                <img src={DownArrow} alt="back" />
+              </a>
             </div>
             <div className="event-info-block event-info-block-right">
               <span className="price-event">Price: $20.00</span>
@@ -114,7 +118,7 @@ export const Home: FC = () => {
           </div>
         </div>
       </div>
-      <div className="products-container">
+      <div className="products-container" id="products">
         <h1 className="title">Products</h1>
         <div className={`products-list ${inView && 'show-products'}`} ref={ref}>
           {products.map((item, index) => (

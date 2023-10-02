@@ -1,10 +1,11 @@
 import { FC, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Button } from '../components/Button';
-import { ClockIcon, CameraIcon, InviteFriendIcon } from '../assets/svg';
+import { ClockIcon, CameraIcon, InviteFriendIcon, Mute } from '../assets/svg';
 import HomeVideo from '../assets/video/home_video.mp4';
 import { StyledWaitingRoomScreens } from '../styles/screens/WaitingRoomScreens';
 import Countdown from '../components/CountDown';
+import { useNavigate } from 'react-router-dom';
 
 export const WaitingRoom: FC = () => {
   const [timer, setTimer] = useState({
@@ -14,6 +15,9 @@ export const WaitingRoom: FC = () => {
     days: 0,
     isEvent: false,
   });
+
+  const [muted, setMuted] = useState(true);
+  const navigate = useNavigate();
 
   // get current time
   const currentTime = new Date();
@@ -76,10 +80,12 @@ export const WaitingRoom: FC = () => {
           height="100%"
           playing
           loop
-          muted
+          muted={muted}
           playsinline
           stopOnUnmount
         />
+        <img src={Mute} alt="Mute" className="mute-button" onClick={() => setMuted((prev) => !prev)} />
+
         <div className="content-wrapper">
           <div className="event-info">
             <div className="event-name-container event-info-block">
@@ -110,12 +116,7 @@ export const WaitingRoom: FC = () => {
               >
                 + Add to calendar
               </Button>
-              <Button
-                onClick={() => {
-                  console.log('Select size');
-                }}
-                transparent={true}
-              >
+              <Button onClick={() => navigate('/products')} transparent={true}>
                 Select size
               </Button>
             </div>

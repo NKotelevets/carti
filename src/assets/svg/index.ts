@@ -11,3 +11,8 @@ export { default as Twitter } from './Twitter.svg';
 export { default as Youtube } from './Youtube.svg';
 export { default as InviteFriendIcon } from './InviteFriendIcon.svg';
 export { default as HelperIcon } from './HelperIcon.svg';
+export { default as Mute } from './Mute.svg';
+export { default as DownArrow } from './DownArrow.svg';
+export { default as TrashIcon } from './TrashIcon.svg';
+export { default as MinusIcon } from './MinusIcon.svg';
+export { default as PlusIcon } from './PlusIcon.svg';
