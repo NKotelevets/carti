@@ -177,4 +177,25 @@ export const StyledHomeScreens = styled.div`
     top: 50%;
     left: 40px;
   }
+
+  .bottom-arrow {
+    position: relative;
+    background: red;
+
+    img {
+      animation: bottomArrowAnimation 1.5s infinite;
+      animation-fill-mode: forwards;
+      top: -5px;
+      position: absolute;
+
+      @keyframes bottomArrowAnimation {
+        0% {
+          top: -5px;
+        }
+        100% {
+          top: 0px;
+        }
+      }
+    }
+  }
 `;

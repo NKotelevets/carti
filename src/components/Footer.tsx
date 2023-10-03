@@ -40,8 +40,8 @@ export const Footer: FC = () => {
       <div className="bottom-container">
         <span>© ALL RIGHTS RESERVED</span>
         <div>
-          <Link to="/">Terms & Conditions</Link>
-          <Link to="/">Privacy Policy</Link>
+          <Link to="/terms-and-conditions">Terms & Conditions</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
       </div>
     </StyledFooter>

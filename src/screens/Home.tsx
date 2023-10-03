@@ -105,7 +105,7 @@ export const Home: FC = () => {
                 the notion of true freedom. SPENCER BADU’s modular design and interchangeable accessories empower you to
                 create a style that is uniquely yours.
               </span>
-              <a href="#products">
+              <a href="#products" className="bottom-arrow">
                 <img src={DownArrow} alt="back" />
               </a>
             </div>

@@ -75,6 +75,8 @@ export const Checkout: FC = () => {
                     className="input-text"
                     placeholder="ADDRESS 1"
                     onFocus={handleSelectAddressModal}
+                    autocomplete="off"
+                    aria-autocomplete="none"
                   />
                 </div>
                 <div className="column">

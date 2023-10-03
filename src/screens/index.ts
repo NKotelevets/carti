@@ -6,5 +6,20 @@ import ProductsList from './ProductsList';
 import PickedItems from './PickedItems';
 import MissedItems from './MissedItems';
 import Checkout from './Checkout';
+import Event from './Event';
+import TermsAndConditions from './TermsAndConditions';
+import PrivacyPolicy from './PrivacyPolicy';
 
-export { SignIn, SignUp, Home, WaitingRoom, ProductsList, PickedItems, MissedItems, Checkout };
+export {
+  SignIn,
+  SignUp,
+  Home,
+  WaitingRoom,
+  ProductsList,
+  PickedItems,
+  MissedItems,
+  Checkout,
+  Event,
+  TermsAndConditions,
+  PrivacyPolicy,
+};

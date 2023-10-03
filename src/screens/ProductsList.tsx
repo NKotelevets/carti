@@ -102,7 +102,7 @@ export const ProductsList: FC = () => {
       </div>
       <div className="column description-product">
         <Carousel ref={carouselRef} items={items} slideOnClick />
-        <div>
+        <div className="description-container">
           <h2 className="name-product">NOCTA TECH FLEECE CREW</h2>
           <p className="price-product">$ 5.100</p>
           <p className="description-product">

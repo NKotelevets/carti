@@ -39,8 +39,8 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
     return () => window.removeEventListener('scroll', listenToScroll);
   }, []);
 
-  return (
-    <StyledHeader fixed={location.pathname === '/checkout'}>
+  return location.pathname !== '/event' ? (
+    <StyledHeader fixed={location.pathname === '/checkout' ? true : false}>
       <div className="left-side">
         {showBackButton && (
           <button className="back-arrow" onClick={() => navigate(-1)}>
@@ -51,7 +51,7 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
       </div>
       <img src={logo} className="logo" alt="logo" />
       <div className="right-side">
-        {isVisible && (
+        {isVisible && location.pathname === '/' && (
           <Button type="button" onClick={handleJoinEvent} width={'200px'} className="join-event-button">
             JOIN EVENT
           </Button>
@@ -73,5 +73,5 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
       </div>
       {showMyCard && <MyCard />}
     </StyledHeader>
-  );
+  ) : null;
 };

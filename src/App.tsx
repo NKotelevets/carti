@@ -1,7 +1,19 @@
 import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { SignIn, Home, SignUp, WaitingRoom, ProductsList, PickedItems, MissedItems, Checkout } from './screens';
+import {
+  SignIn,
+  Home,
+  SignUp,
+  WaitingRoom,
+  ProductsList,
+  PickedItems,
+  MissedItems,
+  Checkout,
+  Event,
+  TermsAndConditions,
+  PrivacyPolicy,
+} from './screens';
 import { Theme } from './styles/Theme';
 import { Header } from './components/Header';
 import 'animate.css/animate.min.css';
@@ -21,6 +33,9 @@ function App() {
             <Route path="/picked-items" element={<PickedItems />} />
             <Route path="/missed-items" element={<MissedItems />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/Event" element={<Event />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
             <Route path="/" element={<Home />} />
           </Routes>

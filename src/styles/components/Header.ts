@@ -8,7 +8,7 @@ interface StyledHeaderProps extends HTMLProps<HTMLButtonElement> {
 export const StyledHeader = styled.div<StyledHeaderProps>`
   width: 100%;
   height: 56px;
-  position: ${(fixed) => (fixed ? 'absolute' : 'fixed')};
+  position: ${({ fixed }) => (fixed ? 'absolute' : 'fixed')};
   top: 0;
   background: rgba(25, 25, 27, 0.1);
   backdrop-filter: blur(5px);

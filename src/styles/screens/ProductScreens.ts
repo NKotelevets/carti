@@ -11,14 +11,14 @@ export const StyledProductScreens = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  .image-container {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
-
   .column {
     width: 50%;
+  }
+
+  .image-container {
+    height: 100%;
+    width: 60%;
+    overflow: hidden;
   }
 
   .swiper-slide {
@@ -45,6 +45,10 @@ export const StyledProductScreens = styled.div`
     font-weight: 400;
     letter-spacing: 0.12px;
     margin-bottom: 40px;
+  }
+
+  .column.description-product {
+    width: 40%;
   }
 
   .name-product {
@@ -256,15 +260,21 @@ export const StyledProductScreens = styled.div`
     animation: showProducts 3s;
     animation-fill-mode: forwards;
     opacity: 0;
+  }
 
-    @keyframes showProducts {
-      0% {
-        opacity: 0;
-      }
+  .description-container {
+    animation: showProducts 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
 
-      100% {
-        opacity: 1;
-      }
+  @keyframes showProducts {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 `;
