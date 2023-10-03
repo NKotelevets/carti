@@ -1,31 +1,44 @@
-import Carousel from 'react-spring-3d-carousel';
-import { useState, useEffect } from 'react';
-import { config } from 'react-spring';
+import { useState } from 'react';
+import Slider from 'react-slick';
 
-export default function Carroussel(props: any) {
-  const table = props.cards.map((element: any, index: number) => {
-    return { ...element, onClick: () => setGoToSlide(index) };
+export default function Carroussel({ cards }: any) {
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const settings = {
+    centerMode: true,
+    infinite: true,
+    dots: false,
+    speed: 300,
+    slidesToShow: 3,
+    centerPadding: '0',
+    swipeToSlide: true,
+    focusOnSelect: true,
+    beforeChange: (_: any, next: number) => setImageIndex(next),
+    responsive: [
+      {
+        breakpoint: 1490,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 820,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const templateImages = cards.map((item: any, idx: number) => {
+    return (
+      <div className={idx === imageIndex ? 'activeSlide' : 'slide'} key={item.id}>
+        <div className="slideWrapper">{item.content}</div>
+      </div>
+    );
   });
 
-  const [offsetRadius, setOffsetRadius] = useState(2);
-  const [showArrows, setShowArrows] = useState(false);
-  const [goToSlide, setGoToSlide] = useState(1);
-  const [cards] = useState(table);
-
-  useEffect(() => {
-    setOffsetRadius(props.offset);
-    setShowArrows(props.showArrows);
-  }, [props.offset, props.showArrows]);
-
-  return (
-    <div style={{ width: props.width, height: props.height, margin: props.margin }}>
-      <Carousel
-        slides={cards}
-        goToSlide={goToSlide}
-        offsetRadius={offsetRadius}
-        showNavigation={showArrows}
-        animationConfig={config.gentle}
-      />
-    </div>
-  );
+  return <Slider {...settings}>{templateImages}</Slider>;
 }

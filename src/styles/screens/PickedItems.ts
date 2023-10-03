@@ -46,12 +46,6 @@ export const StyledPickedItemsScreens = styled.div`
     background-color: red;
   }
 
-  div {
-    opacity: 1 !important;
-    background-color: transparent !important;
-    transform: scale(1);
-  }
-
   .title {
     color: ${({ theme }) => theme.white};
     text-align: center;
@@ -79,25 +73,6 @@ export const StyledPickedItemsScreens = styled.div`
     }
   }
 
-  .slider-container {
-    height: 100%;
-    overflow: hidden;
-    //   height: 75vh;
-    //   // border-bottom: 1px solid ${({ theme }) => theme.grey};
-    //   // margin-bottom: 35px;
-    //   // position: relative;
-    //   // padding-top: 50%;
-    //   div {
-    //     // max-height: 65vh;
-    //     // top: 0;
-    //     // transform: scale(0.9) !important;
-    //     height: 100% !important;
-    //     img {
-    //       // height: 300px;
-    //     }
-    //   }
-  }
-
   .event-button {
     margin: 0 auto;
   }
@@ -114,21 +89,15 @@ export const StyledPickedItemsScreens = styled.div`
     justify-content: center;
   }
 
-  // .jiaanf {
-  //   height: 350px;
-  //   width: 500px;
+  .slide {
+    transform: scale(0.7);
+    transition: transform 300ms;
+    opacity: 0.5;
+  }
 
-  //   img {
-  //     height: 300px;
-  //     margin-bottom: 0px;
-  //   }
-  // }
-
-  // .css-1fzpoyk {
-  //   top: 45%;
-  // }
-
-  .css-doq0dk {
-    top: -16vh;
+  .slideWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
   }
 `;
