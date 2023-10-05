@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { StyledHomeScreens } from '../styles/screens/HomeScreens';
 import { Button } from '../components/Button';
@@ -63,6 +63,7 @@ export const Home: FC = () => {
   const handleJoinEvent = () => {
     console.log('Join Event');
   };
+  const [muted, setMuted] = useState(true);
 
   const { ref, inView } = useInView({
     /* Optional options */
@@ -79,11 +80,14 @@ export const Home: FC = () => {
           height="100%"
           playing
           loop
-          muted
+          muted={muted}
           playsinline
           stopOnUnmount
         />
-        <img src={Mute} alt="Mute" className="mute-button" />
+        <button className="mute-button" onClick={() => setMuted((prev) => !prev)}>
+          <Mute color={'#fff'} muted={muted} />
+        </button>
+
         <div className="content-wrapper">
           <div className="event-info">
             <div className="event-name-container event-info-block">
@@ -119,11 +123,13 @@ export const Home: FC = () => {
         </div>
       </div>
       <div className="products-container" id="products">
-        <h1 className="title">Products</h1>
-        <div className={`products-list ${inView && 'show-products'}`} ref={ref}>
-          {products.map((item, index) => (
-            <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} />
-          ))}
+        <div className="title-container" ref={ref}>
+          <h1 className={`title ${inView && 'show-products'}`}>Products</h1>
+          <div className={`products-list ${inView && 'show-products'}`}>
+            {products.map((item, index) => (
+              <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} />
+            ))}
+          </div>
         </div>
       </div>
       <Footer />

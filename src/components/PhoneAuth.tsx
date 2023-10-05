@@ -109,6 +109,9 @@ export const PhoneAuth: FC<Props> = ({ title, subtitle, subtitleLinkText, subtit
               <Button flat textButton type="button" onClick={handleResendCode} className="text-button">
                 resend code
               </Button>
+              <Button flat textButton type="button" onClick={() => setCurrentIndex(0)} className="text-button">
+                Change phone number
+              </Button>
             </Form>
           )}
         </Formik>
@@ -153,6 +156,12 @@ export const PhoneAuth: FC<Props> = ({ title, subtitle, subtitleLinkText, subtit
                 classNamePrefix="gender-select"
                 isSearchable={false}
               />
+              <div className="label-wrapper">
+                <p className="label">your email</p>
+                {false && <p className="error">Email is required</p>}
+              </div>
+              <Field name="email" type="email" className="input-text" placeholder="Enter email" />
+
               <Button type="button" onClick={handleSubmitCreateAcc}>
                 submit
               </Button>

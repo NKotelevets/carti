@@ -3,7 +3,7 @@ import { FC, useCallback, useMemo, useRef, useState } from 'react';
 import { StyledCheckoutScreens } from '../styles/screens/Checkout';
 import { Field, Form, Formik } from 'formik';
 import PhoneInput from 'react-phone-number-input';
-import { Fedex, Ups } from '../assets/svg';
+import { Close, Fedex, Ups } from '../assets/svg';
 import { Button } from '../components/Button';
 import { CheckoutProductItem } from '../components/CheckoutProductItem';
 import { StyledSelectAdressModal } from '../styles/components/SelectAdressModal';
@@ -75,7 +75,7 @@ export const Checkout: FC = () => {
                     className="input-text"
                     placeholder="ADDRESS 1"
                     onFocus={handleSelectAddressModal}
-                    autocomplete="off"
+                    autoComplete="off"
                     aria-autocomplete="none"
                   />
                 </div>
@@ -135,6 +135,9 @@ export const Checkout: FC = () => {
         onBackgroundClick={handleSelectAddressModal}
         onEscapeKeydown={handleSelectAddressModal}
       >
+        <button className="close-button" onClick={handleSelectAddressModal}>
+          <img src={Close} alt="close" />
+        </button>
         <h1 className="title">select your location</h1>
         <p className="description">
           Choose your location by clicking on the map or entering the address in the search field

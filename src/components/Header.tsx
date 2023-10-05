@@ -5,7 +5,9 @@ import { StyledHeader } from '../styles/components/Header';
 import logo from '../assets/images/Logo.png';
 import { LeftArrow } from '../assets/svg';
 import { Button } from './Button';
-import { MyCard } from './MyCard';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../redux/store';
+import { setStatusCard } from '../redux/reducers/mainReducer';
 
 interface HeaderProps extends HTMLProps<HTMLElement> {
   showBackButton?: boolean;
@@ -14,9 +16,9 @@ interface HeaderProps extends HTMLProps<HTMLElement> {
 export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
   const navigate = useNavigate();
   const location = useLocation();
-
+  const { myCardActive } = useSelector((state: RootState) => state.main);
+  const dispatch = useDispatch();
   const [isVisible, setIsVisible] = useState(false);
-  const [showMyCard, setShowMyCard] = useState(false);
 
   const handleJoinEvent = () => {
     console.log('join event');
@@ -44,7 +46,7 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
       <div className="left-side">
         {showBackButton && (
           <button className="back-arrow" onClick={() => navigate(-1)}>
-            <img src={LeftArrow} alt="back" />
+            <LeftArrow />
             <span>Back</span>
           </button>
         )}
@@ -64,14 +66,15 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
             textButton
             width="auto"
             type="button"
-            onClick={() => setShowMyCard((prev) => !prev)}
+            onClick={() => {
+              dispatch(setStatusCard(!myCardActive));
+            }}
             className="text-button select-sizes-button"
           >
             My Cart (2)
           </Button>
         )}
       </div>
-      {showMyCard && <MyCard />}
     </StyledHeader>
   ) : null;
 };

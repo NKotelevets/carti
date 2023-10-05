@@ -13,8 +13,8 @@ export type IVideoPlayer = ReactPlayer & { wrapper: HTMLElement };
 
 const cards = [
   {
-    width: 0.243161094224924,
-    height: 0.5619697761126822,
+    width: 0.130161094224924,
+    height: 0.3819697761126822,
     offsetLeft: 0.07633587786259542,
     offsetTop: 0.13574660633484162,
     start: 1,
@@ -97,7 +97,6 @@ export const Event: FC = () => {
           setIsPlay(false);
           navigate('/picked-items');
         }}
-        controls
         ref={ref}
         onDuration={handleGetDuration}
         onReady={() => {
@@ -136,7 +135,8 @@ export const Event: FC = () => {
       <div className="header">
         <div className="left-side">
           <button className="back-arrow" onClick={() => navigate(-1)}>
-            <img src={LeftArrow} alt="back" />
+            <LeftArrow />
+
             <span>To Waiting Room</span>
           </button>
         </div>

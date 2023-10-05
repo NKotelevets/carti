@@ -67,6 +67,10 @@ export const StyledEventScreens = styled.div`
       border: 0px;
       cursor: pointer;
 
+      svg {
+        stroke: ${({ theme }) => theme.white};
+      }
+
       span {
         font-size: 14px;
         font-weight: 600;

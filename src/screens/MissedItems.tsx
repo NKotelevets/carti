@@ -14,7 +14,12 @@ import { Button } from '../components/Button';
 import { StyledSelectSizesModal } from '../styles/components/SelectSizesModal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { useDispatch, useSelector } from 'react-redux';
+
 import 'swiper/css';
+import { setStatusCard } from '../redux/reducers/mainReducer';
+import { MyCard } from '../components/MyCard';
+import { RootState } from '../redux/store';
 const products = [
   {
     image: Image_1,
@@ -89,8 +94,12 @@ const sizes = [
 ];
 
 export const MissedItems: FC = () => {
+  const dispatch = useDispatch();
+  const { myCardActive } = useSelector((state: RootState) => state.main);
+
   const goToCard = () => {
     console.log('goToCard');
+    dispatch(setStatusCard(true));
   };
   const addItemToCard = () => {
     console.log('addItemToCard');
@@ -157,6 +166,7 @@ export const MissedItems: FC = () => {
           CONFIRM
         </Button>
       </StyledSelectSizesModal>
+      <MyCard showMyCard={myCardActive} />
     </StyledMissedItemsScreens>
   );
 };

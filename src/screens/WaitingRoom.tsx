@@ -84,8 +84,9 @@ export const WaitingRoom: FC = () => {
           playsinline
           stopOnUnmount
         />
-        <img src={Mute} alt="Mute" className="mute-button" onClick={() => setMuted((prev) => !prev)} />
-
+        <button className="mute-button" onClick={() => setMuted((prev) => !prev)}>
+          <Mute color={'#fff'} muted={muted} />
+        </button>
         <div className="content-wrapper">
           <div className="event-info">
             <div className="event-name-container event-info-block">

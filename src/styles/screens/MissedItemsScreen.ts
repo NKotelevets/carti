@@ -64,11 +64,12 @@ export const StyledMissedItemsScreens = styled.div`
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: ${({ theme }) => theme.dark};
     display: flex;
     align-items: center;
     justify-content: center;
     bottom: -100%;
+    background: rgba(25, 25, 27, 0.4);
+    backdrop-filter: blur(7.5px);
 
     animation: showBottomPanel 3s;
     animation-fill-mode: forwards;

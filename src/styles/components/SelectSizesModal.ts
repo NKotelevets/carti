@@ -50,5 +50,24 @@ h3{
     font-style: normal;
     font-weight: 500;
     line-height: 150%;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      &::before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 24px;
+        height: 3px;
+        background: radial-gradient(50% 50% at 50% 50%, #fff 0%, rgba(255, 255, 255, 0) 100%);
+      }
+    }
+
+ 
   }
+
 `;

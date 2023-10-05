@@ -9,16 +9,17 @@ export default function Carroussel({ cards }: any) {
     infinite: true,
     dots: false,
     speed: 300,
-    slidesToShow: 3,
+    slidesToShow: 5,
     centerPadding: '0',
     swipeToSlide: true,
+    slidesToScroll: true,
     focusOnSelect: true,
     beforeChange: (_: any, next: number) => setImageIndex(next),
     responsive: [
       {
         breakpoint: 1490,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
           slidesToScroll: 1,
         },
       },

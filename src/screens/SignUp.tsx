@@ -3,18 +3,17 @@ import ReactPlayer from 'react-player';
 import { StyledAuthScreens } from '../styles/screens/AuthScreens';
 import { PhoneAuth } from '../components/PhoneAuth';
 import { Link } from 'react-router-dom';
+import LoginVideo from '../assets/video/login_video.mp4';
 
 export const SignUp: FC = () => {
   return (
     <StyledAuthScreens>
       <ReactPlayer
         className="player"
-        url={
-          'https://s3-figma-videos-production-sig.figma.com/video/978649961378621333/TEAM/af98/3fb8/-fcf3-41ac-86ae-780ecf0dbb0a?Expires=1694995200&Signature=Zwso5hNUudsuTUc9yxG9blqVbsKlDAX0saTHBlvUHHZx5wjq~FnpRisOdkmZeil8azq7MEnM60xoIiDg4elimMiJxdA0ERa36ORn7eErO0OZsvzsv7VQWheeJknpKHQdGDWwJ0GtzqbS9~pjIAuseHL-JVgp3~OKj61toM70oHdYa0OqBbpr5usqUNrf19eNZzurYhQahHFhgi5V3IlUj7LQSwxjS8GAhW0FTbCYQiLsWfaHbK5VhQprzrg9AYl-vXG9PFJok-pgizKcAVGFKn~hna5syLKd34XynbCdfG1Ol7kOmzN2PM1TebyPMAO-eRVVqxUlnuVPDq7NkGOvyA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
-        }
+        url={LoginVideo}
         width="100%"
         height="100%"
-        // playing
+        playing
         loop
         muted
         playsinline
@@ -31,8 +30,8 @@ export const SignUp: FC = () => {
           />
         </div>
         <div className="footer-wrapper">
-          <Link to="/">Terms & Conditions</Link>
-          <Link to="/">Privacy Policy</Link>
+          <Link to="/terms-and-conditions">Terms & Conditions</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
       </div>
     </StyledAuthScreens>

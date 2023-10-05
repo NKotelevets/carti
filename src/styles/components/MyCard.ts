@@ -1,7 +1,12 @@
+import { HTMLProps } from 'react';
 import { styled } from 'styled-components';
 
-export const StyledMyCard = styled.div`
-  animation: fadeInCard 2s;
+interface StyledMyCardProps extends HTMLProps<HTMLButtonElement> {
+  showMyCard?: boolean;
+}
+
+export const StyledMyCard = styled.div<StyledMyCardProps>`
+  animation: ${({ showMyCard }) => (showMyCard ? 'fadeInCard' : 'fadeOutCard')} 2s;
   animation-fill-mode: forwards;
   width: 300px;
   position: fixed;
@@ -21,6 +26,16 @@ export const StyledMyCard = styled.div`
 
     100% {
       right: 0px;
+    }
+  }
+
+  @keyframes fadeOutCard {
+    0% {
+      right: 0px;
+    }
+
+    100% {
+      right: -300px;
     }
   }
 

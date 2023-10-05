@@ -8,6 +8,22 @@ export const StyledPickedItemsScreens = styled.div`
   box-sizing: border-box;
   overflow: hidden;
 
+  .container {
+    opacity: 0;
+    animation: showProducts 4s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes showProducts {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
   .cardContainer {
     background-color: blue;
     /*margin: 20px;*/
@@ -54,6 +70,7 @@ export const StyledPickedItemsScreens = styled.div`
     font-weight: 400;
     letter-spacing: 0.26px;
     margin-bottom: 26px;
+    text-transform: uppercase;
   }
 
   .counter {
@@ -75,6 +92,17 @@ export const StyledPickedItemsScreens = styled.div`
 
   .event-button {
     margin: 0 auto;
+
+    svg {
+      transform: rotate(180deg);
+      stroke: #000;
+    }
+
+    &:hover {
+      svg {
+        stroke: ${({ theme }) => theme.white};
+      }
+    }
   }
 
   .bottom-navigation {
@@ -89,10 +117,18 @@ export const StyledPickedItemsScreens = styled.div`
     justify-content: center;
   }
 
+  .slider-container {
+    height: 70vh;
+  }
+
   .slide {
-    transform: scale(0.7);
+    transform: scale(0.6);
     transition: transform 300ms;
     opacity: 0.5;
+  }
+
+  .activeSlide {
+    transform: scale(1);
   }
 
   .slideWrapper {

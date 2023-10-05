@@ -158,5 +158,9 @@ export const StyledWaitingRoomScreens = styled.div`
     position: absolute;
     top: 50%;
     left: 40px;
+    cursor: pointer;
+    background: none;
+    border: 0px;
+    z-index: 100;
   }
 `;

@@ -9,6 +9,7 @@ export const StyledSelectAdressModal = Modal.styled`
     width: 60vw;
     // height: 70vh;
     z-index: 101!important;
+    position: relative;
 
     .map-container {
     height: 400px;
@@ -41,5 +42,14 @@ export const StyledSelectAdressModal = Modal.styled`
 
   .button{
       margin: 0 auto;
+  }
+
+  .close-button {
+    border: 0px;
+    background: none;
+    position: absolute;
+    top; 40px;
+    right: 20px;
+    cursor: pointer;
   }
 `;

@@ -145,6 +145,7 @@ export const StyledHomeScreens = styled.div`
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 60px;
+      opacity: 0;
     }
 
     .products-list {
@@ -159,16 +160,16 @@ export const StyledHomeScreens = styled.div`
     .show-products {
       animation: showProducts 3s;
       animation-fill-mode: forwards;
+    }
+  }
 
-      @keyframes showProducts {
-        0% {
-          opacity: 0;
-        }
+  @keyframes showProducts {
+    0% {
+      opacity: 0;
+    }
 
-        100% {
-          opacity: 1;
-        }
-      }
+    100% {
+      opacity: 1;
     }
   }
 
@@ -176,6 +177,10 @@ export const StyledHomeScreens = styled.div`
     position: absolute;
     top: 50%;
     left: 40px;
+    cursor: pointer;
+    background: none;
+    border: 0px;
+    z-index: 100;
   }
 
   .bottom-arrow {

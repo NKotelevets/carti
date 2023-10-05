@@ -14,6 +14,7 @@ import Image_8 from '../assets/images/8.png';
 import { Button } from '../components/Button';
 import HelperIcon from '../assets/images/question-mark-circle.png';
 import { useNavigate } from 'react-router-dom';
+import { LeftArrow } from '../assets/svg';
 
 const products = [
   {
@@ -67,7 +68,7 @@ const selectedProducts = products.map((item, index) => ({
       name={item.name}
       key={index}
       hideDetailsButton
-      width={'20vw'}
+      width={'22vw'}
       height={'52vh'}
     />
   ),
@@ -82,18 +83,27 @@ export const PickedItems: FC = () => {
 
   return (
     <StyledPickedItemsScreens>
-      <h3 className="title">CONGRATULATIONS! YOUR PICKS ARE IN</h3>
-      <p className="counter">
-        09:59 min left <img src={HelperIcon} alt="Helper" />
-      </p>
-      <div className="slider-container">
-        <Carroussel cards={selectedProducts} height="100%" width="90%" margin="0 auto" offset={2} showArrows={false} />
-      </div>
+      <div className="container">
+        <h3 className="title">Congratulations, Uyi! Your picks are in</h3>
+        <p className="counter">
+          09:59 min left <img src={HelperIcon} alt="Helper" />
+        </p>
+        <div className="slider-container">
+          <Carroussel
+            cards={selectedProducts}
+            height="100%"
+            width="90%"
+            margin="0 auto"
+            offset={2}
+            showArrows={false}
+          />
+        </div>
 
-      <div className="bottom-navigation">
-        <Button type="button" onClick={goToMisseditems} width={'400px'} className="event-button">
-          ITEMS YOU MISSED
-        </Button>
+        <div className="bottom-navigation">
+          <Button type="button" onClick={goToMisseditems} width={'400px'} className="event-button">
+            Continue <LeftArrow />
+          </Button>
+        </div>
       </div>
     </StyledPickedItemsScreens>
   );
