@@ -41,6 +41,17 @@ export const StyledCheckoutScreens = styled.div`
 
   .products-container {
     width: 30%;
+    position: relative;
+
+    min-height: calc(65vh - 136px);
+  }
+
+  .bottom-container {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: ${({ theme }) => theme.dark};
+    padding-bottom: 20px;
   }
 
   .form-container {

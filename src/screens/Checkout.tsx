@@ -104,30 +104,32 @@ export const Checkout: FC = () => {
           </Formik>
         </div>
         <div className="products-container">
-          <div>
+          <div className="products-list">
             <CheckoutProductItem />
             <CheckoutProductItem />
             <CheckoutProductItem />
             <CheckoutProductItem />
           </div>
-          <div className="prices">
+          <div className="bottom-container">
+            <div className="prices">
+              <p className="prices-description">
+                <span>Subtotal:</span> <span>$ 950.00</span>
+              </p>
+              <p className="prices-description">
+                <span>Shipping:</span> <span>$ 25.75</span>
+              </p>
+              <p className="prices-description">
+                <span>Taxes:</span> <span>$ 18.30</span>
+              </p>
+            </div>
             <p className="prices-description">
-              <span>Subtotal:</span> <span>$ 950.00</span>
+              <span>Total:</span> <span>$ 994.05</span>
             </p>
-            <p className="prices-description">
-              <span>Shipping:</span> <span>$ 25.75</span>
-            </p>
-            <p className="prices-description">
-              <span>Taxes:</span> <span>$ 18.30</span>
-            </p>
-          </div>
-          <p className="prices-description">
-            <span>Total:</span> <span>$ 994.05</span>
-          </p>
 
-          <Button type="button" onClick={() => console.log('do ')} width={'100%'} className="pay-button">
-            to payment
-          </Button>
+            <Button type="button" onClick={() => console.log('do ')} width={'100%'} className="pay-button">
+              to payment
+            </Button>
+          </div>
         </div>
       </div>
       <StyledSelectAdressModal

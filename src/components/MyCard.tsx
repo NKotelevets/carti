@@ -10,15 +10,20 @@ interface MyCardProps extends HTMLProps<HTMLElement> {
 
 export const MyCard: FC<MyCardProps> = ({ showMyCard }) => {
   const navigate = useNavigate();
+
   return (
     <StyledMyCard showMyCard={showMyCard}>
-      <MyCardItem />
-      <MyCardItem />
-      <MyCardItem />
-      <div className="bottom-nav">
-        <Button onClick={() => navigate('/checkout')} transparent={true} className="button-action">
-          TO checkout
-        </Button>
+      <div className={`overlay ${showMyCard == true ? 'active' : ''}`}>
+        <div className={`panel ${showMyCard == true ? 'active' : ''}`}>
+          <MyCardItem />
+          <MyCardItem />
+          <MyCardItem />
+          <div className="bottom-nav">
+            <Button onClick={() => navigate('/checkout')} transparent={true} className="button-action">
+              TO checkout
+            </Button>
+          </div>
+        </div>
       </div>
     </StyledMyCard>
   );

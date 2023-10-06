@@ -6,36 +6,38 @@ interface StyledMyCardProps extends HTMLProps<HTMLButtonElement> {
 }
 
 export const StyledMyCard = styled.div<StyledMyCardProps>`
-  animation: ${({ showMyCard }) => (showMyCard ? 'fadeInCard' : 'fadeOutCard')} 2s;
-  animation-fill-mode: forwards;
-  width: 300px;
-  position: fixed;
-  background-color: ${({ theme }: any) => theme.dark};
-  height: calc(100vh - 56px);
-  right: -300px;
-  top: 56px;
-  border-left: 1px solid ${({ theme }: any) => theme.white};
-  padding: 40px;
-  box-sizing: border-box;
-  overflow-y: scroll;
+  .overlay {
+    background: rgba(25, 25, 27, 0.5);
+    height: calc(100vh - 56px);
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 100vw;
+    transition: 2s;
 
-  @keyframes fadeInCard {
-    0% {
-      right: -300px;
-    }
-
-    100% {
-      right: 0px;
+    &.active {
+      left: 0px;
     }
   }
 
-  @keyframes fadeOutCard {
-    0% {
-      right: 0px;
-    }
+  .panel {
+    // animation: ${({ showMyCard }) => (showMyCard ? 'fadeInCard' : 'fadeOutCard')} 2s;
+    animation-fill-mode: forwards;
+    width: 300px;
+    position: fixed;
+    background-color: ${({ theme }: any) => theme.dark};
+    height: calc(100vh - 56px);
+    right: -300px;
+    top: 56px;
+    border-left: 1px solid ${({ theme }: any) => theme.white};
+    padding: 40px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    z-index: 10000;
+    transition: 2s;
 
-    100% {
-      right: -300px;
+    &.active {
+      right: 0px;
     }
   }
 
