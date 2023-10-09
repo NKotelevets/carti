@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { StyledPickedItemsScreens } from '../styles/screens/PickedItems';
 import { v4 as uuidv4 } from 'uuid';
+import { Tooltip } from 'react-tooltip';
+
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import Carroussel from '../components/Carousel';
 import Image_1 from '../assets/images/1.png';
@@ -86,7 +88,13 @@ export const PickedItems: FC = () => {
       <div className="container">
         <h3 className="title">Congratulations, Uyi! Your picks are in</h3>
         <p className="counter">
-          09:59 min left <img src={HelperIcon} alt="Helper" />
+          09:59 min left{' '}
+          <img
+            src={HelperIcon}
+            alt="Helper"
+            data-tooltip-id="tooltip"
+            data-tooltip-content="Time left before items become unavailable for purchase"
+          />
         </p>
         <div className="slider-container">
           <Carroussel
@@ -105,6 +113,7 @@ export const PickedItems: FC = () => {
           </Button>
         </div>
       </div>
+      <Tooltip id="tooltip" place="top" arrowColor="transparent" />
     </StyledPickedItemsScreens>
   );
 };

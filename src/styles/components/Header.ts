@@ -53,6 +53,10 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
       line-height: 21px;
       color: ${({ theme }) => theme.white};
       text-decoration: none;
+
+      &:hover {
+        color: ${({ theme }) => theme.grey};
+      }
     }
   }
 
@@ -64,6 +68,16 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
     background-color: transparent;
     border: 0px;
     cursor: pointer;
+
+    &:hover {
+      svg {
+        stroke: ${({ theme }) => theme.grey};
+      }
+
+      span {
+        color: ${({ theme }) => theme.grey};
+      }
+    }
 
     svg {
       stroke: ${({ theme }) => theme.white};

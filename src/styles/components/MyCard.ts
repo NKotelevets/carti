@@ -13,7 +13,7 @@ export const StyledMyCard = styled.div<StyledMyCardProps>`
     position: fixed;
     bottom: 0;
     left: 100vw;
-    transition: 2s;
+    transition: 0.75s;
 
     &.active {
       left: 0px;
@@ -43,9 +43,33 @@ export const StyledMyCard = styled.div<StyledMyCardProps>`
 
   .bottom-nav {
     position: sticky;
-    bottom: 0px;
+    bottom: -40px;
     // width: calc(100% - 80px);
-    background: rgba(25, 25, 27, 0.1);
-    backdrop-filter: blur(5px);
+    background: ${({ theme }: any) => theme.dark};
+    // backdrop-filter: blur(5px);
+    padding: 40px 0;
+
+    .price-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+
+      span {
+        color: ${({ theme }: any) => theme.white};
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: 0.14px;
+        &:first-child {
+          font-weight: 700;
+        }
+
+        &:last-child {
+          font-weight: 400;
+        }
+      }
+    }
   }
 `;

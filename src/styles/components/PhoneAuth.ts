@@ -47,6 +47,11 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
     a {
       color: ${({ theme }) => theme.white};
       font-weight: 800;
+
+      &:hover {
+        color: ${({ theme }) => theme.grey};
+        text-decoration: underline;
+      }
     }
   }
 
@@ -149,6 +154,11 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
         color: ${({ theme }) => theme.white};
         font-weight: 500;
         text-decoration: none;
+
+        &:hover {
+          color: ${({ theme }) => theme.grey};
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -178,6 +188,11 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
 
   .text-button {
     margin-top: 16px;
+
+    &:hover {
+      color: ${({ theme }) => theme.grey};
+      text-decoration: underline;
+    }
   }
 
   .react-datepicker-wrapper {
@@ -312,6 +327,7 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
       background: rgba(25, 25, 27, 0.5);
       backdrop-filter: blur(7.5px);
       box-shadow: none;
+      height: 41px;
 
       &:hover {
         border: 1px solid ${({ theme }) => theme.white};
@@ -374,6 +390,17 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
       &:hover {
         color: rgba(255, 255, 255, 0.7);
       }
+    }
+  }
+
+  .gender-dob-container {
+    display: flex;
+    justify-content: space-between;
+
+    .gender-dob-field-container {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
     }
   }
 `;

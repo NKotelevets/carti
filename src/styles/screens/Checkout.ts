@@ -49,9 +49,11 @@ export const StyledCheckoutScreens = styled.div`
   .bottom-container {
     position: sticky;
     bottom: 0;
-    width: 100%;
+    width: calc(100% + 20px);
     background-color: ${({ theme }) => theme.dark};
-    padding-bottom: 20px;
+    border: 1px solid #fff;
+    padding: 30px;
+    box-sizing: border-box;
   }
 
   .form-container {
@@ -83,6 +85,11 @@ export const StyledCheckoutScreens = styled.div`
         outline: transparent;
         // border: none;
         color: ${({ theme }) => theme.white};
+
+        input {
+          outline-color: ${({ theme }) => theme.dark};
+          outline-width: 0px;
+        }
 
         .PhoneInputInput {
           background: transparent;
@@ -201,7 +208,7 @@ export const StyledCheckoutScreens = styled.div`
   .prices {
     border-bottom: 1px solid ${({ theme }) => theme.white};
     margin-bottom: 16px;
-    margin-top: 100px;
+    // margin-top: 100px;
   }
 
   .pay-button {

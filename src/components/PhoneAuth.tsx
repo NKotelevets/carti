@@ -129,33 +129,39 @@ export const PhoneAuth: FC<Props> = ({ title, subtitle, subtitleLinkText, subtit
                 {false && <p className="error">Last name is required</p>}
               </div>
               <Field name="lastName" type="text" className="input-text" placeholder="Enter last name" />
-              <div className="label-wrapper">
-                <p className="label">your birthday</p>
-                {false && <p className="error">Birthday is required</p>}
+              <div className="gender-dob-container">
+                <div className="gender-dob-field-container">
+                  <div className="label-wrapper">
+                    <p className="label">your birthday</p>
+                    {false && <p className="error">Birthday is required</p>}
+                  </div>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    placeholderText="date of birth"
+                    //It should be added, because  it is not convenient to choose birthday by flipping through just one month.
+                    // showMonthDropdown
+                    // showYearDropdown
+                    dropdownMode="select"
+                  />
+                </div>
+                <div className="gender-dob-field-container">
+                  <div className="label-wrapper">
+                    <p className="label">your gender</p>
+                    {false && <p className="error">Gender is required</p>}
+                  </div>
+                  <Select
+                    name="gender"
+                    placeholder="select gender"
+                    options={genderList}
+                    value={genderList.find((item) => item.value === values.gender)}
+                    onChange={(selectedOption) => setFieldValue('gender', selectedOption?.value)}
+                    className="gender-select"
+                    classNamePrefix="gender-select"
+                    isSearchable={false}
+                  />
+                </div>
               </div>
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                placeholderText="date of birth"
-                //It should be added, because  it is not convenient to choose birthday by flipping through just one month.
-                // showMonthDropdown
-                // showYearDropdown
-                dropdownMode="select"
-              />
-              <div className="label-wrapper">
-                <p className="label">your gender</p>
-                {false && <p className="error">Gender is required</p>}
-              </div>
-              <Select
-                name="gender"
-                placeholder="select gender"
-                options={genderList}
-                value={genderList.find((item) => item.value === values.gender)}
-                onChange={(selectedOption) => setFieldValue('gender', selectedOption?.value)}
-                className="gender-select"
-                classNamePrefix="gender-select"
-                isSearchable={false}
-              />
               <div className="label-wrapper">
                 <p className="label">your email</p>
                 {false && <p className="error">Email is required</p>}

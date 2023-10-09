@@ -14,12 +14,17 @@ import { Button } from '../components/Button';
 import { StyledSelectSizesModal } from '../styles/components/SelectSizesModal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import Sizes from '../assets/images/Sizes.png';
+import CheckCircle from '../assets/images/CheckCircle.png';
 
 import 'swiper/css';
-import { setStatusCard } from '../redux/reducers/mainReducer';
+// import { setStatusCard } from '../redux/reducers/mainReducer';
 import { MyCard } from '../components/MyCard';
 import { RootState } from '../redux/store';
+// import { useNavigate } from 'react-router-dom';
+import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
+import { Close } from '../assets/svg';
 const products = [
   {
     image: Image_1,
@@ -94,23 +99,46 @@ const sizes = [
 ];
 
 export const MissedItems: FC = () => {
-  const dispatch = useDispatch();
-  const { myCardActive } = useSelector((state: RootState) => state.main);
+  // const dispatch = useDispatch();
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [selectedSize, setSelectedSize] = useState('');
+  const [addedNewProduct, setAddedNewProduct] = useState(false);
 
-  const goToCard = () => {
-    console.log('goToCard');
-    dispatch(setStatusCard(true));
-  };
+  const { myCardActive } = useSelector((state: RootState) => state.main);
+  // const navigate = useNavigate();
+
+  // const goToCard = () => {
+  //   navigate('/checkout');
+  //   // console.log('goToCard');
+  //   // dispatch(setStatusCard(true));
+  // };
   const addItemToCard = () => {
     console.log('addItemToCard');
     setIsOpenModal(true);
   };
 
-  const [isOpenModal, setIsOpenModal] = useState(false);
-
   function handleSelectSizesModal() {
     setIsOpenModal(!isOpenModal);
   }
+
+  const [isOpenModalSizes, setIsOpenModalSizes] = useState(false);
+
+  const handleSelectSizesChartModal = () => {
+    setIsOpenModalSizes(!isOpenModalSizes);
+  };
+
+  const handleChangeSize = (e: any) => {
+    setSelectedSize(e.target.value);
+  };
+
+  const addNewProduct = () => {
+    setAddedNewProduct(true);
+    setIsOpenModal(!isOpenModal);
+
+    setTimeout(() => {
+      setAddedNewProduct(false);
+    }, 5000);
+  };
 
   return (
     <StyledMissedItemsScreens>
@@ -132,12 +160,12 @@ export const MissedItems: FC = () => {
           />
         ))}
       </div>
-
+      {/* 
       <div className="bottom-navigation">
         <Button type="button" onClick={goToCard} width={'400px'} className="event-button">
-          GO TO CART
+          Checkout
         </Button>
-      </div>
+      </div> */}
 
       <StyledSelectSizesModal
         isOpen={isOpenModal}
@@ -156,17 +184,44 @@ export const MissedItems: FC = () => {
           className="mySwiper"
         >
           {sizes.map((sizes) => (
-            <SwiperSlide>{sizes.label}</SwiperSlide>
+            <SwiperSlide>
+              <label
+                className={`select-size-options ${
+                  selectedSize && selectedSize === sizes.label && 'selected-size-effect'
+                }`}
+                key={sizes.label}
+              >
+                {sizes.label}
+                <input type="radio" name="sizes" id={sizes.label} value={sizes.label} onChange={handleChangeSize} />
+              </label>
+            </SwiperSlide>
           ))}
         </Swiper>
-        <Button flat textButton type="button" className="text-button">
+        <Button flat textButton type="button" className="text-button" onClick={handleSelectSizesChartModal}>
           View sizing chart
         </Button>
-        <Button onClick={() => handleSelectSizesModal()} transparent={true}>
+        <Button onClick={addNewProduct} transparent={true}>
           CONFIRM
         </Button>
       </StyledSelectSizesModal>
+
+      <StyledProductSizingChart
+        isOpen={isOpenModalSizes}
+        onBackgroundClick={handleSelectSizesChartModal}
+        onEscapeKeydown={handleSelectSizesChartModal}
+      >
+        <button className="close-button" onClick={handleSelectSizesChartModal}>
+          <Close />
+        </button>
+        <h3>sizing chart</h3>
+        <p>Choose your size according the information below</p>
+        <img src={Sizes} alt="sizes" />
+      </StyledProductSizingChart>
       <MyCard showMyCard={myCardActive} />
+      <div className={`success-added-item ${addedNewProduct && 'show'}`}>
+        <img src={CheckCircle} alt="confirm" />
+        <p>Item was successfully added to the cart</p>
+      </div>
     </StyledMissedItemsScreens>
   );
 };

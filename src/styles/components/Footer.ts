@@ -32,9 +32,12 @@ export const StyledFooter = styled.div`
       font-size: 12px;
       font-weight: 400;
       text-decoration: none;
-    }
-    a {
       margin-left: 20px;
+
+      &:hover {
+        color: ${({ theme }) => theme.white};
+        text-decoration: underline;
+      }
     }
   }
 

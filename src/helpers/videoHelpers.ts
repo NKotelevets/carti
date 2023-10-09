@@ -16,20 +16,33 @@ type GetProductCardStyledProps = {
 };
 
 export const getProductCardStyles = ({ currentSeek, item, clientWidth, clientHeight }: GetProductCardStyledProps) => {
+  // const styles = {
+  //   display:
+  //     currentSeek <= Math.trunc(Number(item.start)) ||
+  //     currentSeek >= Math.trunc(Number(item.start)) + Math.trunc(Number(item.duration))
+  //       ? 'none'
+  //       : 'flex',
+  // };
+  console.log('item.start', item.start);
+  console.log('currentSeek', currentSeek);
+
   const styles = {
-    display:
-      currentSeek <= Math.trunc(Number(item.start)) ||
+    bottom:
+      currentSeek <= Math.trunc(Number(item.start) - 1) ||
       currentSeek >= Math.trunc(Number(item.start)) + Math.trunc(Number(item.duration))
-        ? 'none'
-        : 'flex',
+        ? '-100%'
+        : '0px',
   };
 
   return {
     ...styles,
+    display: 'flex',
     width: Number(item.width) * Number(clientWidth),
     height: Number(item.height) * Number(clientHeight),
     transform: `translate(${Number(clientWidth) * Number(item.offsetLeft)}px, ${
       Number(item.offsetTop) * Number(clientHeight)
     }px)`,
+    transition: '2s',
+    right: '0px',
   };
 };

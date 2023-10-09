@@ -15,8 +15,8 @@ const cards = [
   {
     width: 0.130161094224924,
     height: 0.3819697761126822,
-    offsetLeft: 0.07633587786259542,
-    offsetTop: 0.13574660633484162,
+    offsetLeft: 0.17633587786259542,
+    offsetTop: 0.33574660633484162,
     start: 1,
     duration: 10,
     player_width: 786,
@@ -95,7 +95,7 @@ export const Event: FC = () => {
         stopOnUnmount
         onEnded={() => {
           setIsPlay(false);
-          navigate('/picked-items');
+          // navigate('/picked-items');
         }}
         ref={ref}
         onDuration={handleGetDuration}
@@ -116,6 +116,7 @@ export const Event: FC = () => {
               className="resize"
               isPlay={isPlay}
               card={product}
+              currentSeek={currentSeek}
               handleCardClick={() => console.log('test')}
               style={getProductCardStyles({
                 currentSeek,

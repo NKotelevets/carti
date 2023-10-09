@@ -21,6 +21,37 @@ import Image_10 from '../assets/images/10.png';
 import Image_11 from '../assets/images/11.png';
 import Image_12 from '../assets/images/12.png';
 import { Close } from '../assets/svg';
+import { useNavigate } from 'react-router-dom';
+
+const sizes = [
+  {
+    label: 'XS',
+  },
+  {
+    label: 'S',
+  },
+  {
+    label: 'M',
+  },
+  {
+    label: 'L',
+  },
+  {
+    label: 'XL',
+  },
+  {
+    label: '2XL',
+  },
+  {
+    label: '3XL',
+  },
+  {
+    label: '4XL',
+  },
+  {
+    label: '5XL',
+  },
+];
 
 const items = [
   {
@@ -71,13 +102,20 @@ const items = [
   },
 ];
 
-export const ProductsList: FC = () => {
+export const SelectSizes: FC = () => {
   const carouselRef = React.createRef<CarouselRef>();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [selectedSize, setSelectedSize] = useState('');
+  const navigate = useNavigate();
 
-  function handleSelectSizesModal() {
+  const handleChangeSize = (e: any) => {
+    setSelectedSize(e.target.value);
+  };
+
+  const handleSelectSizesModal = () => {
     setIsOpenModal(!isOpenModal);
-  }
+  };
+
   return (
     <StyledProductScreens>
       <div className="column image-container">
@@ -119,6 +157,38 @@ export const ProductsList: FC = () => {
             View sizing chart
           </Button>
         </div>
+
+        <div className="select-sizes-container">
+          <p>Select your size here</p>
+
+          <Swiper
+            slidesPerView={9}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {sizes.map((sizes) => (
+              <SwiperSlide>
+                <label
+                  className={`select-size-options ${
+                    selectedSize && selectedSize === sizes.label && 'selected-size-effect'
+                  }`}
+                  key={sizes.label}
+                >
+                  {sizes.label}
+                  <input type="radio" name="sizes" id={sizes.label} value={sizes.label} onChange={handleChangeSize} />
+                </label>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <Button onClick={() => navigate('/waiting-room')} transparent={true}>
+            To waiting room
+          </Button>
+        </div>
       </div>
 
       <StyledProductSizingChart
@@ -137,4 +207,4 @@ export const ProductsList: FC = () => {
   );
 };
 
-export default ProductsList;
+export default SelectSizes;

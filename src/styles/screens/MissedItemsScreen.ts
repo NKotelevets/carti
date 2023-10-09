@@ -4,7 +4,7 @@ export const StyledMissedItemsScreens = styled.div`
   background-color: ${({ theme }) => theme.dark};
   width: '100%';
   //   height: 100vh;
-  padding: 80px 0px 224px 0px;
+  padding: 80px 0px 140px 0px;
   box-sizing: border-box;
 
   .counter {
@@ -58,30 +58,60 @@ export const StyledMissedItemsScreens = styled.div`
     }
   }
 
-  .bottom-navigation {
-    padding: 30px;
-    border-top: 1px solid ${({ theme }) => theme.grey};
+  // .bottom-navigation {
+  //   padding: 30px;
+  //   border-top: 1px solid ${({ theme }) => theme.grey};
+  //   position: fixed;
+  //   bottom: 0;
+  //   width: 100%;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   bottom: -100%;
+  //   background: rgba(25, 25, 27, 0.4);
+  //   backdrop-filter: blur(7.5px);
+
+  //   animation: showBottomPanel 3s;
+  //   animation-fill-mode: forwards;
+
+  //   @keyframes showBottomPanel {
+  //     0% {
+  //       bottom: -100%;
+  //     }
+
+  //     100% {
+  //       bottom: 0%;
+  //     }
+  //   }
+  // }
+
+  .success-added-item {
     position: fixed;
-    bottom: 0;
+    bottom: -100px;
     width: 100%;
+    background-color: ${({ theme }) => theme.white};
+    padding: 31px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    bottom: -100%;
-    background: rgba(25, 25, 27, 0.4);
-    backdrop-filter: blur(7.5px);
+    align-items: center;
+    transition: 3s;
 
-    animation: showBottomPanel 3s;
-    animation-fill-mode: forwards;
+    &.show {
+      bottom: 0;
+    }
 
-    @keyframes showBottomPanel {
-      0% {
-        bottom: -100%;
-      }
+    p {
+      color: ${({ theme }) => theme.dark};
+      text-align: center;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      margin-left: 12px;
+    }
 
-      100% {
-        bottom: 0%;
-      }
+    img {
+      height: 24px;
     }
   }
 `;

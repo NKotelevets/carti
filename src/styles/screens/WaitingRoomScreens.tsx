@@ -137,8 +137,21 @@ export const StyledWaitingRoomScreens = styled.div`
     font-weight: 400;
     text-transform: uppercase;
 
+    svg {
+      stroke: ${({ theme }) => theme.white};
+    }
+
     span {
       margin-left: 6px;
+    }
+    &:hover {
+      span {
+        color: ${({ theme }) => theme.grey};
+      }
+
+      svg {
+        stroke: ${({ theme }) => theme.grey};
+      }
     }
   }
 

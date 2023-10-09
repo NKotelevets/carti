@@ -19,6 +19,10 @@ export const MyCard: FC<MyCardProps> = ({ showMyCard }) => {
           <MyCardItem />
           <MyCardItem />
           <div className="bottom-nav">
+            <p className="price-total">
+              <span>Total:</span>
+              <span>$ 610.00</span>
+            </p>
             <Button onClick={() => navigate('/checkout')} transparent={true} className="button-action">
               TO checkout
             </Button>

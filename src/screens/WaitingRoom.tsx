@@ -117,7 +117,7 @@ export const WaitingRoom: FC = () => {
               >
                 + Add to calendar
               </Button>
-              <Button onClick={() => navigate('/products')} transparent={true}>
+              <Button onClick={() => navigate('/select-sizes')} transparent={true}>
                 Select size
               </Button>
             </div>
@@ -131,7 +131,7 @@ export const WaitingRoom: FC = () => {
                   type="button"
                   onClick={handleInviteFriend}
                   className="text-button"
-                  leftIcon={<img src={InviteFriendIcon} alt="Invite a friend" />}
+                  leftIcon={<InviteFriendIcon />}
                 >
                   Invite a friend
                 </Button>

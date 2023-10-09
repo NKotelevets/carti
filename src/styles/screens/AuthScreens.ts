@@ -48,6 +48,11 @@ export const StyledAuthScreens = styled.div<StyledProps>`
         letter-spacing: 0.12px;
         color: ${({ theme }) => theme.white};
         text-decoration: none;
+
+        &:hover {
+          color: ${({ theme }) => theme.grey};
+          text-decoration: underline;
+        }
       }
     }
   }

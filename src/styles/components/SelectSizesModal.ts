@@ -6,10 +6,10 @@ export const StyledSelectSizesModal = Modal.styled`
     align-items: center;
     justify-content: center;
     border: 1px solid #FFF;
-background: #19191B;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-padding: 40px 60px;
-width: 30vw;
+    background: #19191B;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 40px 60px;
+    width: 30vw;
 
 h3{
     color: ${({ theme }: any) => theme.white};
@@ -68,6 +68,30 @@ h3{
     }
 
  
+  }
+
+  .selected-size-effect {
+    position: relative;
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 3px;
+      background: radial-gradient(50% 50% at 50% 50%, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+  }
+
+  .select-size-options {
+    cursor: pointer;
+
+    input{
+      display: none
+    }
   }
 
 `;

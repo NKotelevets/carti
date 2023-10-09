@@ -20,6 +20,7 @@ export const StyledEventProductCard = styled.div<StyledProductCardProps>`
   position: relative;
   user-select: none;
   padding: 18px 11px;
+  transition: 3s;
 
   background: rgba(25, 25, 27, 0.4);
   backdrop-filter: blur(10px);
@@ -131,7 +132,7 @@ export const StyledEventProductCard = styled.div<StyledProductCardProps>`
     width: 70%;
     border: 1px solid white;
     border-radius: 4px;
-    padding: 6px 20px;
+    padding: 4px 20px;
     white-space: nowrap;
     color: ${({ theme }) => theme.white};
     display: flex;
@@ -139,6 +140,7 @@ export const StyledEventProductCard = styled.div<StyledProductCardProps>`
     justify-content: center;
     box-sizing: border-box;
     z-index: 10000;
+    height: 30px;
 
     &:hover {
       color: ${({ theme }) => theme.dark};

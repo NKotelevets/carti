@@ -17,6 +17,7 @@ type ProductCardProps = {
   isPlay?: boolean;
   startPos?: { x: number; y: number };
   currency?: string;
+  currentSeek?: number;
 } & React.ComponentProps<'div'>;
 
 export const EventProductCard: React.FC<ProductCardProps> = ({
@@ -28,6 +29,7 @@ export const EventProductCard: React.FC<ProductCardProps> = ({
   isPlay = false,
   startPos,
   currency,
+  currentSeek = 0,
 }) => {
   const animationstartpos = Number(card.start);
   const animationDuration = Number(card.start) + Number(card.duration);

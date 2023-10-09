@@ -44,7 +44,7 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
   return location.pathname !== '/event' ? (
     <StyledHeader fixed={location.pathname === '/checkout' ? true : false}>
       <div className="left-side">
-        {showBackButton && (
+        {(showBackButton || location.pathname === '/products') && (
           <button className="back-arrow" onClick={() => navigate(-1)}>
             <LeftArrow />
             <span>Back</span>
@@ -53,27 +53,46 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
       </div>
       <img src={logo} className="logo" alt="logo" />
       <div className="right-side">
-        {isVisible && location.pathname === '/' && (
-          <Button type="button" onClick={handleJoinEvent} width={'200px'} className="join-event-button">
-            JOIN EVENT
-          </Button>
-        )}
-        {location.pathname !== '/missed-items' ? (
-          <Link to="/">My Account</Link>
-        ) : (
-          <Button
-            flat
-            textButton
-            width="auto"
-            type="button"
-            onClick={() => {
-              dispatch(setStatusCard(!myCardActive));
-            }}
-            className="text-button select-sizes-button"
-          >
-            My Cart (2)
-          </Button>
-        )}
+        {location.pathname !== '/sign-up' &&
+          location.pathname !== '/sign-in' &&
+          location.pathname !== '/picked-items' &&
+          location.pathname !== '/checkout' && (
+            <>
+              {isVisible && location.pathname === '/' && (
+                <Button type="button" onClick={handleJoinEvent} width={'200px'} className="join-event-button">
+                  JOIN EVENT
+                </Button>
+              )}
+              {location.pathname !== '/missed-items' ? (
+                <Link to="/">My Account</Link>
+              ) : (
+                <>
+                  {location.pathname === '/missed-items' && (
+                    <Button
+                      type="button"
+                      onClick={() => navigate('/checkout')}
+                      width={'200px'}
+                      className="join-event-button"
+                    >
+                      To checkout
+                    </Button>
+                  )}
+                  <Button
+                    flat
+                    textButton
+                    width="auto"
+                    type="button"
+                    onClick={() => {
+                      dispatch(setStatusCard(!myCardActive));
+                    }}
+                    className="text-button select-sizes-button"
+                  >
+                    My Cart (2)
+                  </Button>
+                </>
+              )}
+            </>
+          )}
       </div>
     </StyledHeader>
   ) : null;

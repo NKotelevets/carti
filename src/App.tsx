@@ -13,6 +13,7 @@ import {
   Event,
   TermsAndConditions,
   PrivacyPolicy,
+  SelectSizes,
 } from './screens';
 import { Theme } from './styles/Theme';
 import { Header } from './components/Header';
@@ -39,6 +40,7 @@ function App() {
               <Route path="/Event" element={<Event />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/select-sizes" element={<SelectSizes />} />
 
               <Route path="/" element={<Home />} />
             </Routes>

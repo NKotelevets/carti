@@ -9,6 +9,7 @@ import Checkout from './Checkout';
 import Event from './Event';
 import TermsAndConditions from './TermsAndConditions';
 import PrivacyPolicy from './PrivacyPolicy';
+import SelectSizes from './SelectSizes';
 
 export {
   SignIn,
@@ -22,4 +23,5 @@ export {
   Event,
   TermsAndConditions,
   PrivacyPolicy,
+  SelectSizes,
 };

@@ -127,7 +127,7 @@ export const Checkout: FC = () => {
             </p>
 
             <Button type="button" onClick={() => console.log('do ')} width={'100%'} className="pay-button">
-              to payment
+              PLACE ORDER
             </Button>
           </div>
         </div>
@@ -138,7 +138,7 @@ export const Checkout: FC = () => {
         onEscapeKeydown={handleSelectAddressModal}
       >
         <button className="close-button" onClick={handleSelectAddressModal}>
-          <img src={Close} alt="close" />
+          <Close />
         </button>
         <h1 className="title">select your location</h1>
         <p className="description">
