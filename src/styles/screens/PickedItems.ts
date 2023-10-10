@@ -146,4 +146,8 @@ export const StyledPickedItemsScreens = styled.div`
     width: 250px;
     text-align: center;
   }
+
+  .slick-cloned {
+    display: none;
+  }
 `;
