@@ -2,7 +2,7 @@ import { FC, HTMLProps, useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { StyledHeader } from '../styles/components/Header';
 
-import logo from '../assets/images/Logo.png';
+import logo from '../assets/images/Lando/Logo.png';
 import { LeftArrow } from '../assets/svg';
 import { Button } from './Button';
 import { useSelector, useDispatch } from 'react-redux';

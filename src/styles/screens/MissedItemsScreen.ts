@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const StyledMissedItemsScreens = styled.div`
   background-color: ${({ theme }) => theme.dark};
   width: '100%';
-  //   height: 100vh;
+  min-height: 100vh;
   padding: 80px 0px 140px 0px;
   box-sizing: border-box;
 

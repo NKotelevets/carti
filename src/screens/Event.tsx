@@ -1,13 +1,14 @@
 import { FC, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { StyledEventScreens } from '../styles/screens/Event';
-import HomeVideo from '../assets/video/home_video.mp4';
 import { useNavigate } from 'react-router-dom';
 import { LeftArrow } from '../assets/svg';
 import { IProductData } from '../models/event';
 import { EventProductCard } from '../components/EventProductCard';
 import { getProductCardStyles } from '../helpers/videoHelpers';
 import { formattedTime } from '../helpers/formattedValue';
+import LandoMain from '../assets/video/LandoMain.mp4';
+import Image_1 from '../assets/images/Lando/product_1_1.png';
 
 export type IVideoPlayer = ReactPlayer & { wrapper: HTMLElement };
 
@@ -23,10 +24,10 @@ const cards = [
     player_height: 442,
     id: 709,
     product_id: 906,
-    name: 'First',
-    price: 121,
-    currency: 'usd',
-    image: 'https://d2pdy0anl46va0.cloudfront.net/906/57c269d5-6ff0-46f6-9a73-6743ea0d8174.webp',
+    name: "1:2 SCALE 2023 'TRIPLE CROWN' MINI HELMET",
+    price: 179.0,
+    currency: 'gbp',
+    image: Image_1,
   },
 
   // {
@@ -86,7 +87,7 @@ export const Event: FC = () => {
     <StyledEventScreens>
       <ReactPlayer
         className="player"
-        url={HomeVideo}
+        url={LandoMain}
         width="100%"
         height="100%"
         playing={isPlay}

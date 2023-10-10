@@ -1,14 +1,10 @@
 import { FC, useState } from 'react';
 import { StyledMissedItemsScreens } from '../styles/screens/MissedItemsScreen';
 import HelperIcon from '../assets/images/question-mark-circle.png';
-import Image_1 from '../assets/images/1.png';
-import Image_2 from '../assets/images/2.png';
-import Image_3 from '../assets/images/3.png';
-import Image_4 from '../assets/images/4.png';
-import Image_5 from '../assets/images/5.png';
-import Image_6 from '../assets/images/6.png';
-import Image_7 from '../assets/images/7.png';
-import Image_8 from '../assets/images/8.png';
+import Image_1 from '../assets/images/Lando/product_1_1.png';
+import Image_2 from '../assets/images/Lando/product_2_1.png';
+import Image_3 from '../assets/images/Lando/product_3_1.png';
+import Image_4 from '../assets/images/Lando/product_4_1.png';
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import { Button } from '../components/Button';
 import { StyledSelectSizesModal } from '../styles/components/SelectSizesModal';
@@ -29,43 +25,23 @@ import { Tooltip } from 'react-tooltip';
 const products = [
   {
     image: Image_1,
-    name: 'HOT STEP',
-    price: '180.00',
+    name: "1:2 SCALE 2023 'TRIPLE CROWN' MINI HELMET",
+    price: '£179.00',
   },
   {
     image: Image_2,
-    name: 'NOCTA TECH FLEECE CREW',
-    price: '310.00',
+    name: 'BEACHBALL LONG SLEEVE TEE',
+    price: '£40.00',
   },
   {
     image: Image_3,
-    name: 'NOCTA TECH FLEECE CREW PANT',
-    price: '280.00',
+    name: 'LN TRUCKER HAT',
+    price: '£25.00',
   },
   {
     image: Image_4,
-    name: 'NOCTA FLEECE HOODIE',
-    price: '500.00',
-  },
-  {
-    image: Image_5,
-    name: 'ALIEN GORETEX JACKET',
-    price: '400.00',
-  },
-  {
-    image: Image_6,
-    name: 'JACKET WITH SWAROVSKI® CRYSTALS',
-    price: '130.00',
-  },
-  {
-    image: Image_7,
-    name: 'RD TECH CREW',
-    price: '150.00',
-  },
-  {
-    image: Image_8,
-    name: 'NOCTA TECH FLEECE CREW',
-    price: '310.00',
+    name: 'LN HOODIE',
+    price: '£70.00',
   },
 ];
 

@@ -8,6 +8,37 @@ import { Button } from '../components/Button';
 import { CheckoutProductItem } from '../components/CheckoutProductItem';
 import { StyledSelectAdressModal } from '../styles/components/SelectAdressModal';
 import { GoogleMap, useLoadScript } from '@react-google-maps/api';
+import Image_1 from '../assets/images/Lando/product_1_1.png';
+import Image_2 from '../assets/images/Lando/product_2_1.png';
+import Image_3 from '../assets/images/Lando/product_3_1.png';
+import Image_4 from '../assets/images/Lando/product_4_1.png';
+
+const products = [
+  {
+    image: Image_1,
+    name: "1:2 SCALE 2023 'TRIPLE CROWN' MINI HELMET",
+    price: '£179.00',
+    size: 'S',
+  },
+  {
+    image: Image_2,
+    name: 'BEACHBALL LONG SLEEVE TEE',
+    price: '£40.00',
+    size: 'S',
+  },
+  {
+    image: Image_3,
+    name: 'LN TRUCKER HAT',
+    price: '£25.00',
+    size: 'S',
+  },
+  {
+    image: Image_4,
+    name: 'LN HOODIE',
+    price: '£70.00',
+    size: 'S',
+  },
+];
 
 const libraries: 'places'[] = ['places'];
 
@@ -105,10 +136,14 @@ export const Checkout: FC = () => {
         </div>
         <div className="products-container">
           <div className="products-list">
-            <CheckoutProductItem />
-            <CheckoutProductItem />
-            <CheckoutProductItem />
-            <CheckoutProductItem />
+            {products.map((product: any) => (
+              <CheckoutProductItem
+                name={product.name}
+                price={product.price}
+                image={product.image}
+                size={product.size}
+              />
+            ))}
           </div>
           <div className="bottom-container">
             <div className="prices">

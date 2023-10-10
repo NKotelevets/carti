@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Button } from '../components/Button';
 import { ClockIcon, CameraIcon, InviteFriendIcon, Mute, Close } from '../assets/svg';
-import HomeVideo from '../assets/video/home_video.mp4';
+import WaitingRoomVideo from '../assets/video/LandoWaitingRoom.mp4';
 import { StyledWaitingRoomScreens } from '../styles/screens/WaitingRoomScreens';
 import Countdown from '../components/CountDown';
 import { useNavigate } from 'react-router-dom';
@@ -79,7 +79,7 @@ export const WaitingRoom: FC = () => {
       <div className="player-container">
         <ReactPlayer
           className="player"
-          url={HomeVideo}
+          url={WaitingRoomVideo}
           width="100%"
           height="100%"
           playing

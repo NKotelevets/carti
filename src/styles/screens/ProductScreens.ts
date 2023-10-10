@@ -153,6 +153,9 @@ export const StyledProductScreens = styled.div`
 
   .carousel__slide {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 11.875em;
     height: 11.875em;
     left: 0.625em;
@@ -164,8 +167,8 @@ export const StyledProductScreens = styled.div`
   }
 
   .carousel__slide img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     display: block;
   }
 

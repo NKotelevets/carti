@@ -8,18 +8,15 @@ import { Carousel, CarouselRef } from 'react-round-carousel';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
 import 'react-round-carousel/src/index.css';
 import Sizes from '../assets/images/Sizes.png';
-import Image_1 from '../assets/images/1.png';
-import Image_2 from '../assets/images/2.png';
-import Image_3 from '../assets/images/3.png';
-import Image_4 from '../assets/images/4.png';
-import Image_5 from '../assets/images/5.png';
-import Image_6 from '../assets/images/6.png';
-import Image_7 from '../assets/images/7.png';
-import Image_8 from '../assets/images/8.png';
-import Image_9 from '../assets/images/9.png';
-import Image_10 from '../assets/images/10.png';
-import Image_11 from '../assets/images/11.png';
-import Image_12 from '../assets/images/12.png';
+import Image_1 from '../assets/images/Lando/product_1_1.png';
+import Image_2 from '../assets/images/Lando/product_2_1.png';
+import Image_3 from '../assets/images/Lando/product_3_1.png';
+import Image_4 from '../assets/images/Lando/product_4_1.png';
+import Image_5 from '../assets/images/Lando/product_1_2.png';
+import Image_6 from '../assets/images/Lando/product_1_3.png';
+import Image_7 from '../assets/images/Lando/product_1_4.png';
+import Image_8 from '../assets/images/Lando/product_1_5.png';
+
 import { Close } from '../assets/svg';
 
 const items = [
@@ -41,32 +38,6 @@ const items = [
   {
     alt: 'Photo',
     image: Image_4,
-    content: '',
-  },
-  {
-    alt: 'Photo',
-    image: Image_5,
-    content: '',
-  },
-  {
-    alt: 'Photo',
-    image: Image_6,
-    content: '',
-  },
-  {
-    alt: 'Photo',
-    image: Image_7,
-    content: '',
-  },
-
-  {
-    alt: 'Photo',
-    image: Image_8,
-    content: '',
-  },
-  {
-    alt: 'Photo',
-    image: Image_6,
     content: '',
   },
 ];
@@ -93,27 +64,33 @@ export const ProductsList: FC = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={Image_9} />
+            <img src={Image_1} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={Image_10} />
+            <img src={Image_5} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={Image_11} />
+            <img src={Image_6} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={Image_12} />
+            <img src={Image_7} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Image_8} />
           </SwiperSlide>
         </Swiper>
       </div>
       <div className="column description-product">
         <Carousel ref={carouselRef} items={items} slideOnClick />
         <div className="description-container">
-          <h2 className="name-product">NOCTA TECH FLEECE CREW</h2>
-          <p className="price-product">$ 5.100</p>
+          <h2 className="name-product">1:2 SCALE 2023 'TRIPLE CROWN' MINI HELMET</h2>
+          <p className="price-product">£179.00</p>
           <p className="description-product">
-            This straight velvet coat combines the elegance of classic fashion with the contemporary attitude. It has a
-            slim fit, enhanced with wide lapels and flap pockets. The embroidered logo adds an iconic finishing touch.
+            A special race deserves a special helmet, and Lando understood the assignment. A nod to McLaren's success in
+            Monaco, this helmet brings the old-school vibes to celebrate their historic Triple Crown achievement. The
+            helmet design is inspired by McLaren's iconic 1984 Monaco Grand Prix winning livery, but with a Lando Norris
+            twist. The same Triple Crown logo that is on the special McLaren livery sits on the back of the helmet,
+            alongside all of Lando's usual logos that have been given a retro look.
           </p>
           <Button flat textButton type="button" className="text-button" onClick={handleSelectSizesModal}>
             View sizing chart

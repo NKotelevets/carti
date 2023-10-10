@@ -31,7 +31,7 @@ export const HomePageProductItem: FC<HomePageProductItemProps> = ({
       <img src={image} alt={name} />
       <div className="description-container">
         <p className="name">{name}</p>
-        <p className="price">${price}</p>
+        <p className="price">{price}</p>
       </div>
       {actionButton && actionButtonText && (
         <Button onClick={actionButton} transparent={true} className="button-action">
