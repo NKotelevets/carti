@@ -105,7 +105,7 @@ export const Home: FC = () => {
           <h1 className={`title ${inView && 'show-products'}`}>Products</h1>
           <div className={`products-list ${inView && 'show-products'}`}>
             {products.map((item, index) => (
-              <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} />
+              <HomePageProductItem image={item.image} price={item.price} name={item.name} key={index} height={'260'} />
             ))}
           </div>
         </div>
