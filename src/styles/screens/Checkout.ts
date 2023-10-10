@@ -42,13 +42,18 @@ export const StyledCheckoutScreens = styled.div`
   .products-container {
     width: 30%;
     position: relative;
+    height: calc(65vh - 136px);
+  }
 
-    min-height: calc(65vh - 136px);
+  .products-list {
+    overflow: scroll;
+    height: 80%;
+    margin-bottom: 10px;
   }
 
   .bottom-container {
-    position: sticky;
-    bottom: 0;
+    // position: sticky;
+    // bottom: 0;
     width: calc(100% + 20px);
     background-color: ${({ theme }) => theme.dark};
     border: 1px solid #fff;

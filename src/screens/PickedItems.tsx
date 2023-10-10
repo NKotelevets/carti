@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { StyledPickedItemsScreens } from '../styles/screens/PickedItems';
 import { v4 as uuidv4 } from 'uuid';
 import { Tooltip } from 'react-tooltip';
+import { useNavigate } from 'react-router-dom';
 
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import Carroussel from '../components/Carousel';
@@ -15,8 +16,6 @@ import Image_7 from '../assets/images/7.png';
 import Image_8 from '../assets/images/8.png';
 import { Button } from '../components/Button';
 import HelperIcon from '../assets/images/question-mark-circle.png';
-import { useNavigate } from 'react-router-dom';
-import { LeftArrow } from '../assets/svg';
 
 const products = [
   {
@@ -109,7 +108,7 @@ export const PickedItems: FC = () => {
 
         <div className="bottom-navigation">
           <Button type="button" onClick={goToMisseditems} width={'400px'} className="event-button">
-            Continue <LeftArrow />
+            Continue
           </Button>
         </div>
       </div>

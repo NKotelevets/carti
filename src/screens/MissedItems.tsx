@@ -25,6 +25,7 @@ import { RootState } from '../redux/store';
 // import { useNavigate } from 'react-router-dom';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
 import { Close } from '../assets/svg';
+import { Tooltip } from 'react-tooltip';
 const products = [
   {
     image: Image_1,
@@ -145,7 +146,13 @@ export const MissedItems: FC = () => {
       <h3 className="title">ITEMS YOU MISSED</h3>
 
       <p className="counter">
-        09:59 min left <img src={HelperIcon} alt="Helper" />
+        09:59 min left{' '}
+        <img
+          src={HelperIcon}
+          alt="Helper"
+          data-tooltip-id="tooltip"
+          data-tooltip-content="Time left before items become unavailable for purchase"
+        />
       </p>
       <div className="products-container">
         {products.map((item, index) => (
@@ -222,6 +229,7 @@ export const MissedItems: FC = () => {
         <img src={CheckCircle} alt="confirm" />
         <p>Item was successfully added to the cart</p>
       </div>
+      <Tooltip id="tooltip" place="top" arrowColor="transparent" />
     </StyledMissedItemsScreens>
   );
 };

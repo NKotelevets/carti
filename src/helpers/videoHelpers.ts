@@ -23,8 +23,6 @@ export const getProductCardStyles = ({ currentSeek, item, clientWidth, clientHei
   //       ? 'none'
   //       : 'flex',
   // };
-  console.log('item.start', item.start);
-  console.log('currentSeek', currentSeek);
 
   const styles = {
     bottom:

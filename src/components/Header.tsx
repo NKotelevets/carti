@@ -51,7 +51,10 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
           </button>
         )}
       </div>
-      <img src={logo} className="logo" alt="logo" />
+      <Link to="/">
+        <img src={logo} className="logo" alt="logo" />
+      </Link>
+
       <div className="right-side">
         {location.pathname !== '/sign-up' &&
           location.pathname !== '/sign-in' &&
@@ -63,9 +66,8 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
                   JOIN EVENT
                 </Button>
               )}
-              {location.pathname !== '/missed-items' ? (
-                <Link to="/">My Account</Link>
-              ) : (
+              {location.pathname !== '/missed-items' ? null : (
+                // <Link to="/">My Account</Link>
                 <>
                   {location.pathname === '/missed-items' && (
                     <Button

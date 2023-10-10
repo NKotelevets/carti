@@ -121,9 +121,10 @@ export const WaitingRoom: FC = () => {
               >
                 + Add to calendar
               </Button>
-              <Button onClick={() => navigate('/select-sizes')} transparent={true}>
+              <Button onClick={() => navigate('/select-sizes')} transparent={true} className="select-size-btn">
                 Select size
               </Button>
+              <Button onClick={() => navigate('/event')}>Start Event</Button>
             </div>
             <div className="event-info-block event-info-block-right">
               <div className="invite-friend">

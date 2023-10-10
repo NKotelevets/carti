@@ -177,4 +177,8 @@ export const StyledWaitingRoomScreens = styled.div`
       width: 30%;
     }
   }
+
+  .select-size-btn {
+    margin-bottom: 20px;
+  }
 `;

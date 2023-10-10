@@ -21,7 +21,17 @@ export const StyledMissedItemsScreens = styled.div`
 
     img {
       margin-left: 10px;
+      width: 24px;
+      cursor: pointer;
     }
+  }
+
+  #tooltip {
+    border: 1px solid #fff;
+    background: #19191b;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
   }
 
   .title {
