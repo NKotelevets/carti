@@ -49,12 +49,13 @@ export const StyledCheckoutScreens = styled.div`
     overflow: scroll;
     height: 80%;
     margin-bottom: 10px;
+    padding-right: 20px;
   }
 
   .bottom-container {
     // position: sticky;
     // bottom: 0;
-    width: calc(100% + 20px);
+    width: 100%;
     background-color: ${({ theme }) => theme.dark};
     border: 1px solid #fff;
     padding: 30px;
@@ -70,6 +71,7 @@ export const StyledCheckoutScreens = styled.div`
     flex-direction: row;
     padding: 40px;
     column-gap: 80px;
+    padding-right: 20px;
   }
 
   .column {

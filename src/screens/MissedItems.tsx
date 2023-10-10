@@ -140,6 +140,8 @@ export const MissedItems: FC = () => {
             hideDetailsButton
             actionButton={addItemToCard}
             actionButtonText="ADD TO CART"
+            height={'330px'}
+            width={'220px'}
           />
         ))}
       </div>
