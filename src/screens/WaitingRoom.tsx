@@ -1,11 +1,14 @@
 import { FC, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Button } from '../components/Button';
-import { ClockIcon, CameraIcon, InviteFriendIcon, Mute } from '../assets/svg';
+import { ClockIcon, CameraIcon, InviteFriendIcon, Mute, Close } from '../assets/svg';
 import HomeVideo from '../assets/video/home_video.mp4';
 import { StyledWaitingRoomScreens } from '../styles/screens/WaitingRoomScreens';
 import Countdown from '../components/CountDown';
 import { useNavigate } from 'react-router-dom';
+import { StyledInviteFriendModal } from '../styles/components/InviteFriendModal';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 export const WaitingRoom: FC = () => {
   const [timer, setTimer] = useState({
@@ -15,7 +18,12 @@ export const WaitingRoom: FC = () => {
     days: 0,
     isEvent: false,
   });
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [value, setValue] = useState();
 
+  const handleSelectSizesModal = () => {
+    setIsOpenModal(!isOpenModal);
+  };
   const [muted, setMuted] = useState(true);
   const navigate = useNavigate();
 
@@ -61,10 +69,6 @@ export const WaitingRoom: FC = () => {
       }
     }, 1000);
   }, [currentYear]);
-
-  const handleInviteFriend = () => {
-    console.log('handleInviteFriend');
-  };
 
   const handleAddToCalendar = () => {
     console.log('handleAddToCalendar');
@@ -129,7 +133,7 @@ export const WaitingRoom: FC = () => {
                   flat
                   textButton
                   type="button"
-                  onClick={handleInviteFriend}
+                  onClick={handleSelectSizesModal}
                   className="text-button"
                   leftIcon={<InviteFriendIcon />}
                 >
@@ -141,6 +145,31 @@ export const WaitingRoom: FC = () => {
           </div>
         </div>
       </div>
+      <StyledInviteFriendModal
+        isOpen={isOpenModal}
+        onBackgroundClick={handleSelectSizesModal}
+        onEscapeKeydown={handleSelectSizesModal}
+      >
+        <button className="close-button" onClick={handleSelectSizesModal}>
+          <Close />
+        </button>
+        <h2>INVITE A FRIEND</h2>
+        <label>enter friend’s phone number</label>
+        <PhoneInput
+          international
+          placeholder="Enter phone number"
+          defaultCountry="US"
+          value={value}
+          onChange={() => setValue}
+          smartCaret={false}
+        />
+        <label>Comment (optional)</label>
+
+        <textarea></textarea>
+        <p>Max 120 symbols</p>
+
+        <Button onClick={handleSelectSizesModal}>send invitation</Button>
+      </StyledInviteFriendModal>
     </StyledWaitingRoomScreens>
   );
 };

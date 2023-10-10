@@ -29,7 +29,6 @@ export const EventProductCard: React.FC<ProductCardProps> = ({
   isPlay = false,
   startPos,
   currency,
-  currentSeek = 0,
 }) => {
   const animationstartpos = Number(card.start);
   const animationDuration = Number(card.start) + Number(card.duration);

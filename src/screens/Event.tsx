@@ -95,7 +95,7 @@ export const Event: FC = () => {
         stopOnUnmount
         onEnded={() => {
           setIsPlay(false);
-          // navigate('/picked-items');
+          navigate('/picked-items');
         }}
         ref={ref}
         onDuration={handleGetDuration}

@@ -1,8 +1,9 @@
 import { styled } from 'styled-components';
 
 export const StyledWaitingRoomScreens = styled.div`
+  position: relative;
   .player-container {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: relative;
     overflow: hidden;
@@ -13,49 +14,16 @@ export const StyledWaitingRoomScreens = styled.div`
   }
 
   .content-wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: flex-end;
 
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       linear-gradient(0.75deg, #19191b 4.74%, rgba(25, 25, 27, 0) 46.34%);
-
-    .event-info {
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 40px 40px 40px;
-      opacity: 0;
-      position: relative;
-      bottom: -250px;
-      animation: fadeIn 3s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-          bottom: -250px;
-        }
-        50% {
-          opacity: 0.5;
-          bottom: 0px;
-        }
-        100% {
-          bottom: 0px;
-          opacity: 1;
-        }
-      }
-
-      .event-info-block {
-        width: 30%;
-      }
-    }
 
     .event-description {
       font-size: 12px;
@@ -175,5 +143,38 @@ export const StyledWaitingRoomScreens = styled.div`
     background: none;
     border: 0px;
     z-index: 100;
+  }
+
+  .event-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 40px 40px;
+    // opacity: 0;
+    position: relative;
+    // bottom: -250px;
+    animation: fadeIn 3s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        bottom: -250px;
+      }
+      50% {
+        opacity: 0.5;
+        bottom: 0px;
+      }
+      100% {
+        bottom: 0px;
+        opacity: 1;
+      }
+    }
+
+    .event-info-block {
+      width: 30%;
+    }
   }
 `;
