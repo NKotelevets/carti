@@ -72,7 +72,7 @@ export const StyledEventProductCard = styled.div<StyledProductCardProps>`
       stroke-width: 1;
       fill: none;
       stroke-dasharray: 1000;
-      stroke-dashoffset: ${({ animationstartpos }) => 1000 - Number(animationstartpos) * 1000 || 1000};
+      stroke-dashoffset: 1000;
 
       animation: border-card ${({ duration }) => duration}s linear;
       animation-play-state: ${({ isplay }) => (isplay ? 'running' : 'paused')};

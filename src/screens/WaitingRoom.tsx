@@ -94,7 +94,7 @@ export const WaitingRoom: FC = () => {
         <div className="content-wrapper">
           <div className="event-info">
             <div className="event-name-container event-info-block">
-              <span className="event-name">“Chasing Freedom”</span>
+              <span className="event-name">Genesis</span>
               <div className="event-date">
                 <div>
                   <img src={CameraIcon} alt="camera" />
@@ -106,9 +106,9 @@ export const WaitingRoom: FC = () => {
                 </div>
               </div>
               <span className="event-description">
-                Individuality is the essence of freedom. Discover and shop the 2-in-1 bag in this short film exploring
-                the notion of true freedom. SPENCER BADU’s modular design and interchangeable accessories empower you to
-                create a style that is uniquely yours.
+                Discover the genesis of Anthony Joshua’s career and uncover the untold story behind his gold medal
+                Olympic win. Immerse yourself in this exclusive, interactive short film, and shop exclusive AJBXING
+                products during the experience.
               </span>
             </div>
             <div className="event-info-block event-info-block-center">

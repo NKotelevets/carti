@@ -12,7 +12,6 @@ import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
 import Image_3 from '../assets/images/joshua/product_3_1.png';
 import Image_4 from '../assets/images/joshua/product_4_1.png';
-import Image_5 from '../assets/images/joshua/product_1_2.png';
 import Image_6 from '../assets/images/joshua/product_1_3.png';
 import Image_7 from '../assets/images/joshua/product_1_4.png';
 import Image_8 from '../assets/images/joshua/product_1_5.png';
@@ -66,9 +65,9 @@ export const ProductsList: FC = () => {
           <SwiperSlide>
             <img src={Image_1} />
           </SwiperSlide>
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <img src={Image_5} />
-          </SwiperSlide>
+          </SwiperSlide> */}
           <SwiperSlide>
             <img src={Image_6} />
           </SwiperSlide>

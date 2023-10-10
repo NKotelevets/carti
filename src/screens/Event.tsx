@@ -7,8 +7,8 @@ import { IProductData } from '../models/event';
 import { EventProductCard } from '../components/EventProductCard';
 import { getProductCardStyles } from '../helpers/videoHelpers';
 import { formattedTime } from '../helpers/formattedValue';
-import LandoMain from '../assets/video/AJMainPage.mp4';
-import Image_1 from '../assets/images/joshua/product_1_1.png';
+import EventVideo from '../assets/video/Event.mp4';
+import Image_1 from '../assets/images/Supreme.png';
 
 export type IVideoPlayer = ReactPlayer & { wrapper: HTMLElement };
 
@@ -16,17 +16,17 @@ const cards = [
   {
     width: 0.130161094224924,
     height: 0.3819697761126822,
-    offsetLeft: 0.17633587786259542,
+    offsetLeft: 0.67633587786259542,
     offsetTop: 0.33574660633484162,
-    start: 1,
+    start: 55,
     duration: 10,
     player_width: 786,
     player_height: 442,
     id: 709,
     product_id: 906,
-    name: 'Great Britain Team Training Jacket Olympic Games Adidas',
-    price: 169.0,
-    currency: 'USD',
+    name: 'Box Logo T-shirt',
+    price: 95.0,
+    currency: 'usd',
     image: Image_1,
   },
 
@@ -87,13 +87,14 @@ export const Event: FC = () => {
     <StyledEventScreens>
       <ReactPlayer
         className="player"
-        url={LandoMain}
+        url={EventVideo}
         width="100%"
         height="100%"
         playing={isPlay}
         muted
         playsinline
         stopOnUnmount
+        currentSeek={currentSeek}
         onEnded={() => {
           setIsPlay(false);
           navigate('/picked-items');
@@ -115,9 +116,11 @@ export const Event: FC = () => {
             <EventProductCard
               key={product.id}
               className="resize"
-              isPlay={isPlay}
+              isPlay={
+                currentSeek >= Math.trunc(Number(product.start)) &&
+                currentSeek <= Math.trunc(Number(product.start)) + Math.trunc(Number(product.duration))
+              }
               card={product}
-              currentSeek={currentSeek}
               handleCardClick={() => console.log('test')}
               style={getProductCardStyles({
                 currentSeek,

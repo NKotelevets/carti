@@ -25,11 +25,11 @@ export const getProductCardStyles = ({ currentSeek, item, clientWidth, clientHei
   // };
 
   const styles = {
-    bottom:
+    opacity:
       currentSeek <= Math.trunc(Number(item.start) - 1) ||
       currentSeek >= Math.trunc(Number(item.start)) + Math.trunc(Number(item.duration))
-        ? '-100%'
-        : '0px',
+        ? '0'
+        : '1',
   };
 
   return {

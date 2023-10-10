@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { StyledEventProductCard } from '../styles/components/StyledEventProductCard';
 import { formattedValue } from '../helpers/formattedValue';
@@ -17,7 +17,6 @@ type ProductCardProps = {
   isPlay?: boolean;
   startPos?: { x: number; y: number };
   currency?: string;
-  currentSeek?: number;
 } & React.ComponentProps<'div'>;
 
 export const EventProductCard: React.FC<ProductCardProps> = ({
@@ -31,12 +30,17 @@ export const EventProductCard: React.FC<ProductCardProps> = ({
   currency,
 }) => {
   const animationstartpos = Number(card.start);
-  const animationDuration = Number(card.start) + Number(card.duration);
-  // const animationstartpos = (Number(seekChanged) - Number(card.start)) / Number(card.duration);
-  // const animationDuration =
-  //   Number(seekChanged) < Number(card.start)
-  //     ? Number(card.duration)
-  //     : Number(card.start) + Number(card.duration) - Number(seekChanged) + 1;
+  const animationDuration = Number(card.duration);
+
+  useEffect(() => {
+    const el = document.getElementById('animation');
+    if (el && isPlay) {
+      el.style.animationName = 'none';
+      requestAnimationFrame(() => {
+        el.style.animationName = 'border-card';
+      });
+    }
+  }, [isPlay]);
 
   return (
     <StyledEventProductCard
