@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 const products = [
   {
     image: Image_1,
-    name: 'Great Britain Team Training Jacket Olympic Games Adidas',
+    name: 'AJBXING Olympic Jacket',
     price: '$ 169.00',
   },
   {

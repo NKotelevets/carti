@@ -16,7 +16,7 @@ import Image_4 from '../assets/images/joshua/product_4_1.png';
 const products = [
   {
     image: Image_1,
-    name: 'Great Britain Team Training Jacket Olympic Games Adidas',
+    name: 'AJBXING Olympic Jacket',
     price: '$ 169.00',
     size: 'S',
   },

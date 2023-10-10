@@ -120,7 +120,7 @@ export const SelectSizes: FC = () => {
       <div className="column description-product">
         <Carousel ref={carouselRef} items={items} slideOnClick />
         <div className="description-container">
-          <h2 className="name-product">Great Britain Team Training Jacket Olympic Games Adidas</h2>
+          <h2 className="name-product">AJBXING Olympic Jacket</h2>
           <p className="price-product">$169</p>
           <p className="description-product">
             Description: Adidas 2012 Olympic Mens Large Track Jacket Team GB Great Britain London Games

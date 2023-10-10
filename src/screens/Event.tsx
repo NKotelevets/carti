@@ -7,7 +7,7 @@ import { IProductData } from '../models/event';
 import { EventProductCard } from '../components/EventProductCard';
 import { getProductCardStyles } from '../helpers/videoHelpers';
 import { formattedTime } from '../helpers/formattedValue';
-import EventVideo from '../assets/video/Event.mp4';
+import EventVideo from '../assets/video/AnthonyJoshuaDemo.mp4';
 import Image_1 from '../assets/images/Supreme.png';
 
 export type IVideoPlayer = ReactPlayer & { wrapper: HTMLElement };
