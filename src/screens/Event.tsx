@@ -91,7 +91,6 @@ export const Event: FC = () => {
         width="100%"
         height="100%"
         playing={isPlay}
-        muted
         playsinline
         stopOnUnmount
         currentSeek={currentSeek}
