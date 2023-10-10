@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { StyledFooter } from '../styles/components/Footer';
-import logo from '../assets/images/Logo.png';
 import { Link } from 'react-router-dom';
+import logo from '../assets/images/Lando/Logo.png';
 
 // import { Facebook, Instagram, Pinterest, Tiktok, Twitter, Youtube } from '../assets/svg';
 

@@ -135,7 +135,7 @@ export const StyledHomeScreens = styled.div`
   }
   .products-container {
     background-color: ${({ theme }) => theme.dark};
-    padding: 100px 40px 80px 40px;
+    padding: 100px 40px 120px 40px;
 
     .title {
       color: #fff;
