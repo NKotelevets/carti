@@ -19,7 +19,7 @@ export const StyledEventScreens = styled.div`
     justify-content: space-between;
     padding: 0 40px;
     box-sizing: border-box;
-    z-index: 20;
+    z-index: 100000;
     // border-bottom: 1px solid ${({ theme }) => theme.white};
     top: -60px;
     animation: fadeIn 3s;
@@ -66,9 +66,19 @@ export const StyledEventScreens = styled.div`
       background-color: transparent;
       border: 0px;
       cursor: pointer;
+      z-index: 100000;
 
       svg {
         stroke: ${({ theme }) => theme.white};
+      }
+
+      &:hover {
+        svg {
+          stroke: ${({ theme }) => theme.grey};
+        }
+        span {
+          color: ${({ theme }) => theme.grey};
+        }
       }
 
       span {

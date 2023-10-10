@@ -138,7 +138,6 @@ export const Event: FC = () => {
         <div className="left-side">
           <button className="back-arrow" onClick={() => navigate('/waiting-room')}>
             <LeftArrow />
-
             <span>To Waiting Room</span>
           </button>
         </div>
