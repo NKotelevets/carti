@@ -47,7 +47,7 @@ const selectedProducts = products.map((item, index) => ({
       key={index}
       hideDetailsButton
       width={'20vw'}
-      height={'54vh'}
+      height={'57vh'}
     />
   ),
 }));

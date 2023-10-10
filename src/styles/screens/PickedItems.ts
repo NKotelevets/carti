@@ -143,7 +143,7 @@ export const StyledPickedItemsScreens = styled.div`
   .slideWrapper {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   #tooltip {
