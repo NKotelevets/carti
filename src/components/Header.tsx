@@ -44,7 +44,12 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
   return location.pathname !== '/event' ? (
     <StyledHeader fixed={location.pathname === '/checkout' ? true : false}>
       <div className="left-side">
-        {(showBackButton || location.pathname === '/products') && (
+        {(showBackButton ||
+          location.pathname === '/products' ||
+          location.pathname === '/terms-and-conditions' ||
+          location.pathname === '/privacy-policy' ||
+          location.pathname === '/select-sizes' ||
+          location.pathname === '/products') && (
           <button className="back-arrow" onClick={() => navigate(-1)}>
             <LeftArrow />
             <span>Back</span>
