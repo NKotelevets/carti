@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import { StyledAuthScreens } from '../styles/screens/AuthScreens';
 import { PhoneAuth } from '../components/PhoneAuth';
 import { Link } from 'react-router-dom';
-import LoginVideo from '../assets/video/login_video.mp4';
+import LoginVideo from '../assets/video/AuthAnthonyJoshua.mp4';
 
 export const SignUp: FC = () => {
   return (

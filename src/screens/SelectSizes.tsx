@@ -8,14 +8,14 @@ import { Carousel, CarouselRef } from 'react-round-carousel';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
 import 'react-round-carousel/src/index.css';
 import Sizes from '../assets/images/Sizes.png';
-import Image_1 from '../assets/images/Lando/product_1_1.png';
-import Image_2 from '../assets/images/Lando/product_2_1.png';
-import Image_3 from '../assets/images/Lando/product_3_1.png';
-import Image_4 from '../assets/images/Lando/product_4_1.png';
-import Image_5 from '../assets/images/Lando/product_1_2.png';
-import Image_6 from '../assets/images/Lando/product_1_3.png';
-import Image_7 from '../assets/images/Lando/product_1_4.png';
-import Image_8 from '../assets/images/Lando/product_1_5.png';
+import Image_1 from '../assets/images/joshua/product_1_1.png';
+import Image_2 from '../assets/images/joshua/product_2_1.png';
+import Image_3 from '../assets/images/joshua/product_3_1.png';
+import Image_4 from '../assets/images/joshua/product_4_1.png';
+import Image_5 from '../assets/images/joshua/product_1_2.png';
+import Image_6 from '../assets/images/joshua/product_1_3.png';
+import Image_7 from '../assets/images/joshua/product_1_4.png';
+import Image_8 from '../assets/images/joshua/product_1_5.png';
 
 import { Close } from '../assets/svg';
 import { useNavigate } from 'react-router-dom';
@@ -121,14 +121,10 @@ export const SelectSizes: FC = () => {
       <div className="column description-product">
         <Carousel ref={carouselRef} items={items} slideOnClick />
         <div className="description-container">
-          <h2 className="name-product">1:2 SCALE 2023 'TRIPLE CROWN' MINI HELMET</h2>
-          <p className="price-product">£179.00</p>
+          <h2 className="name-product">Great Britain Team Training Jacket Olympic Games Adidas</h2>
+          <p className="price-product">$169</p>
           <p className="description-product">
-            A special race deserves a special helmet, and Lando understood the assignment. A nod to McLaren's success in
-            Monaco, this helmet brings the old-school vibes to celebrate their historic Triple Crown achievement. The
-            helmet design is inspired by McLaren's iconic 1984 Monaco Grand Prix winning livery, but with a Lando Norris
-            twist. The same Triple Crown logo that is on the special McLaren livery sits on the back of the helmet,
-            alongside all of Lando's usual logos that have been given a retro look.
+            Description: Adidas 2012 Olympic Mens Large Track Jacket Team GB Great Britain London Games
           </p>
           <Button flat textButton type="button" className="text-button" onClick={handleSelectSizesModal}>
             View sizing chart

@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Button } from '../components/Button';
 import { ClockIcon, CameraIcon, InviteFriendIcon, Mute, Close } from '../assets/svg';
-import WaitingRoomVideo from '../assets/video/LandoWaitingRoom.mp4';
+import WaitingRoomVideo from '../assets/video/AJWaitingRoom.mp4';
 import { StyledWaitingRoomScreens } from '../styles/screens/WaitingRoomScreens';
 import Countdown from '../components/CountDown';
 import { useNavigate } from 'react-router-dom';

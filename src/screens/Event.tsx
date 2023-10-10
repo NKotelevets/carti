@@ -7,8 +7,8 @@ import { IProductData } from '../models/event';
 import { EventProductCard } from '../components/EventProductCard';
 import { getProductCardStyles } from '../helpers/videoHelpers';
 import { formattedTime } from '../helpers/formattedValue';
-import LandoMain from '../assets/video/LandoMain.mp4';
-import Image_1 from '../assets/images/Lando/product_1_1.png';
+import LandoMain from '../assets/video/AJMainPage.mp4';
+import Image_1 from '../assets/images/joshua/product_1_1.png';
 
 export type IVideoPlayer = ReactPlayer & { wrapper: HTMLElement };
 
@@ -24,9 +24,9 @@ const cards = [
     player_height: 442,
     id: 709,
     product_id: 906,
-    name: "1:2 SCALE 2023 'TRIPLE CROWN' MINI HELMET",
-    price: 179.0,
-    currency: 'gbp',
+    name: 'Great Britain Team Training Jacket Olympic Games Adidas',
+    price: 169.0,
+    currency: 'USD',
     image: Image_1,
   },
 

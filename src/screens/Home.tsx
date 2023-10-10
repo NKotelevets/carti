@@ -5,34 +5,34 @@ import { Button } from '../components/Button';
 import { ClockIcon, CameraIcon, Mute, DownArrow } from '../assets/svg';
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import { Footer } from '../components/Footer';
-import LandoMain from '../assets/video/LandoMain.mp4';
+import LandoMain from '../assets/video/AJMainPage.mp4';
 import { useInView } from 'react-intersection-observer';
-import Image_1 from '../assets/images/Lando/product_1_1.png';
-import Image_2 from '../assets/images/Lando/product_2_1.png';
-import Image_3 from '../assets/images/Lando/product_3_1.png';
-import Image_4 from '../assets/images/Lando/product_4_1.png';
+import Image_1 from '../assets/images/joshua/product_1_1.png';
+import Image_2 from '../assets/images/joshua/product_2_1.png';
+import Image_3 from '../assets/images/joshua/product_3_1.png';
+import Image_4 from '../assets/images/joshua/product_4_1.png';
 import { useNavigate } from 'react-router-dom';
 
 const products = [
   {
     image: Image_1,
-    name: "1:2 SCALE 2023 'TRIPLE CROWN' MINI HELMET",
-    price: '£179.00',
+    name: 'Great Britain Team Training Jacket Olympic Games Adidas',
+    price: '$ 169.00',
   },
   {
     image: Image_2,
-    name: 'BEACHBALL LONG SLEEVE TEE',
-    price: '£40.00',
+    name: 'Elite ESG10 Hustle Sparring Glove 16oz',
+    price: '$ 155.00',
   },
   {
     image: Image_3,
-    name: 'LN TRUCKER HAT',
-    price: '£25.00',
+    name: 'Dark Earth Hoodie',
+    price: '$ 75.00',
   },
   {
     image: Image_4,
-    name: 'LN HOODIE',
-    price: '£70.00',
+    name: 'Sketch Tee White',
+    price: '$ 25.00',
   },
 ];
 
