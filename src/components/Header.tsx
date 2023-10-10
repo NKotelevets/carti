@@ -21,7 +21,7 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleJoinEvent = () => {
-    console.log('join event');
+    navigate('/waiting-room');
   };
 
   const listenToScroll = () => {
