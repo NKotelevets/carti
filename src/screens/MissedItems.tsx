@@ -25,7 +25,7 @@ import { Tooltip } from 'react-tooltip';
 const products = [
   {
     image: Image_1,
-    name: 'AJBXING Olympic Jacket',
+    name: 'AJBXNG Olympic Jacket',
     price: '$ 169.00',
   },
   {

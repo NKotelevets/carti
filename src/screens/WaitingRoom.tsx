@@ -107,7 +107,7 @@ export const WaitingRoom: FC = () => {
               </div>
               <span className="event-description">
                 Discover the genesis of Anthony Joshua’s career and uncover the untold story behind his gold medal
-                Olympic win. Immerse yourself in this exclusive, interactive short film, and shop exclusive AJBXING
+                Olympic win. Immerse yourself in this exclusive, interactive short film, and shop exclusive AJBXNG
                 products during the experience.
               </span>
             </div>

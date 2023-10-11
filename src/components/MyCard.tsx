@@ -15,7 +15,7 @@ interface MyCardProps extends HTMLProps<HTMLElement> {
 const products = [
   {
     image: Image_1,
-    name: 'AJBXING Olympic Jacket',
+    name: 'AJBXNG Olympic Jacket',
     price: '$ 169.00',
     size: 'S',
   },

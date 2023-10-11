@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 const products = [
   {
     image: Image_1,
-    name: 'AJBXING Olympic Jacket',
+    name: 'AJBXNG Olympic Jacket',
     price: '$ 169.00',
   },
   {
@@ -84,7 +84,7 @@ export const Home: FC = () => {
             <div className="event-info-block event-info-block-center">
               <span className="event-description">
                 Discover the genesis of Anthony Joshua’s career and uncover the untold story behind his gold medal
-                Olympic win. Immerse yourself in this exclusive, interactive short film, and shop exclusive AJBXING
+                Olympic win. Immerse yourself in this exclusive, interactive short film, and shop exclusive AJBXNG
                 products during the experience.
               </span>
               <a href="#products" className="bottom-arrow">
