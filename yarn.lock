@@ -4305,6 +4305,11 @@ touchsweep@2.1.0:
   resolved "https://registry.npmmirror.com/touchsweep/-/touchsweep-2.1.0.tgz"
   integrity sha512-lCdHhYs/SCxvz3ggJY/425Y57/xFDsMViOMRam1vhRrKBSb1AjscwkpTPGwgavMrZ19UNs+MuxXuUczn23PQTA==
 
+touchsweep@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmmirror.com/touchsweep/-/touchsweep-2.1.0.tgz#3cf8646cabe0e47466a398580724ec367403a745"
+  integrity sha512-lCdHhYs/SCxvz3ggJY/425Y57/xFDsMViOMRam1vhRrKBSb1AjscwkpTPGwgavMrZ19UNs+MuxXuUczn23PQTA==
+
 ts-api-utils@^1.0.1:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/ts-api-utils/-/ts-api-utils-1.0.2.tgz"

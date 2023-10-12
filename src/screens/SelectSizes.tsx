@@ -4,7 +4,7 @@ import { StyledProductScreens } from '../styles/screens/ProductScreens';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination } from 'swiper/modules';
 import { Button } from '../components/Button';
-import { Carousel, CarouselRef } from 'react-round-carousel';
+import { CarouselRef } from 'react-round-carousel';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
 import 'react-round-carousel/src/index.css';
 import Sizes from '../assets/images/Sizes.png';
@@ -18,6 +18,7 @@ import Image_8 from '../assets/images/joshua/product_1_5.png';
 
 import { Close } from '../assets/svg';
 import { useNavigate } from 'react-router-dom';
+import RoundedSlider from '../components/RoundedSlider';
 
 const sizes = [
   {
@@ -118,7 +119,15 @@ export const SelectSizes: FC = () => {
         </Swiper>
       </div>
       <div className="column description-product">
-        <Carousel ref={carouselRef} items={items} slideOnClick />
+        <RoundedSlider
+          ref={carouselRef}
+          items={items}
+          slideOnClick
+          itemWidth={210}
+          onChangeSlide={(index) => {
+            console.log('122112', index);
+          }}
+        />
         <div className="description-container">
           <h2 className="name-product">AJBXNG Olympic Jacket</h2>
           <p className="price-product">$169</p>

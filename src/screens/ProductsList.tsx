@@ -4,9 +4,9 @@ import { StyledProductScreens } from '../styles/screens/ProductScreens';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination } from 'swiper/modules';
 import { Button } from '../components/Button';
-import { Carousel, CarouselRef } from 'react-round-carousel';
+import { CarouselRef } from 'react-round-carousel';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
-import 'react-round-carousel/src/index.css';
+// import 'react-round-carousel/src/index.css';
 import Sizes from '../assets/images/Sizes.png';
 import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
@@ -17,27 +17,41 @@ import Image_7 from '../assets/images/joshua/product_1_4.png';
 import Image_8 from '../assets/images/joshua/product_1_5.png';
 
 import { Close } from '../assets/svg';
+import RoundedSlider from '../components/RoundedSlider';
 
 const items = [
   {
     alt: 'Photo',
     image: Image_1,
-    content: '',
   },
   {
     alt: 'Photo',
     image: Image_2,
-    content: '',
+    checked: true,
   },
   {
     alt: 'Photo',
     image: Image_3,
-    content: '',
   },
   {
     alt: 'Photo',
     image: Image_4,
-    content: '',
+  },
+  {
+    alt: 'Photo',
+    image: Image_1,
+  },
+  {
+    alt: 'Photo',
+    image: Image_2,
+  },
+  {
+    alt: 'Photo',
+    image: Image_3,
+  },
+  {
+    alt: 'Photo',
+    image: Image_4,
   },
 ];
 
@@ -80,7 +94,15 @@ export const ProductsList: FC = () => {
         </Swiper>
       </div>
       <div className="column description-product">
-        <Carousel ref={carouselRef} items={items} slideOnClick />
+        <RoundedSlider
+          ref={carouselRef}
+          items={items}
+          slideOnClick
+          itemWidth={210}
+          onChangeSlide={(index) => {
+            console.log('122112', index);
+          }}
+        />
         <div className="description-container">
           <h2 className="name-product">AJBXNG Olympic Jacket</h2>
           <p className="price-product">$169</p>

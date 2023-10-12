@@ -21,23 +21,6 @@ export const StyledProductScreens = styled.div`
     overflow: hidden;
   }
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    background-color: ${({ theme }) => theme.dark};
-  }
-
-  .swiper-slide img {
-    width: 100%;
-    object-fit: contain;
-  }
-
-  .swiper {
-    height: 100%;
-  }
-
   .description-product {
     color: ${({ theme }) => theme.white};
     text-align: center;
@@ -87,181 +70,44 @@ export const StyledProductScreens = styled.div`
     box-sizing: border-box;
     padding: 0px 40px;
   }
+  .image-container {
+    .swiper-pagination {
+      position: absolute;
+      left: 40px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 10px;
+      z-index: 100;
+    }
 
-  .carousel {
-    width: 1.025em;
-    height: 10.125em !important;
-    position: relative;
-    margin: 0 auto;
-    perspective: 62.5em;
-    margin-bottom: 60px !important;
+    .swiper-pagination-bullet {
+      height: 60px;
+      width: 2px;
+      display: inline-block;
+      margin: 5px;
+      background: #999999;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: ${({ theme }) => theme.white};
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      background-color: ${({ theme }) => theme.dark};
+    }
+
+    .swiper {
+      height: 100%;
+    }
   }
 
-  .carousel__slide {
-    position: absolute;
-    width: 9.875em !important;
-    height: 9.875em !important;
-    left: 0.625em;
-    top: 0.625em;
-    border: 0.125em solid;
-    transition:
-      transform 1s,
-      opacity 1s;
-  }
-
-  .carousel__controls {
-    display: none;
-  }
-
-  .swiper-pagination {
-    position: absolute;
-    left: 40px;
-    top: 50%;
-    transform: translate(0, -50%);
-    width: 10px;
-    z-index: 100;
-  }
-
-  .swiper-pagination-bullet {
-    height: 60px;
-    width: 2px;
-    display: inline-block;
-    margin: 5px;
-    background: #999999;
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: ${({ theme }) => theme.white};
-  }
-
-  .carousel {
-    width: 13.125em;
-    height: 13.125em;
-    position: relative;
-    margin: 0 auto;
-    perspective: 62.5em;
-    margin-bottom: 100px;
-  }
-
-  .carousel__container {
+  .swiper-slide img {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-  }
-
-  .carousel__slide {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 11.875em;
-    height: 11.875em;
-    left: 0.625em;
-    top: 0.625em;
-    border: 0.125em solid;
-    transition:
-      transform 1s,
-      opacity 1s;
-  }
-
-  .carousel__slide img {
-    width: auto;
-    height: 100%;
-    display: block;
-  }
-
-  .carousel__slide-overlay {
-    color: #fff;
-    text-align: center;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.35s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.7);
-    user-select: none;
-  }
-
-  .carousel__slide-overlay span,
-  .carousel__slide-overlay strong {
-    display: block;
-    flex: 0 0 100%;
-  }
-
-  .carousel__slide:hover .carousel__slide-overlay {
-    opacity: 1;
-  }
-
-  .carousel__slide:hover .carousel__slide-overlay {
-    opacity: 1;
-  }
-
-  .carousel__controls {
-    display: none;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .carousel__control {
-    font-size: 0;
-    line-height: 0;
-    text-indent: -100%;
-    width: 2.5em;
-    height: 2.5em;
-    display: block;
-    position: relative;
-    border: 1px solid;
-    margin: 0 2em;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    box-shadow: none;
-  }
-
-  .carousel__control::before,
-  .carousel__control::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-  }
-
-  .carousel__control::before {
-    width: 50%;
-    height: 1px;
-    background-color: #fff;
-  }
-
-  .carousel__control::after {
-    content: '';
-    width: 0.9375em;
-    height: 0.9375em;
-    display: inline-block;
-    vertical-align: middle;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 0 0 1px 1px;
-    margin: auto;
-    transform: rotate(-135deg);
-    transform-origin: 50% 50%;
-    transition: all 0.35s ease-in-out;
-  }
-
-  .carousel__control--prev::after {
-    transform: rotate(45deg);
+    object-fit: contain;
   }
 
   .swiper-slide-active {

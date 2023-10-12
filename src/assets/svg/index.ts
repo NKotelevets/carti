@@ -19,3 +19,4 @@ export { default as PlusIcon } from './PlusIcon.svg';
 export { default as Fedex } from './Fedex.svg';
 export { default as Ups } from './Ups.svg';
 export { Close } from './Close.tsx';
+export { default as CheckedIcon } from './CheckedIcon.svg';
