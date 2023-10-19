@@ -95,6 +95,10 @@ export const StyledMissedItemsScreens = styled.div`
   //   }
   // }
 
+  .bottom-navigation {
+    display: none;
+  }
+
   .success-added-item {
     position: fixed;
     bottom: -100px;
@@ -122,6 +126,27 @@ export const StyledMissedItemsScreens = styled.div`
 
     img {
       height: 24px;
+    }
+  }
+
+  @media (max-width: 965px) {
+    padding: 80px 0px 0px 0px;
+
+    .products-container {
+      padding: 0px 40px 140px 40px;
+    }
+
+    .bottom-navigation {
+      padding: 30px;
+      border-top: 1px solid ${({ theme }) => theme.grey};
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(25, 25, 27, 0.4);
+      backdrop-filter: blur(7.5px);
+      box-sizing: border-box;
     }
   }
 `;

@@ -18,7 +18,7 @@ const cards = [
     height: 0.3819697761126822,
     offsetLeft: 0.67633587786259542,
     offsetTop: 0.33574660633484162,
-    start: 55,
+    start: 2,
     duration: 10,
     player_width: 786,
     player_height: 442,
@@ -96,7 +96,7 @@ export const Event: FC = () => {
         currentSeek={currentSeek}
         onEnded={() => {
           setIsPlay(false);
-          navigate('/picked-items');
+          // navigate('/picked-items');
         }}
         ref={ref}
         onDuration={handleGetDuration}

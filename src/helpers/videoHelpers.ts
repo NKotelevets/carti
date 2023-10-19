@@ -16,20 +16,24 @@ type GetProductCardStyledProps = {
 };
 
 export const getProductCardStyles = ({ currentSeek, item, clientWidth, clientHeight }: GetProductCardStyledProps) => {
-  // const styles = {
-  //   display:
-  //     currentSeek <= Math.trunc(Number(item.start)) ||
-  //     currentSeek >= Math.trunc(Number(item.start)) + Math.trunc(Number(item.duration))
-  //       ? 'none'
-  //       : 'flex',
-  // };
-
   const styles = {
     opacity:
       currentSeek <= Math.trunc(Number(item.start) - 1) ||
       currentSeek >= Math.trunc(Number(item.start)) + Math.trunc(Number(item.duration))
         ? '0'
         : '1',
+    transform:
+      currentSeek <= Math.trunc(Number(item.start) - 1)
+        ? `translate(${Number(clientWidth) * Number(item.offsetLeft)}px, ${
+            Number(item.offsetTop) * Number(clientHeight) + 60
+          }px)`
+        : currentSeek <= Math.trunc(Number(item.start)) + Math.trunc(Number(item.duration))
+        ? `translate(${Number(clientWidth) * Number(item.offsetLeft)}px, ${
+            Number(item.offsetTop) * Number(clientHeight)
+          }px)`
+        : `translate(${Number(clientWidth) * Number(item.offsetLeft)}px, ${
+            Number(item.offsetTop) * Number(clientHeight) - 60
+          }px)`,
   };
 
   return {
@@ -37,9 +41,6 @@ export const getProductCardStyles = ({ currentSeek, item, clientWidth, clientHei
     display: 'flex',
     width: Number(item.width) * Number(clientWidth),
     height: Number(item.height) * Number(clientHeight),
-    transform: `translate(${Number(clientWidth) * Number(item.offsetLeft)}px, ${
-      Number(item.offsetTop) * Number(clientHeight)
-    }px)`,
     transition: '2s',
     right: '0px',
   };

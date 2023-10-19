@@ -122,4 +122,9 @@ margin-bottom: 6px;
 margin-bottom: 30px;
 }
     
+@media (max-width: 965px) {
+  width: 95vw;
+box-sizing: border-box;
+
+}
 `;

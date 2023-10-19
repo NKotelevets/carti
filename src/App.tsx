@@ -14,6 +14,8 @@ import {
   TermsAndConditions,
   PrivacyPolicy,
   SelectSizes,
+  NotFound,
+  Success,
 } from './screens';
 import { Theme } from './styles/Theme';
 import { Header } from './components/Header';
@@ -41,8 +43,10 @@ function App() {
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/select-sizes" element={<SelectSizes />} />
+              <Route path="/success" element={<Success />} />
 
               <Route path="/" element={<Home />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
         </ModalProvider>

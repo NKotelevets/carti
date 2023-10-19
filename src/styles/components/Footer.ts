@@ -59,4 +59,8 @@ export const StyledFooter = styled.div`
     display: flex;
     column-gap: 30px;
   }
+
+  @media (max-width: 965px) {
+    padding: 40px 20px;
+  }
 `;

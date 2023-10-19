@@ -210,4 +210,59 @@ export const StyledProductScreens = styled.div`
       margin-bottom: 12px;
     }
   }
+
+  .inner-slider {
+    margin-bottom: 80px;
+
+    img {
+      height: 100px;
+    }
+
+    // .slick-cloned {
+    //   display: none;
+    // }
+
+    .slick-slide {
+      padding: 10px 10px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .slide {
+      border: 1px solid #888891;
+      text-align: center;
+    }
+    .slideWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .activeSlide {
+      border: 1px solid #fff;
+      position: relative;
+      transform: scale(1.2);
+
+      &:before {
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(50% 50% at 50% 50%, #fff 0%, rgba(255, 255, 255, 0) 100%);
+        width: 50px;
+        height: 6px;
+        content: '';
+      }
+
+      &:after {
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(50% 50% at 50% 50%, #fff 0%, rgba(255, 255, 255, 0) 100%);
+        width: 50px;
+        height: 6px;
+        content: '';
+      }
+    }
+  }
 `;

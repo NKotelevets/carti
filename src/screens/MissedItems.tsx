@@ -18,7 +18,7 @@ import 'swiper/css';
 // import { setStatusCard } from '../redux/reducers/mainReducer';
 import { MyCard } from '../components/MyCard';
 import { RootState } from '../redux/store';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
 import { Close } from '../assets/svg';
 import { Tooltip } from 'react-tooltip';
@@ -82,7 +82,7 @@ export const MissedItems: FC = () => {
   const [addedNewProduct, setAddedNewProduct] = useState(false);
 
   const { myCardActive } = useSelector((state: RootState) => state.main);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // const goToCard = () => {
   //   navigate('/checkout');
@@ -141,16 +141,16 @@ export const MissedItems: FC = () => {
             actionButton={addItemToCard}
             actionButtonText="ADD TO CART"
             height={'330px'}
-            width={'220px'}
+            width={window.innerWidth < 965 ? (window.innerWidth < 610 ? '100%' : '45%') : '220px'}
           />
         ))}
       </div>
-      {/* 
+
       <div className="bottom-navigation">
-        <Button type="button" onClick={goToCard} width={'400px'} className="event-button">
-          Checkout
+        <Button type="button" onClick={() => navigate('/checkout')} width={'400px'} className="event-button">
+          GO TO CART
         </Button>
-      </div> */}
+      </div>
 
       <StyledSelectSizesModal
         isOpen={isOpenModal}

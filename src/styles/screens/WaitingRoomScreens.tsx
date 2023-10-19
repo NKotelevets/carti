@@ -181,4 +181,59 @@ export const StyledWaitingRoomScreens = styled.div`
   .select-size-btn {
     margin-bottom: 20px;
   }
+  .mobile-counter {
+    display: none;
+  }
+  @media (max-width: 965px) {
+    .mute-button {
+      display: none;
+    }
+
+    .event-info {
+      flex-direction: column;
+    }
+
+    .content-wrapper {
+      .event-info-block-right {
+        display: none;
+      }
+
+      .event-info-block {
+        width: 100%;
+      }
+
+      .event-name-container {
+        margin-bottom: 30px;
+        padding-bottom: 12px;
+
+        .event-name {
+          margin-bottom: 12px;
+        }
+      }
+
+      .event-info-block-center {
+        margin-bottom: 30px;
+      }
+    }
+
+    .mobile-counter {
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 40px;
+      width: calc(100% - 80px) !important;
+
+      .start-event {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+        color: ${({ theme }) => theme.white};
+        // text-align: center;
+        width: 100%;
+        display: inline-block;
+        text-transform: uppercase;
+      }
+    }
+  }
 `;

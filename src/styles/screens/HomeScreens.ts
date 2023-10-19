@@ -203,4 +203,66 @@ export const StyledHomeScreens = styled.div`
       }
     }
   }
+
+  @media (max-width: 965px) {
+    .mute-button,
+    .bottom-arrow {
+      display: none;
+    }
+
+    .content-wrapper {
+      .event-info {
+        flex-direction: column;
+        height: auto;
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            bottom: -250px;
+          }
+          50% {
+            opacity: 0.5;
+            bottom: 0px;
+          }
+          100% {
+            bottom: 0px;
+            opacity: 1;
+          }
+        }
+
+        .event-info-block {
+          width: 100%;
+        }
+
+        .event-name-container {
+          margin-bottom: 30px;
+          padding-bottom: 12px;
+
+          .event-name {
+            margin-bottom: 12px;
+          }
+        }
+
+        .event-info-block-center {
+          margin-bottom: 30px;
+        }
+
+        .event-info-block-right {
+          flex-direction: row;
+          align-items: center;
+
+          .price-event {
+            text-align: left;
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+
+    .products-container {
+      .products-list {
+        justify-content: center;
+      }
+    }
+  }
 `;

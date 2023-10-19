@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { StyledHeader } from '../styles/components/Header';
 
 import logo from '../assets/images/logo2.svg';
+import ShoppingCard from '../assets/svg/ShoppingCard.svg';
 import { LeftArrow } from '../assets/svg';
 import { Button } from './Button';
 import { useSelector, useDispatch } from 'react-redux';
@@ -94,7 +95,8 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
                     }}
                     className="text-button select-sizes-button"
                   >
-                    My Cart (2)
+                    <img className="my-card-icon" src={ShoppingCard} alt="My Cart " />
+                    <span className="my-card-text">My Cart (2)</span>
                   </Button>
                 </>
               )}

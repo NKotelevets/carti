@@ -14,6 +14,7 @@ export default function Carroussel({ cards }: any) {
     swipeToSlide: true,
     slidesToScroll: true,
     focusOnSelect: true,
+
     beforeChange: (_: any, next: number) => setImageIndex(next),
     responsive: [
       {
@@ -26,8 +27,10 @@ export default function Carroussel({ cards }: any) {
       {
         breakpoint: 820,
         settings: {
-          slidesToShow: 1,
           slidesToScroll: 1,
+          // centerPadding: '60px',
+          slidesToShow: 1,
+          centerMode: true,
         },
       },
     ],

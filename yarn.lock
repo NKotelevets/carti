@@ -1441,7 +1441,7 @@
   resolved "https://registry.npmmirror.com/@floating-ui/utils/-/utils-0.1.4.tgz"
   integrity sha512-qprfWkn82Iw821mcKofJ5Pk9wgioHicxcQMxx+5zt5GSKoqdWvgG5AxVmpmUUjzTLPVSH5auBrhI93Deayn/DA==
 
-"@googlemaps/js-api-loader@1.16.2":
+"@googlemaps/js-api-loader@1.16.2", "@googlemaps/js-api-loader@^1.13.8":
   version "1.16.2"
   resolved "https://registry.npmmirror.com/@googlemaps/js-api-loader/-/js-api-loader-1.16.2.tgz"
   integrity sha512-psGw5u0QM6humao48Hn4lrChOM2/rA43ZCm3tKK9qQsEj1/VzqkCqnvGfEOshDbBQflydfaRovbKwZMF4AyqbA==
@@ -1507,6 +1507,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@mapbox/point-geometry@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.npmmirror.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
+  integrity sha512-6j56HdLTwWGO0fJPlrZtdU/B13q8Uwmo18Ck2GnGgN9PCFyKTZ3UbXeEdRFh18i9XQ92eH2VdtpJHpBD3aripQ==
+
 "@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents.3":
   version "2.1.8-no-fsevents.3"
   resolved "https://registry.npmmirror.com/@nicolo-ribaudo/chokidar-2/-/chokidar-2-2.1.8-no-fsevents.3.tgz"
@@ -1540,7 +1545,7 @@
 
 "@react-google-maps/api@^2.19.2":
   version "2.19.2"
-  resolved "https://registry.npmmirror.com/@react-google-maps/api/-/api-2.19.2.tgz"
+  resolved "https://registry.npmmirror.com/@react-google-maps/api/-/api-2.19.2.tgz#678dc1871fbab72cd46d338eed687a36bf556ab1"
   integrity sha512-Vt57XWzCKfsUjKOmFUl2erVVfOePkPK5OigF/f+q7UuV/Nm9KDDy1PMFBx+wNahEqOd6a32BxfsykEhBnbU9wQ==
   dependencies:
     "@googlemaps/js-api-loader" "1.16.2"
@@ -1595,6 +1600,13 @@
   version "1.0.1"
   resolved "https://registry.npmmirror.com/@types/estree/-/estree-1.0.1.tgz"
   integrity sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==
+
+"@types/google-map-react@^2.1.8":
+  version "2.1.8"
+  resolved "https://registry.npmmirror.com/@types/google-map-react/-/google-map-react-2.1.8.tgz#eabff6af2e4491252ea5cfc1b7a355191469bbe4"
+  integrity sha512-JtSKnfiB5syuJybXLwgIxNjv1J443/dg6ZPJUkcFTpmh3X3zie3y51GZGhyn5TxqHwMYQ51rkdhlj2e+SEbxCQ==
+  dependencies:
+    "@types/react" "*"
 
 "@types/google.maps@3.53.5":
   version "3.53.5"
@@ -2694,6 +2706,11 @@ esutils@^2.0.2:
   resolved "https://registry.npmmirror.com/esutils/-/esutils-2.0.3.tgz"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
+eventemitter3@^4.0.4:
+  version "4.0.7"
+  resolved "https://registry.npmmirror.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
+  integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
+
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
   resolved "https://registry.npmmirror.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
@@ -2903,6 +2920,16 @@ globby@^11.1.0:
     ignore "^5.2.0"
     merge2 "^1.4.1"
     slash "^3.0.0"
+
+google-map-react@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npmmirror.com/google-map-react/-/google-map-react-2.2.1.tgz#54c45899966fb0000e04cde2d5ca44ad728bdba6"
+  integrity sha512-Dg8aexf5rNSmywj0XKQ5m4RNzVcWwKEM2BGDj5aPChD0um8ZRjB5Upcb/yg/i0oG1aES29asQ5+6BHVgrK5xGA==
+  dependencies:
+    "@googlemaps/js-api-loader" "^1.13.8"
+    "@mapbox/point-geometry" "^0.1.0"
+    eventemitter3 "^4.0.4"
+    prop-types "^15.7.2"
 
 gopd@^1.0.1:
   version "1.0.1"
@@ -4300,14 +4327,9 @@ toposort@^2.0.2:
   resolved "https://registry.npmmirror.com/toposort/-/toposort-2.0.2.tgz"
   integrity sha512-0a5EOkAUp8D4moMi2W8ZF8jcga7BgZd91O/yabJCFY8az+XSzeGyTKs0Aoo897iV1Nj6guFq8orWDS96z91oGg==
 
-touchsweep@2.1.0:
+touchsweep@2.1.0, touchsweep@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmmirror.com/touchsweep/-/touchsweep-2.1.0.tgz"
-  integrity sha512-lCdHhYs/SCxvz3ggJY/425Y57/xFDsMViOMRam1vhRrKBSb1AjscwkpTPGwgavMrZ19UNs+MuxXuUczn23PQTA==
-
-touchsweep@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmmirror.com/touchsweep/-/touchsweep-2.1.0.tgz#3cf8646cabe0e47466a398580724ec367403a745"
   integrity sha512-lCdHhYs/SCxvz3ggJY/425Y57/xFDsMViOMRam1vhRrKBSb1AjscwkpTPGwgavMrZ19UNs+MuxXuUczn23PQTA==
 
 ts-api-utils@^1.0.1:

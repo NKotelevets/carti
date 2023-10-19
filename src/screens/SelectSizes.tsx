@@ -1,10 +1,11 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import { StyledProductScreens } from '../styles/screens/ProductScreens';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination } from 'swiper/modules';
 import { Button } from '../components/Button';
-import { CarouselRef } from 'react-round-carousel';
+// import { CarouselRef } from 'react-round-carousel';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
 import 'react-round-carousel/src/index.css';
 import Sizes from '../assets/images/Sizes.png';
@@ -15,10 +16,12 @@ import Image_4 from '../assets/images/joshua/product_4_1.png';
 import Image_6 from '../assets/images/joshua/product_1_3.png';
 import Image_7 from '../assets/images/joshua/product_1_4.png';
 import Image_8 from '../assets/images/joshua/product_1_5.png';
+import Slider from 'react-slick';
 
 import { Close } from '../assets/svg';
 import { useNavigate } from 'react-router-dom';
-import RoundedSlider from '../components/RoundedSlider';
+// import RoundedSlider from '../components/RoundedSlider';
+// import Carroussel from '../components/Carousel';
 
 const sizes = [
   {
@@ -74,7 +77,7 @@ const items = [
 ];
 
 export const SelectSizes: FC = () => {
-  const carouselRef = React.createRef<CarouselRef>();
+  // const carouselRef = React.createRef<CarouselRef>();
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [selectedSize, setSelectedSize] = useState('');
   const navigate = useNavigate();
@@ -86,6 +89,59 @@ export const SelectSizes: FC = () => {
   const handleSelectSizesModal = () => {
     setIsOpenModal(!isOpenModal);
   };
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const settings = {
+    centerMode: true,
+    infinite: true,
+    dots: false,
+    speed: 300,
+    slidesToShow: 3,
+    centerPadding: '0',
+    swipeToSlide: true,
+    slidesToScroll: true,
+    focusOnSelect: true,
+    arrows: false,
+
+    beforeChange: (_: any, next: number) => setImageIndex(next),
+    responsive: [
+      {
+        breakpoint: 1490,
+        settings: {
+          arrows: false,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 820,
+        settings: {
+          arrows: false,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  // const selectedProducts = items.map((item, index) => ({
+  //   key: uuidv4(),
+  //   content: (
+  //     <>
+  //       <img src={item.image} alt={item.alt} />
+  //     </>
+  //   ),
+  // }));
+
+  const templateImages = items.map((item: any, idx: number) => {
+    return (
+      <div className={idx === imageIndex ? 'activeSlide' : 'slide'} key={uuidv4()}>
+        <div className="slideWrapper">
+          <img src={item.image} alt={item.alt} />
+        </div>
+      </div>
+    );
+  });
 
   return (
     <StyledProductScreens>
@@ -119,7 +175,7 @@ export const SelectSizes: FC = () => {
         </Swiper>
       </div>
       <div className="column description-product">
-        <RoundedSlider
+        {/* <RoundedSlider
           ref={carouselRef}
           items={items}
           slideOnClick
@@ -127,7 +183,18 @@ export const SelectSizes: FC = () => {
           onChangeSlide={(index) => {
             console.log('122112', index);
           }}
-        />
+        /> */}
+        {/* <Carroussel
+            cards={selectedProducts}
+            height="100%"
+            width="90%"
+            margin="0 auto"
+            offset={2}
+            showArrows={false}
+          /> */}
+        <div className="inner-slider">
+          <Slider {...settings}>{templateImages}</Slider>
+        </div>
         <div className="description-container">
           <h2 className="name-product">AJBXNG Olympic Jacket</h2>
           <p className="price-product">$169</p>

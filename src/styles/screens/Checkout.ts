@@ -221,4 +221,9 @@ export const StyledCheckoutScreens = styled.div`
   .pay-button {
     margin-top: 15px;
   }
+
+  .map-container {
+    width: 200px;
+    height: 200px;
+  }
 `;

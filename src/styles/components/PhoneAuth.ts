@@ -13,6 +13,7 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
   gap: 52px;
   align-items: center;
   overflow: scroll;
+  padding: 0 20px;
 
   & > div {
     width: 100%;

@@ -10,6 +10,8 @@ import Event from './Event';
 import TermsAndConditions from './TermsAndConditions';
 import PrivacyPolicy from './PrivacyPolicy';
 import SelectSizes from './SelectSizes';
+import NotFound from './NotFound';
+import Success from './Success';
 
 export {
   SignIn,
@@ -24,4 +26,6 @@ export {
   TermsAndConditions,
   PrivacyPolicy,
   SelectSizes,
+  NotFound,
+  Success,
 };

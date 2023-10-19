@@ -84,4 +84,8 @@ export const StyledTermsAndConditionsScreens = styled.div`
     list-style: decimal inside none;
     margin-bottom: 20px;
   }
+
+  @media (max-width: 965px) {
+    padding: 80px 3rem 24px 3rem;
+  }
 `;

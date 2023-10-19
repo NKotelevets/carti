@@ -1,4 +1,5 @@
-import { FC, useCallback, useMemo, useRef, useState } from 'react';
+import { FC, useCallback, useRef, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import { StyledCheckoutScreens } from '../styles/screens/Checkout';
 import { Field, Form, Formik } from 'formik';
@@ -7,11 +8,12 @@ import { Close, Fedex, Ups } from '../assets/svg';
 import { Button } from '../components/Button';
 import { CheckoutProductItem } from '../components/CheckoutProductItem';
 import { StyledSelectAdressModal } from '../styles/components/SelectAdressModal';
-import { GoogleMap, useLoadScript } from '@react-google-maps/api';
+// import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
 import Image_3 from '../assets/images/joshua/product_3_1.png';
 import Image_4 from '../assets/images/joshua/product_4_1.png';
+import GoogleMapReact from 'google-map-react';
 
 const products = [
   {
@@ -40,16 +42,19 @@ const products = [
   },
 ];
 
-const libraries: 'places'[] = ['places'];
+// const libraries: 'places'[] = ['places'];
 
 export const googleMapsApiKey: string = import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY;
 
 export const Checkout: FC = () => {
   const [value, setValue] = useState();
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: googleMapsApiKey ?? '',
-    libraries,
-  });
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // const { isLoaded } = useJsApiLoader({
+  //   id: '8d4d3f6d6171c09d',
+  //   googleMapsApiKey: googleMapsApiKey ?? '',
+  //   libraries,
+  // });
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   function handleSelectAddressModal() {
@@ -57,23 +62,33 @@ export const Checkout: FC = () => {
   }
 
   const mapRef = useRef<google.maps.Map>();
-  const options = useMemo(
-    () => ({
-      mapId: '900afbd5cfe4c204',
-      disableDefaultUI: true,
-      clickableIcons: false,
-    }),
-    [],
+  // const options = useMemo(
+  //   () => ({
+  //     mapId: '8d4d3f6d6171c09d',
+  //     disableDefaultUI: false,
+  //     clickableIcons: false,
+  //   }),
+  //   [],
+  // );
+  console.log(isLoaded);
+  const onLoad = useCallback(
+    (map: google.maps.Map): void | Promise<void> => {
+      setIsLoaded(true);
+      mapRef.current = map;
+    },
+    [setIsLoaded],
   );
 
-  const onLoad = useCallback((map: google.maps.Map): void | Promise<void> => {
-    mapRef.current = map;
-  }, []);
-
+  const defaultProps = {
+    center: {
+      lat: 40.73061,
+      lng: -73.935242,
+    },
+    zoom: 11,
+  };
   return (
     <StyledCheckoutScreens>
       <h3 className="title">Checkout</h3>
-
       <div className="container">
         <div className="form-container">
           <h2 className="title-form">DELIVERY ADDRESS</h2>
@@ -142,6 +157,7 @@ export const Checkout: FC = () => {
                 price={product.price}
                 image={product.image}
                 size={product.size}
+                key={uuidv4()}
               />
             ))}
           </div>
@@ -179,7 +195,15 @@ export const Checkout: FC = () => {
         <p className="description">
           Choose your location by clicking on the map or entering the address in the search field
         </p>
-        {isLoaded && <GoogleMap zoom={10} options={options} mapContainerClassName="map-container" onLoad={onLoad} />}
+        {/* {isLoaded && <GoogleMap zoom={10} options={options} mapContainerClassName="map-container" onLoad={onLoad} />} */}
+        <div className="map-container">
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: googleMapsApiKey }}
+            defaultCenter={defaultProps.center}
+            defaultZoom={defaultProps.zoom}
+            onGoogleApiLoaded={({ map }: { map: google.maps.Map }) => onLoad(map)}
+          ></GoogleMapReact>
+        </div>
         <Button type="button" onClick={() => console.log('do ')} width={'400px'} className="button">
           Save
         </Button>

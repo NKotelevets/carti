@@ -110,8 +110,8 @@ export const Home: FC = () => {
                 price={item.price}
                 name={item.name}
                 key={index}
-                height={'330px'}
-                width={'220px'}
+                height={window.innerWidth < 965 ? '330px' : '450px'}
+                width={window.innerWidth < 965 ? '220px' : '100%'}
               />
             ))}
           </div>

@@ -88,10 +88,28 @@ export const WaitingRoom: FC = () => {
           playsinline
           stopOnUnmount
         />
+
         <button className="mute-button" onClick={() => setMuted((prev) => !prev)}>
           <Mute color={'#fff'} muted={muted} />
         </button>
         <div className="content-wrapper">
+          <div className="mobile-counter event-info-block ">
+            <div className="invite-friend">
+              <span className="start-event">event starts in:</span>
+
+              <Button
+                flat
+                textButton
+                type="button"
+                onClick={handleSelectSizesModal}
+                className="text-button"
+                leftIcon={<InviteFriendIcon />}
+              >
+                Invite a friend
+              </Button>
+            </div>
+            <Countdown countdownData={timer} />
+          </div>
           <div className="event-info">
             <div className="event-name-container event-info-block">
               <span className="event-name">Genesis</span>

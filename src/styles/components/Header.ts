@@ -96,4 +96,25 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
     height: 30px;
     margin-right: 20px;
   }
+
+  .my-card-icon {
+    display: none;
+  }
+
+  @media (max-width: 965px) {
+    padding: 0 20px;
+
+    .join-event-button {
+      display: none;
+    }
+
+    .select-sizes-button {
+      .my-card-icon {
+        display: block;
+      }
+      .my-card-text {
+        display: none;
+      }
+    }
+  }
 `;

@@ -108,7 +108,7 @@ export const StyledPickedItemsScreens = styled.div`
   }
 
   .bottom-navigation {
-    padding: 30px;
+    padding: 30px 0;
     border-top: 1px solid ${({ theme }) => theme.grey};
     position: fixed;
     bottom: 0;
@@ -156,5 +156,15 @@ export const StyledPickedItemsScreens = styled.div`
 
   .slick-cloned {
     display: none;
+  }
+
+  @media (max-width: 965px) {
+    .slick-cloned {
+      display: block;
+    }
+
+    .slick-list {
+      padding: 0 20% 0 0 !important;
+    }
   }
 `;

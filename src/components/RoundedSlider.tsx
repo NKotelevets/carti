@@ -187,6 +187,8 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
                   setPrevSelectedIndex(selectedIndex);
 
                   if (slideOnClick) {
+                    console.log(prevSelectedIndex);
+
                     // if (
                     //   prevSelectedIndex + 1 === index ||
                     //   (prevSelectedIndex === len - 1 && index === 0) ||
