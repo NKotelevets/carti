@@ -17,7 +17,7 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
   justify-content: space-between;
   padding: 0 40px;
   box-sizing: border-box;
-  z-index: 20;
+  z-index: 10001;
   border-bottom: 1px solid ${({ theme }) => theme.white};
   top: -60px;
   animation: fadeIn 3s;
@@ -103,6 +103,7 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
 
   @media (max-width: 965px) {
     padding: 0 20px;
+    background-color: #19191b;
 
     .join-event-button {
       display: none;

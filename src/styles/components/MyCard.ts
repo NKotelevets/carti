@@ -23,14 +23,14 @@ export const StyledMyCard = styled.div<StyledMyCardProps>`
   .panel {
     // animation: ${({ showMyCard }) => (showMyCard ? 'fadeInCard' : 'fadeOutCard')} 2s;
     animation-fill-mode: forwards;
-    width: 300px;
+    width: 350px;
     position: fixed;
     background-color: ${({ theme }: any) => theme.dark};
     height: calc(100vh - 56px);
-    right: -300px;
+    right: -350px;
     top: 56px;
     border-left: 1px solid ${({ theme }: any) => theme.white};
-    padding: 40px;
+    padding: 40px 30px;
     box-sizing: border-box;
     overflow-y: scroll;
     z-index: 10000;
@@ -48,6 +48,10 @@ export const StyledMyCard = styled.div<StyledMyCardProps>`
     background: ${({ theme }: any) => theme.dark};
     // backdrop-filter: blur(5px);
     padding: 40px 0;
+
+    .button-action-first {
+      margin-bottom: 20px;
+    }
 
     .price-total {
       display: flex;

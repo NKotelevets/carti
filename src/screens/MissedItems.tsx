@@ -12,16 +12,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import { useSelector } from 'react-redux';
 import Sizes from '../assets/images/Sizes.png';
-import CheckCircle from '../assets/images/CheckCircle.png';
 
 import 'swiper/css';
-// import { setStatusCard } from '../redux/reducers/mainReducer';
+import { setStatusCard } from '../redux/reducers/mainReducer';
 import { MyCard } from '../components/MyCard';
 import { RootState } from '../redux/store';
 import { useNavigate } from 'react-router-dom';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
 import { Close } from '../assets/svg';
 import { Tooltip } from 'react-tooltip';
+import { useDispatch } from 'react-redux';
 const products = [
   {
     image: Image_1,
@@ -76,10 +76,9 @@ const sizes = [
 ];
 
 export const MissedItems: FC = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [selectedSize, setSelectedSize] = useState('');
-  const [addedNewProduct, setAddedNewProduct] = useState(false);
 
   const { myCardActive } = useSelector((state: RootState) => state.main);
   const navigate = useNavigate();
@@ -109,12 +108,8 @@ export const MissedItems: FC = () => {
   };
 
   const addNewProduct = () => {
-    setAddedNewProduct(true);
     setIsOpenModal(!isOpenModal);
-
-    setTimeout(() => {
-      setAddedNewProduct(false);
-    }, 5000);
+    dispatch(setStatusCard(!myCardActive));
   };
 
   return (
@@ -203,10 +198,6 @@ export const MissedItems: FC = () => {
         <img src={Sizes} alt="sizes" />
       </StyledProductSizingChart>
       <MyCard showMyCard={myCardActive} />
-      <div className={`success-added-item ${addedNewProduct && 'show'}`}>
-        <img src={CheckCircle} alt="confirm" />
-        <p>Item was successfully added to the cart</p>
-      </div>
       <Tooltip id="tooltip" place="top" arrowColor="transparent" />
     </StyledMissedItemsScreens>
   );

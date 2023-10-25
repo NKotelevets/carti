@@ -1,20 +1,32 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import { StyledFooter } from '../styles/components/Footer';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo2.svg';
+import { Button } from './Button';
+import { Field, Form, Formik } from 'formik';
+import { ContactUsModal } from '../styles/components/ContactUsModal';
+import { Close } from '../assets/svg';
 
 // import { Facebook, Instagram, Pinterest, Tiktok, Twitter, Youtube } from '../assets/svg';
 
 export const Footer: FC = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const handleSelectSizesModal = () => {
+    setIsOpenModal(!isOpenModal);
+  };
+
   return (
     <StyledFooter>
       <div className="links-container">
         <img src={logo} className="logo" alt="logo" />
 
         <div className="web-links">
-          <Link to="/">Contact Us</Link>
-          <Link to="/">My Account</Link>
+          <Button flat textButton type="button" onClick={handleSelectSizesModal}>
+            Contact Us
+          </Button>
+          {/* <Link to="/">My Account</Link> */}
         </div>
         {/* <div className="social-links">
           <a target="_blank" rel="noreferrer" href={'/'}>
@@ -44,6 +56,41 @@ export const Footer: FC = () => {
           <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
       </div>
+
+      <ContactUsModal
+        isOpen={isOpenModal}
+        onBackgroundClick={handleSelectSizesModal}
+        onEscapeKeydown={handleSelectSizesModal}
+      >
+        <h2>contact us</h2>
+        <button className="close-button" onClick={handleSelectSizesModal}>
+          <Close />
+        </button>
+        <Formik initialValues={{ email: '', name: '', Message: '' }} onSubmit={() => {}}>
+          <Form className="form">
+            <div className="label-wrapper">
+              <p className="label">name</p>
+              {false && <p className="error">Name is required</p>}
+            </div>
+            <Field name="name" type="text" className="input-text" placeholder="Name" />
+
+            <div className="label-wrapper">
+              <p className="label">Email</p>
+              {false && <p className="error">Email is required</p>}
+            </div>
+            <Field name="email" type="email" className="input-text" placeholder="Email" />
+            <div className="label-wrapper">
+              <p className="label">Message</p>
+              {false && <p className="error">Message is required</p>}
+            </div>
+            <textarea></textarea>
+          </Form>
+        </Formik>
+
+        <Button type="button" transparent onClick={handleSelectSizesModal}>
+          send
+        </Button>
+      </ContactUsModal>
     </StyledFooter>
   );
 };

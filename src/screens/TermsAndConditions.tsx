@@ -1,8 +1,11 @@
-import { FC } from 'react';
+import { FC, useLayoutEffect } from 'react';
 
 import { StyledTermsAndConditionsScreens } from '../styles/screens/TermsAndConditions';
 
 export const TermsAndConditions: FC = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <StyledTermsAndConditionsScreens>
       <h2 className="title">terms & conditions</h2>

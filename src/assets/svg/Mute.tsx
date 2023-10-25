@@ -18,15 +18,10 @@ export const Mute: React.FC<IconProps> = ({ color, className, muted }) => {
       />
     </svg>
   ) : (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 32 32" fill="none">
       <path
-        opacity="0.15"
-        d="M13 3L7 8H5C3.89543 8 3 8.89543 3 10V14C3 15.1046 3.89543 16 5 16H7L13 21V3Z"
-        fill={color}
-      />
-      <path
-        d="M7 8L13 3V21L7 16H5C3.89543 16 3 15.1046 3 14V10C3 8.89543 3.89543 8 5 8H7Z"
-        stroke={color}
+        d="M25.4854 7.51455C30.1716 12.2008 30.1716 19.7988 25.4854 24.4851M21.9502 11.0502C24.6839 13.7839 24.6839 18.216 21.9502 20.9497M9 10.9999L15.2929 4.70701C15.9229 4.07704 17 4.52321 17 5.41412V26.5857C17 27.4766 15.9229 27.9228 15.2929 27.2928L9 20.9999H6.01207C4.83962 20.9999 3.74121 20.3246 3.42983 19.1943C3.14966 18.1772 3 17.106 3 15.9999C3 14.8938 3.14966 13.8226 3.42983 12.8056C3.74121 11.6752 4.83962 10.9999 6.01207 10.9999H9Z"
+        stroke="white"
         stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"

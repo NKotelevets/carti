@@ -48,4 +48,22 @@ export const StyledProductSizingChart = Modal.styled`
           }
         }
       }
+
+
+    @media (max-width: 965px) {
+        width: 95%;
+        padding: 30px 20px;
+
+        img {
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+    
+        p {
+            font-size: 12px;
+        }
+   }
 `;

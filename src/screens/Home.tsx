@@ -111,7 +111,7 @@ export const Home: FC = () => {
                 name={item.name}
                 key={index}
                 height={window.innerWidth < 965 ? '330px' : '450px'}
-                width={window.innerWidth < 965 ? '220px' : '100%'}
+                width={window.innerWidth < 965 ? '220px' : '300px'}
               />
             ))}
           </div>

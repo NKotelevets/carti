@@ -1,8 +1,11 @@
-import { FC } from 'react';
+import { FC, useLayoutEffect } from 'react';
 
 import { StyledTermsAndConditionsScreens } from '../styles/screens/TermsAndConditions';
 
 export const PrivacyPolicy: FC = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <StyledTermsAndConditionsScreens>
       <h2 className="title">privacy policy</h2>

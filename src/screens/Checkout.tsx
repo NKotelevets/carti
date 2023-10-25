@@ -56,6 +56,7 @@ export const Checkout: FC = () => {
   //   libraries,
   // });
   const [isOpenModal, setIsOpenModal] = useState(false);
+  // const [isMobile, setIsMobile] = useState(window.innerWidth < 965);
 
   function handleSelectAddressModal() {
     setIsOpenModal(!isOpenModal);
@@ -86,6 +87,23 @@ export const Checkout: FC = () => {
     },
     zoom: 11,
   };
+
+  // const listenWidth = () => {
+  //   const width = window.innerWidth;
+
+  //   if (width < 965) {
+  //     !isMobile && // to limit setting state only the first time
+  //       setIsMobile(true);
+  //   } else {
+  //     setIsMobile(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener('resize', listenWidth);
+  //   return () => window.removeEventListener('resize', listenWidth);
+  // }, []);
+
   return (
     <StyledCheckoutScreens>
       <h3 className="title">Checkout</h3>
@@ -150,7 +168,8 @@ export const Checkout: FC = () => {
           </Formik>
         </div>
         <div className="products-container">
-          <div className="products-list">
+          {/* {!isMobile && ( */}
+          <div className="products-list ">
             {products.map((product: any) => (
               <CheckoutProductItem
                 name={product.name}
@@ -161,6 +180,8 @@ export const Checkout: FC = () => {
               />
             ))}
           </div>
+          {/* )} */}
+
           <div className="bottom-container">
             <div className="prices">
               <p className="prices-description">

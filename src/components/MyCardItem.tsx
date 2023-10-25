@@ -14,22 +14,24 @@ export const MyCardItem: FC<MyCardItemProps> = ({ name, price, sizes, image }) =
   const [count, setCount] = useState(1);
   return (
     <StyledMyCardItem>
-      <img src={TrashIcon} alt="remove" className="trash" />
       <img src={image} alt={'image'} className="image" />
-      <p className="title">{name}</p>
-      <p className="price">{price}</p>
-      <div className="selected-sizes">
+      <div className="description-container">
+        <p className="title">{name}</p>
         <p className="sizes">
           size: <span>{sizes}</span>
         </p>
-        <div className="counter-container">
-          <Button onClick={() => setCount((prev) => prev - 1)} textButton width="auto">
-            <img src={MinusIcon} alt="minus" />
-          </Button>
-          <span className="counter">{count}</span>
-          <Button onClick={() => setCount((prev) => prev + 1)} textButton width="auto">
-            <img src={PlusIcon} alt="minus" />
-          </Button>
+        <div className="selected-sizes">
+          <p className="price">{price}</p>
+          <div className="counter-container">
+            <Button onClick={() => setCount((prev) => prev - 1)} textButton width="auto">
+              <img src={MinusIcon} alt="minus" />
+            </Button>
+            <span className="counter">{count}</span>
+            <Button onClick={() => setCount((prev) => prev + 1)} textButton width="auto">
+              <img src={PlusIcon} alt="minus" />
+            </Button>
+          </div>
+          <img src={TrashIcon} alt="remove" className="trash" />
         </div>
       </div>
     </StyledMyCardItem>

@@ -23,7 +23,7 @@ export const StyledCheckoutProductItem = styled.div`
   .name-container {
     height: 85px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: flex-start;
     display: flex;
   }
@@ -67,7 +67,8 @@ export const StyledCheckoutProductItem = styled.div`
   }
 
   .image {
-    height: 100%;
+    width: 70px;
+    // height: 100%;
     margin-right: 30px;
   }
 

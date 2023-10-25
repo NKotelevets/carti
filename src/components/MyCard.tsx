@@ -7,6 +7,8 @@ import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
 import Image_3 from '../assets/images/joshua/product_3_1.png';
 import Image_4 from '../assets/images/joshua/product_4_1.png';
+import { setStatusCard } from '../redux/reducers/mainReducer';
+import { useDispatch } from 'react-redux';
 
 interface MyCardProps extends HTMLProps<HTMLElement> {
   showMyCard?: boolean;
@@ -41,6 +43,7 @@ const products = [
 
 export const MyCard: FC<MyCardProps> = ({ showMyCard }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <StyledMyCard showMyCard={showMyCard}>
@@ -59,8 +62,11 @@ export const MyCard: FC<MyCardProps> = ({ showMyCard }) => {
               <span>Total:</span>
               <span>$ 610.00</span>
             </p>
-            <Button onClick={() => navigate('/checkout')} transparent={true} className="button-action">
+            <Button onClick={() => navigate('/checkout')} className="button-action button-action-first">
               TO checkout
+            </Button>
+            <Button onClick={() => dispatch(setStatusCard(false))} transparent={true} className="button-action">
+              continue shopping
             </Button>
           </div>
         </div>

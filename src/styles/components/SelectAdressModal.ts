@@ -59,7 +59,22 @@ export const StyledSelectAdressModal = Modal.styled`
           stroke:  ${({ theme }: any) => theme.grey};
       }
     }
+  }
 
-   
+  @media (max-width: 965px) {
+    border-width: 0px;
+    padding: 80px 0px 40px 0px;
+    width: 100vw;
+    height: 100vh;
+    top: 26px;
+
+    .map-container {
+      height: 70%;
+
+    }
+
+    .close-button {
+      top: 50px;
+    }
   }
 `;

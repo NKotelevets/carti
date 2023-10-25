@@ -6,7 +6,7 @@ export const StyledHomeScreens = styled.div`
     width: 100%;
     height: 100vh;
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   .player video {
@@ -21,6 +21,7 @@ export const StyledHomeScreens = styled.div`
     height: 100%;
     display: flex;
     align-items: flex-end;
+    z-index: 10000;
 
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       linear-gradient(0.75deg, #19191b 4.74%, rgba(25, 25, 27, 0) 46.34%);
@@ -37,6 +38,9 @@ export const StyledHomeScreens = styled.div`
       animation: fadeIn 3s;
       animation-delay: 1s;
       animation-fill-mode: forwards;
+      z-index: 1000;
+      // bottom: 0px;
+      // opacity: 1;
 
       @keyframes fadeIn {
         0% {
@@ -214,6 +218,7 @@ export const StyledHomeScreens = styled.div`
       .event-info {
         flex-direction: column;
         height: auto;
+        padding: 0 20px 20px 20px;
 
         @keyframes fadeIn {
           0% {
@@ -260,8 +265,11 @@ export const StyledHomeScreens = styled.div`
     }
 
     .products-container {
+      padding-bottom: 50px;
+
       .products-list {
         justify-content: center;
+        row-gap: 40px;
       }
     }
   }

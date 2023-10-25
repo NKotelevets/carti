@@ -6,6 +6,9 @@ export const StyledCheckoutScreens = styled.div`
   min-height: 100vh;
   padding: 80px 0px 24px 0px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .title {
     color: ${({ theme }) => theme.white};
@@ -40,13 +43,13 @@ export const StyledCheckoutScreens = styled.div`
   }
 
   .products-container {
-    width: 30%;
+    width: 50%;
     position: relative;
     height: calc(65vh - 136px);
   }
 
   .products-list {
-    overflow: scroll;
+    overflow-y: scroll;
     height: 80%;
     margin-bottom: 10px;
     padding-right: 20px;
@@ -63,7 +66,7 @@ export const StyledCheckoutScreens = styled.div`
   }
 
   .form-container {
-    width: 70%;
+    width: 50%;
   }
 
   .container {
@@ -72,6 +75,7 @@ export const StyledCheckoutScreens = styled.div`
     padding: 40px;
     column-gap: 80px;
     padding-right: 20px;
+    width: 70%;
   }
 
   .column {
@@ -225,5 +229,56 @@ export const StyledCheckoutScreens = styled.div`
   .map-container {
     width: 200px;
     height: 200px;
+  }
+
+  .name-container {
+    .title {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 965px) {
+    .container {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .form-container,
+    .products-container {
+      width: 100%;
+      height: fit-content;
+    }
+
+    .products-list {
+      height: auto;
+      overflow: hidden;
+    }
+
+    .title-form,
+    .subtitle-form {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-container {
+      margin-bottom: 40px;
+
+      .row {
+        flex-wrap: wrap;
+
+        .label-sender {
+          width: 100%;
+        }
+      }
+    }
+
+    .bottom-container {
+      border-width: 0px;
+      padding: 0px;
+    }
+
+    .pay-button {
+      margin-top: 40px;
+    }
   }
 `;

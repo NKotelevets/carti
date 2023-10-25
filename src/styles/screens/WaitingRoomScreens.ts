@@ -212,7 +212,7 @@ export const StyledWaitingRoomScreens = styled.div`
       }
 
       .event-info-block-center {
-        margin-bottom: 30px;
+        margin-bottom: 60px;
       }
     }
 

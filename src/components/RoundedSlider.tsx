@@ -67,6 +67,7 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
         })),
       [items],
     );
+    console.log(itemWidth);
 
     const len = useMemo(() => data.length, [data.length]);
     const theta = useMemo(() => 360 / len, [len]);

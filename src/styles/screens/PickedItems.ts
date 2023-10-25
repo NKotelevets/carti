@@ -128,6 +128,15 @@ export const StyledPickedItemsScreens = styled.div`
     transition: transform 300ms;
     opacity: 0.5;
     cursor: pointer;
+
+    &:hover {
+      transform: scale(1);
+      opacity: 1;
+
+      .item-overlay {
+        display: none;
+      }
+    }
   }
 
   .activeSlide {

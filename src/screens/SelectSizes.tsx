@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import { StyledProductScreens } from '../styles/screens/ProductScreens';
@@ -86,6 +86,24 @@ export const SelectSizes: FC = () => {
     setSelectedSize(e.target.value);
   };
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 965);
+
+  const listenWidth = () => {
+    const width = window.innerWidth;
+
+    if (width < 965) {
+      !isMobile && // to limit setting state only the first time
+        setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', listenWidth);
+    return () => window.removeEventListener('resize', listenWidth);
+  }, []);
+
   const handleSelectSizesModal = () => {
     setIsOpenModal(!isOpenModal);
   };
@@ -143,11 +161,46 @@ export const SelectSizes: FC = () => {
     );
   });
 
+  const selectSizes = () => (
+    <div className="select-sizes-container">
+      <p>Select your size here</p>
+
+      <Swiper
+        slidesPerView={isMobile ? 6 : 9}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        {sizes.map((sizes) => (
+          <SwiperSlide>
+            <label
+              className={`select-size-options ${
+                selectedSize && selectedSize === sizes.label && 'selected-size-effect'
+              }`}
+              key={sizes.label}
+            >
+              {sizes.label}
+              <input type="radio" name="sizes" id={sizes.label} value={sizes.label} onChange={handleChangeSize} />
+            </label>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+
   return (
     <StyledProductScreens>
+      {isMobile && (
+        <div className="inner-slider">
+          <Slider {...settings}>{templateImages}</Slider>
+        </div>
+      )}
       <div className="column image-container">
         <Swiper
-          direction={'vertical'}
+          direction={isMobile ? 'horizontal' : 'vertical'}
           slidesPerView={1}
           spaceBetween={30}
           mousewheel={true}
@@ -184,17 +237,13 @@ export const SelectSizes: FC = () => {
             console.log('122112', index);
           }}
         /> */}
-        {/* <Carroussel
-            cards={selectedProducts}
-            height="100%"
-            width="90%"
-            margin="0 auto"
-            offset={2}
-            showArrows={false}
-          /> */}
-        <div className="inner-slider">
-          <Slider {...settings}>{templateImages}</Slider>
-        </div>
+        {!isMobile && (
+          <div className="inner-slider">
+            <Slider {...settings}>{templateImages}</Slider>
+          </div>
+        )}
+        {isMobile && selectSizes()}
+
         <div className="description-container">
           <h2 className="name-product">AJBXNG Olympic Jacket</h2>
           <p className="price-product">$169</p>
@@ -206,37 +255,11 @@ export const SelectSizes: FC = () => {
           </Button>
         </div>
 
-        <div className="select-sizes-container">
-          <p>Select your size here</p>
+        {!isMobile && selectSizes()}
 
-          <Swiper
-            slidesPerView={9}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className="mySwiper"
-          >
-            {sizes.map((sizes) => (
-              <SwiperSlide>
-                <label
-                  className={`select-size-options ${
-                    selectedSize && selectedSize === sizes.label && 'selected-size-effect'
-                  }`}
-                  key={sizes.label}
-                >
-                  {sizes.label}
-                  <input type="radio" name="sizes" id={sizes.label} value={sizes.label} onChange={handleChangeSize} />
-                </label>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          <Button onClick={() => navigate('/waiting-room')} transparent={true}>
-            To waiting room
-          </Button>
-        </div>
+        <Button className="go-to-waiting-btn" onClick={() => navigate('/waiting-room')} transparent={true}>
+          To waiting room
+        </Button>
       </div>
 
       <StyledProductSizingChart

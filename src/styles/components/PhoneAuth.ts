@@ -12,7 +12,7 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
   flex-direction: column;
   gap: 52px;
   align-items: center;
-  overflow: scroll;
+  overflow: hidden;
   padding: 0 20px;
 
   & > div {

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { StyledProductScreens } from '../styles/screens/ProductScreens';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -58,15 +58,46 @@ const items = [
 export const ProductsList: FC = () => {
   const carouselRef = React.createRef<CarouselRef>();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 965);
 
   function handleSelectSizesModal() {
     setIsOpenModal(!isOpenModal);
   }
+
+  const listenWidth = () => {
+    const width = window.innerWidth;
+
+    if (width < 965) {
+      !isMobile && // to limit setting state only the first time
+        setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', listenWidth);
+    return () => window.removeEventListener('resize', listenWidth);
+  }, []);
+
   return (
     <StyledProductScreens>
+      {isMobile && (
+        <div className="rounded-slider-container">
+          <RoundedSlider
+            ref={carouselRef}
+            items={items}
+            slideOnClick
+            itemWidth={isMobile ? 100 : 210}
+            onChangeSlide={(index) => {
+              console.log('122112', index);
+            }}
+          />
+        </div>
+      )}
       <div className="column image-container">
         <Swiper
-          direction={'vertical'}
+          direction={isMobile ? 'horizontal' : 'vertical'}
           slidesPerView={1}
           spaceBetween={30}
           mousewheel={true}
@@ -94,15 +125,17 @@ export const ProductsList: FC = () => {
         </Swiper>
       </div>
       <div className="column description-product">
-        <RoundedSlider
-          ref={carouselRef}
-          items={items}
-          slideOnClick
-          itemWidth={210}
-          onChangeSlide={(index) => {
-            console.log('122112', index);
-          }}
-        />
+        {!isMobile && (
+          <RoundedSlider
+            ref={carouselRef}
+            items={items}
+            slideOnClick
+            itemWidth={isMobile ? 50 : 210}
+            onChangeSlide={(index) => {
+              console.log('122112', index);
+            }}
+          />
+        )}
         <div className="description-container">
           <h2 className="name-product">AJBXNG Olympic Jacket</h2>
           <p className="price-product">$169</p>

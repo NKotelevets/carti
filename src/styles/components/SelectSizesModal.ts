@@ -88,6 +88,7 @@ h3{
 
   .select-size-options {
     cursor: pointer;
+    width: 100%;
 
     input{
       display: none

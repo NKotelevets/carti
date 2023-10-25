@@ -172,4 +172,41 @@ export const RoundedSliderStyles = styled.div`
     border-radius: 100px;
     padding: 10px;
   }
+
+  @media (max-width: 965px) {
+    .carousel {
+      width: 70px;
+      height: 100px;
+    }
+    .carousel__container {
+      width: auto;
+      height: 100px;
+    }
+
+    .carousel__slide {
+      width: 50px;
+      height: 50px;
+    }
+
+    .active_slide {
+      position: relative;
+
+      &:before {
+        top: -2px;
+        width: 20px;
+        height: 2px;
+      }
+
+      &:after {
+        bottom: -2px;
+        width: 20px;
+        height: 2px;
+      }
+    }
+
+    .checked_item {
+      height: 10px;
+      padding: 5px;
+    }
+  }
 `;
