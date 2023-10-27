@@ -1,8 +1,14 @@
+import { HTMLProps } from 'react';
 import { styled } from 'styled-components';
 
-export const StyledHomePageProductItem = styled.div`
-  width: 21%;
-  height: 300px;
+interface StyledHomePageProductItemProps extends HTMLProps<HTMLElement> {
+  width?: string;
+  height?: string;
+}
+
+export const StyledHomePageProductItem = styled.div<StyledHomePageProductItemProps>`
+  width: ${({ width }) => (width ? width : 'auto')};
+  height: ${({ height }) => (height ? height : '300px')};
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -11,9 +17,11 @@ export const StyledHomePageProductItem = styled.div`
   position: relative;
 
   img {
-    height: 220px;
+    // height: ${({ height }) => (height ? '80%' : '220px')};
+    // width: ${({ width }) => (width ? 'fit-content' : 'fit-content')};
+    width: 100%;
     margin-bottom: 40px;
-    width: fit-content;
+    object-fit: contain !important;
   }
 
   .description-container {
@@ -55,5 +63,10 @@ export const StyledHomePageProductItem = styled.div`
 
   &:hover .item-overlay {
     opacity: 1;
+  }
+
+  .button-action {
+    margin-top: 32px;
+    padding: 10px;
   }
 `;

@@ -1,10 +1,14 @@
+import { HTMLProps } from 'react';
 import { styled } from 'styled-components';
 
-export const StyledHeader = styled.div`
+interface StyledHeaderProps extends HTMLProps<HTMLButtonElement> {
+  fixed?: boolean;
+}
+
+export const StyledHeader = styled.div<StyledHeaderProps>`
   width: 100%;
   height: 56px;
-  // background-color: ${({ theme }) => theme.dark};
-  position: fixed;
+  position: ${({ fixed }) => (fixed ? 'absolute' : 'fixed')};
   top: 0;
   background: rgba(25, 25, 27, 0.1);
   backdrop-filter: blur(5px);
@@ -13,8 +17,25 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
   padding: 0 40px;
   box-sizing: border-box;
-  z-index: 100;
+  z-index: 10001;
   border-bottom: 1px solid ${({ theme }) => theme.white};
+  top: -60px;
+  animation: fadeIn 3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      top: -60px;
+    }
+
+    100% {
+      top: 0px;
+
+      opacity: 1;
+    }
+  }
 
   .left-side,
   .right-side {
@@ -32,6 +53,10 @@ export const StyledHeader = styled.div`
       line-height: 21px;
       color: ${({ theme }) => theme.white};
       text-decoration: none;
+
+      &:hover {
+        color: ${({ theme }) => theme.grey};
+      }
     }
   }
 
@@ -43,6 +68,20 @@ export const StyledHeader = styled.div`
     background-color: transparent;
     border: 0px;
     cursor: pointer;
+
+    &:hover {
+      svg {
+        stroke: ${({ theme }) => theme.grey};
+      }
+
+      span {
+        color: ${({ theme }) => theme.grey};
+      }
+    }
+
+    svg {
+      stroke: ${({ theme }) => theme.white};
+    }
 
     span {
       font-size: 14px;
@@ -56,5 +95,27 @@ export const StyledHeader = styled.div`
   .join-event-button {
     height: 30px;
     margin-right: 20px;
+  }
+
+  .my-card-icon {
+    display: none;
+  }
+
+  @media (max-width: 965px) {
+    padding: 0 20px;
+    background-color: #19191b;
+
+    .join-event-button {
+      display: none;
+    }
+
+    .select-sizes-button {
+      .my-card-icon {
+        display: block;
+      }
+      .my-card-text {
+        display: none;
+      }
+    }
   }
 `;

@@ -22,6 +22,7 @@ export const StyledAuthScreens = styled.div<StyledProps>`
     width: 100%;
     height: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 20;
 
     .form-wrapper {
       display: flex;
@@ -48,6 +49,11 @@ export const StyledAuthScreens = styled.div<StyledProps>`
         letter-spacing: 0.12px;
         color: ${({ theme }) => theme.white};
         text-decoration: none;
+
+        &:hover {
+          color: ${({ theme }) => theme.grey};
+          text-decoration: underline;
+        }
       }
     }
   }

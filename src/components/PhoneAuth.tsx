@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { StyledPhoneAuth } from '../styles/components/PhoneAuth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Field, Formik, Form } from 'formik';
 import PhoneInput from 'react-phone-number-input';
 import DatePicker from 'react-datepicker';
@@ -10,6 +10,7 @@ import { Button } from './Button';
 
 import 'react-phone-number-input/style.css';
 import 'react-datepicker/dist/react-datepicker.css';
+import { SuccessModalAuth } from '../styles/components/SuccessModalAuth';
 
 interface Props {
   title: string;
@@ -38,6 +39,12 @@ export const PhoneAuth: FC<Props> = ({ title, subtitle, subtitleLinkText, subtit
   const [value, setValue] = useState();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [startDate, setStartDate] = useState<Date | null>();
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSelectSizesModal = () => {
+    setIsOpenModal(!isOpenModal);
+  };
 
   const handleLoginNext = () => {
     setCurrentIndex(1);
@@ -55,17 +62,22 @@ export const PhoneAuth: FC<Props> = ({ title, subtitle, subtitleLinkText, subtit
     setCurrentIndex(2);
   };
 
-  const handleSubmitCreateAcc = () => {};
+  const handleSubmitCreateAcc = () => {
+    handleSelectSizesModal();
+  };
 
   return (
     <StyledPhoneAuth>
-      <div>
-        <h4>{title}</h4>
-        <p className="subtitle">
-          <span>{subtitle}</span>
-          <Link to={subtitleLinkPath}>{subtitleLinkText}</Link>
-        </p>
-      </div>
+      {!isOpenModal && (
+        <div>
+          <h4>{title}</h4>
+          <p className="subtitle">
+            <span>{subtitle}</span>
+            <Link to={subtitleLinkPath}>{subtitleLinkText}</Link>
+          </p>
+        </div>
+      )}
+
       {currentIndex === 0 ? (
         <div>
           <div className="label-wrapper">
@@ -109,57 +121,87 @@ export const PhoneAuth: FC<Props> = ({ title, subtitle, subtitleLinkText, subtit
               <Button flat textButton type="button" onClick={handleResendCode} className="text-button">
                 resend code
               </Button>
-            </Form>
-          )}
-        </Formik>
-      ) : (
-        <Formik initialValues={{ firstName: '', lastName: '', birthday: '', gender: '' }} onSubmit={() => {}}>
-          {({ values, setFieldValue }) => (
-            <Form className="form">
-              <div className="label-wrapper">
-                <p className="label">first name</p>
-                {false && <p className="error">First name is required</p>}
-              </div>
-              <Field name="firstName" type="text" className="input-text" placeholder="Enter first name" />
-              <div className="label-wrapper">
-                <p className="label">last name</p>
-                {false && <p className="error">Last name is required</p>}
-              </div>
-              <Field name="lastName" type="text" className="input-text" placeholder="Enter last name" />
-              <div className="label-wrapper">
-                <p className="label">your birthday</p>
-                {false && <p className="error">Birthday is required</p>}
-              </div>
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                placeholderText="date of birth"
-                //It should be added, because  it is not convenient to choose birthday by flipping through just one month.
-                // showMonthDropdown
-                // showYearDropdown
-                dropdownMode="select"
-              />
-              <div className="label-wrapper">
-                <p className="label">your gender</p>
-                {false && <p className="error">Gender is required</p>}
-              </div>
-              <Select
-                name="gender"
-                placeholder="select gender"
-                options={genderList}
-                value={genderList.find((item) => item.value === values.gender)}
-                onChange={(selectedOption) => setFieldValue('gender', selectedOption?.value)}
-                className="gender-select"
-                classNamePrefix="gender-select"
-                isSearchable={false}
-              />
-              <Button type="button" onClick={handleSubmitCreateAcc}>
-                submit
+              <Button flat textButton type="button" onClick={() => setCurrentIndex(0)} className="text-button">
+                Change phone number
               </Button>
             </Form>
           )}
         </Formik>
+      ) : (
+        !isOpenModal && (
+          <Formik initialValues={{ firstName: '', lastName: '', birthday: '', gender: '' }} onSubmit={() => {}}>
+            {({ values, setFieldValue }) => (
+              <Form className="form">
+                <div className="label-wrapper">
+                  <p className="label">first name</p>
+                  {false && <p className="error">First name is required</p>}
+                </div>
+                <Field name="firstName" type="text" className="input-text" placeholder="Enter first name" />
+                <div className="label-wrapper">
+                  <p className="label">last name</p>
+                  {false && <p className="error">Last name is required</p>}
+                </div>
+                <Field name="lastName" type="text" className="input-text" placeholder="Enter last name" />
+                <div className="gender-dob-container">
+                  <div className="gender-dob-field-container">
+                    <div className="label-wrapper">
+                      <p className="label">your birthday</p>
+                      {false && <p className="error">Birthday is required</p>}
+                    </div>
+                    <DatePicker
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                      placeholderText="date of birth"
+                      //It should be added, because  it is not convenient to choose birthday by flipping through just one month.
+                      // showMonthDropdown
+                      // showYearDropdown
+                      dropdownMode="select"
+                    />
+                  </div>
+                  <div className="gender-dob-field-container">
+                    <div className="label-wrapper">
+                      <p className="label">your gender</p>
+                      {false && <p className="error">Gender is required</p>}
+                    </div>
+                    <Select
+                      name="gender"
+                      placeholder="select gender"
+                      options={genderList}
+                      value={genderList.find((item) => item.value === values.gender)}
+                      onChange={(selectedOption) => setFieldValue('gender', selectedOption?.value)}
+                      className="gender-select"
+                      classNamePrefix="gender-select"
+                      isSearchable={false}
+                    />
+                  </div>
+                </div>
+                <div className="label-wrapper">
+                  <p className="label">your email</p>
+                  {false && <p className="error">Email is required</p>}
+                </div>
+                <Field name="email" type="email" className="input-text" placeholder="Enter email" />
+
+                <Button type="button" onClick={handleSubmitCreateAcc}>
+                  submit
+                </Button>
+              </Form>
+            )}
+          </Formik>
+        )
       )}
+
+      <SuccessModalAuth
+        isOpen={isOpenModal}
+        onBackgroundClick={handleSelectSizesModal}
+        onEscapeKeydown={handleSelectSizesModal}
+      >
+        <h2>Success!</h2>
+        <p>Congratulations, your account has been successfully created!</p>
+
+        <Button type="button" transparent onClick={() => navigate('/')}>
+          CONTINUE
+        </Button>
+      </SuccessModalAuth>
 
       <div>
         {Array.from({ length: stepsCount }, (_, index) => (

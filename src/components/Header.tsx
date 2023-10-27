@@ -1,11 +1,14 @@
 import { FC, HTMLProps, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { StyledHeader } from '../styles/components/Header';
 
-import logo from '../assets/images/Logo.png';
+import logo from '../assets/images/logo2.svg';
+import ShoppingCard from '../assets/svg/ShoppingCard.svg';
 import { LeftArrow } from '../assets/svg';
 import { Button } from './Button';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../redux/store';
+import { setStatusCard } from '../redux/reducers/mainReducer';
 
 interface HeaderProps extends HTMLProps<HTMLElement> {
   showBackButton?: boolean;
@@ -13,9 +16,13 @@ interface HeaderProps extends HTMLProps<HTMLElement> {
 
 export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { myCardActive } = useSelector((state: RootState) => state.main);
+  const dispatch = useDispatch();
   const [isVisible, setIsVisible] = useState(false);
+
   const handleJoinEvent = () => {
-    console.log('join event');
+    navigate('/waiting-room');
   };
 
   const listenToScroll = () => {
@@ -35,25 +42,67 @@ export const Header: FC<HeaderProps> = ({ showBackButton = false }) => {
     return () => window.removeEventListener('scroll', listenToScroll);
   }, []);
 
-  return (
-    <StyledHeader>
+  return location.pathname !== '/event' ? (
+    <StyledHeader fixed={location.pathname === '/checkout' ? true : false}>
       <div className="left-side">
-        {showBackButton && (
+        {(showBackButton ||
+          location.pathname === '/products' ||
+          location.pathname === '/terms-and-conditions' ||
+          location.pathname === '/privacy-policy' ||
+          location.pathname === '/select-sizes' ||
+          location.pathname === '/products') && (
           <button className="back-arrow" onClick={() => navigate(-1)}>
-            <img src={LeftArrow} alt="back" />
+            <LeftArrow />
             <span>Back</span>
           </button>
         )}
       </div>
-      <img src={logo} className="logo" alt="logo" />
+      <Link to="/">
+        <img src={logo} className="logo" alt="logo" />
+      </Link>
+
       <div className="right-side">
-        {isVisible && (
-          <Button type="button" onClick={handleJoinEvent} width={'200px'} className="join-event-button">
-            JOIN EVENT
-          </Button>
-        )}
-        <Link to="/">My Account</Link>
+        {location.pathname !== '/sign-up' &&
+          location.pathname !== '/sign-in' &&
+          location.pathname !== '/picked-items' &&
+          location.pathname !== '/checkout' && (
+            <>
+              {isVisible && location.pathname === '/' && (
+                <Button type="button" onClick={handleJoinEvent} width={'200px'} className="join-event-button">
+                  JOIN EVENT
+                </Button>
+              )}
+              {location.pathname !== '/missed-items' ? null : (
+                // <Link to="/">My Account</Link>
+                <>
+                  {location.pathname === '/missed-items' && (
+                    <Button
+                      type="button"
+                      onClick={() => navigate('/checkout')}
+                      width={'200px'}
+                      className="join-event-button"
+                    >
+                      To checkout
+                    </Button>
+                  )}
+                  <Button
+                    flat
+                    textButton
+                    width="auto"
+                    type="button"
+                    onClick={() => {
+                      dispatch(setStatusCard(!myCardActive));
+                    }}
+                    className="text-button select-sizes-button"
+                  >
+                    <img className="my-card-icon" src={ShoppingCard} alt="My Cart " />
+                    <span className="my-card-text">My Cart (2)</span>
+                  </Button>
+                </>
+              )}
+            </>
+          )}
       </div>
     </StyledHeader>
-  );
+  ) : null;
 };
