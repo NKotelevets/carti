@@ -1,11 +1,16 @@
 import { styled } from 'styled-components';
 
-export const StyledMissedItemsScreens = styled.div`
+interface StyledProps {
+  scrollEnable?: boolean;
+}
+
+export const StyledMissedItemsScreens = styled.div<StyledProps>`
   background-color: ${({ theme }) => theme.dark};
   width: '100%';
   min-height: 100vh;
   padding: 80px 0px 140px 0px;
   box-sizing: border-box;
+  overflow-y: ${({ scrollEnable }) => (scrollEnable ? 'scroll' : 'hidden')};
 
   .counter {
     color: ${({ theme }) => theme.white};

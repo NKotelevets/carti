@@ -120,6 +120,7 @@ export const StyledProductScreens = styled.div`
     animation: showProducts 3s;
     animation-fill-mode: forwards;
     opacity: 0;
+    margin-bottom: 20px;
   }
 
   @keyframes showProducts {
@@ -232,6 +233,24 @@ export const StyledProductScreens = styled.div`
     .slide {
       border: 1px solid #888891;
       text-align: center;
+      transform: scale(0.8);
+
+      .overlay {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        // opacity: 0;
+        transition: opacity 0.35s ease-in-out;
+        background-color: rgba(0, 0, 0, 0.3);
+        user-select: none;
+      }
     }
     .slideWrapper {
       display: flex;
@@ -265,6 +284,11 @@ export const StyledProductScreens = styled.div`
         content: '';
       }
     }
+  }
+
+  .slick-track {
+    display: flex;
+    gap: 2rem;
   }
 
   @media (max-width: 965px) {
@@ -319,6 +343,8 @@ export const StyledProductScreens = styled.div`
     }
     .go-to-waiting-btn {
       margin-top: 20px;
+      width: 60%;
+      margin: 20px auto 0 auto;
     }
 
     .inner-slider {
@@ -327,6 +353,10 @@ export const StyledProductScreens = styled.div`
       img {
         height: 70px;
       }
+    }
+
+    .swiper {
+      overflow-y: hidden;
     }
   }
 `;

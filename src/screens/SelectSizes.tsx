@@ -157,6 +157,7 @@ export const SelectSizes: FC = () => {
         <div className="slideWrapper">
           <img src={item.image} alt={item.alt} />
         </div>
+        <div className="overlay"></div>
       </div>
     );
   });

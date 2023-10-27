@@ -6,6 +6,7 @@ interface StyledMyCardProps extends HTMLProps<HTMLButtonElement> {
 }
 
 export const StyledMyCard = styled.div<StyledMyCardProps>`
+  overflow: hidden;
   .overlay {
     background: rgba(25, 25, 27, 0.5);
     height: calc(100vh - 56px);

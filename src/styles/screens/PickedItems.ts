@@ -175,5 +175,14 @@ export const StyledPickedItemsScreens = styled.div`
     .slick-list {
       padding: 0 20% 0 0 !important;
     }
+
+    .event-button {
+      width: 100%;
+    }
+
+    .bottom-navigation {
+      padding: 30px 20px;
+      box-sizing: border-box;
+    }
   }
 `;

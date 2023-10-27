@@ -113,7 +113,7 @@ export const MissedItems: FC = () => {
   };
 
   return (
-    <StyledMissedItemsScreens>
+    <StyledMissedItemsScreens scrollEnable={!myCardActive}>
       <h3 className="title">ITEMS YOU MISSED</h3>
 
       <p className="counter">

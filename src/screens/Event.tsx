@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { StyledEventScreens } from '../styles/screens/Event';
 import { useNavigate } from 'react-router-dom';
@@ -29,45 +29,13 @@ const cards = [
     currency: 'usd',
     image: Image_1,
   },
-
-  // {
-  //   width: 0.243161094224924,
-  //   height: 0.5619697761126822,
-  //   offsetLeft: 0.17633587786259542,
-  //   offsetTop: 0.13574660633484162,
-  //   start: 10,
-  //   duration: 10,
-  //   player_width: 786,
-  //   player_height: 442,
-  //   id: 709,
-  //   product_id: 906,
-  //   name: 'First',
-  //   price: 121,
-  //   currency: 'usd',
-  //   image: 'https://d2pdy0anl46va0.cloudfront.net/906/57c269d5-6ff0-46f6-9a73-6743ea0d8174.webp',
-  // },
-  // {
-  //   width: 0.243161094224924,
-  //   height: 0.5619697761126822,
-  //   offsetLeft: 0.07633587786259542,
-  //   offsetTop: 0.13574660633484162,
-  //   start: 13,
-  //   duration: 10,
-  //   player_width: 786,
-  //   player_height: 442,
-  //   id: 710,
-  //   product_id: 907,
-  //   name: 'Second',
-  //   price: 32,
-  //   currency: 'usd',
-  //   image: 'https://d2pdy0anl46va0.cloudfront.net/907/eee3f987-e26e-4a98-9691-730b162ed6d4.webp',
-  // },
 ];
 
 export const Event: FC = () => {
   const navigate = useNavigate();
   const ref = useRef<IVideoPlayer>(null);
 
+  const [showPanel, setShowPanel] = useState(false);
   const [isPlay, setIsPlay] = useState(false);
   const [totalDuration, setTotalDuration] = useState<number>(0);
   const [currentSeek, setCurrentSeek] = useState<number>(0);
@@ -80,6 +48,19 @@ export const Event: FC = () => {
   const handleProcess = ({ playedSeconds }: { playedSeconds: number }) => {
     setCurrentSeek(playedSeconds);
   };
+
+  const mousemove = () => {
+    setShowPanel(true);
+
+    setTimeout(() => {
+      setShowPanel(false);
+    }, 10000);
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousemove', mousemove);
+    return () => window.removeEventListener('mousemove', mousemove);
+  }, []);
 
   const wrapper = (ref as React.MutableRefObject<IVideoPlayer>)?.current?.wrapper;
 
@@ -136,7 +117,7 @@ export const Event: FC = () => {
           ))}
       </div>
 
-      <div className="header">
+      <div className={`header ${showPanel && 'showpanel'}`}>
         <div className="left-side">
           <button className="back-arrow" onClick={() => navigate('/waiting-room')}>
             <LeftArrow />
@@ -144,7 +125,7 @@ export const Event: FC = () => {
           </button>
         </div>
       </div>
-      <div className="time-line-container">
+      <div className={`time-line-container ${showPanel && 'showpanel'}`}>
         <span>{formattedTime(currentSeek)}</span>
         <div className="time-line">
           <div

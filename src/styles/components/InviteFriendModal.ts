@@ -11,6 +11,7 @@ export const StyledInviteFriendModal = Modal.styled`
     padding: 40px 60px;
     width: 30vw;
     position: relative;
+    z-index: 1000000;
 
     h2 {
         color: ${({ theme }: any) => theme.white};
@@ -92,39 +93,38 @@ export const StyledInviteFriendModal = Modal.styled`
         }
       }
 
-      textarea {
-          width: 100%;
-          height: 150px;
-          background: transparent;
-            resize: none;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 17px;
-            letter-spacing: 0.12px;
-            color: ${({ theme }: any) => theme.white};
-            padding: 10px;
-        outline: none;
-        border: 1px solid ${({ theme }: any) => theme.white};
-box-sizing: border-box;
-margin-bottom: 6px;
+  textarea {
+    width: 100%;
+    height: 150px;
+    background: transparent;
+    resize: none;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0.12px;
+    color: ${({ theme }: any) => theme.white};
+    padding: 10px;
+    outline: none;
+    border: 1px solid ${({ theme }: any) => theme.white};
+    box-sizing: border-box;
+    margin-bottom: 6px;
+  }
 
-      }
-
-      p {
-        color: #AFAFB6;
-        font-size: 10px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%; /* 15px */
-          width: 100%;
-          letter-spacing: 0.1px;
-margin-bottom: 30px;
-}
+  p {
+    color: #AFAFB6;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 15px */
+    width: 100%;
+    letter-spacing: 0.1px;
+    margin-bottom: 30px;
+  }
     
-@media (max-width: 965px) {
-  width: 95vw;
-box-sizing: border-box;
-
-}
+  @media (max-width: 965px) {
+    padding:40px 20px;
+    width: 95vw;
+    box-sizing: border-box; 
+  }
 `;

@@ -18,6 +18,7 @@ import Image_8 from '../assets/images/joshua/product_1_5.png';
 
 import { Close } from '../assets/svg';
 import RoundedSlider from '../components/RoundedSlider';
+import { useNavigate } from 'react-router-dom';
 
 const items = [
   {
@@ -59,7 +60,7 @@ export const ProductsList: FC = () => {
   const carouselRef = React.createRef<CarouselRef>();
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 965);
-
+  const navigate = useNavigate();
   function handleSelectSizesModal() {
     setIsOpenModal(!isOpenModal);
   }
@@ -146,6 +147,9 @@ export const ProductsList: FC = () => {
             View sizing chart
           </Button>
         </div>
+        <Button className="go-to-waiting-btn" onClick={() => navigate('/waiting-room')}>
+          join event
+        </Button>
       </div>
 
       <StyledProductSizingChart

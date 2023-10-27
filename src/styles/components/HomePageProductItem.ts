@@ -17,8 +17,9 @@ export const StyledHomePageProductItem = styled.div<StyledHomePageProductItemPro
   position: relative;
 
   img {
-    height: ${({ height }) => (height ? '80%' : '220px')};
+    // height: ${({ height }) => (height ? '80%' : '220px')};
     // width: ${({ width }) => (width ? 'fit-content' : 'fit-content')};
+    width: 100%;
     margin-bottom: 40px;
     object-fit: contain !important;
   }

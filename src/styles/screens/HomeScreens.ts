@@ -209,7 +209,6 @@ export const StyledHomeScreens = styled.div`
   }
 
   @media (max-width: 965px) {
-    .mute-button,
     .bottom-arrow {
       display: none;
     }
@@ -271,6 +270,11 @@ export const StyledHomeScreens = styled.div`
         justify-content: center;
         row-gap: 40px;
       }
+    }
+  }
+  @media (max-width: 600px) {
+    .mute-button {
+      display: none;
     }
   }
 `;

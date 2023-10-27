@@ -404,4 +404,17 @@ export const StyledPhoneAuth = styled.div<StyledProps>`
       width: 48%;
     }
   }
+
+  @media (max-width: 965px) {
+    .PhoneInputInput {
+      border-radius: 0px;
+    }
+
+    .gender-dob-container {
+      flex-wrap: wrap;
+      .gender-dob-field-container {
+        width: 100%;
+      }
+    }
+  }
 `;

@@ -142,7 +142,7 @@ export const StyledWaitingRoomScreens = styled.div`
     cursor: pointer;
     background: none;
     border: 0px;
-    z-index: 100;
+    z-index: 10;
   }
 
   .event-info {
@@ -184,11 +184,8 @@ export const StyledWaitingRoomScreens = styled.div`
   .mobile-counter {
     display: none;
   }
-  @media (max-width: 965px) {
-    .mute-button {
-      display: none;
-    }
 
+  @media (max-width: 965px) {
     .event-info {
       flex-direction: column;
     }
@@ -213,6 +210,8 @@ export const StyledWaitingRoomScreens = styled.div`
 
       .event-info-block-center {
         margin-bottom: 60px;
+        width: 60%;
+        margin: 0px auto 60px auto;
       }
     }
 
@@ -234,6 +233,12 @@ export const StyledWaitingRoomScreens = styled.div`
         display: inline-block;
         text-transform: uppercase;
       }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mute-button {
+      display: none;
     }
   }
 `;

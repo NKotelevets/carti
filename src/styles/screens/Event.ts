@@ -22,22 +22,28 @@ export const StyledEventScreens = styled.div`
     z-index: 100000;
     // border-bottom: 1px solid ${({ theme }) => theme.white};
     top: -60px;
-    animation: fadeIn 3s;
-    animation-fill-mode: forwards;
+    // animation: fadeIn 3s;
+    // animation-fill-mode: forwards;
     opacity: 0;
+    transition: 2s;
+    top: 0px;
 
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        top: -60px;
-      }
-
-      100% {
-        top: 0px;
-
-        opacity: 1;
-      }
+    &.showpanel {
+      opacity: 1;
     }
+
+    // @keyframes fadeIn {
+    //   0% {
+    //     opacity: 0;
+    //     top: -60px;
+    //   }
+
+    //   100% {
+    //     top: 0px;
+
+    //     opacity: 1;
+    //   }
+    // }
 
     .left-side,
     .right-side {
@@ -128,6 +134,12 @@ export const StyledEventScreens = styled.div`
     left: 50%;
     transform: translateX(-50%);
     height: 10px;
+    opacity: 0;
+    transition: 2s;
+
+    &.showpanel {
+      opacity: 1;
+    }
 
     span {
       color: ${({ theme }) => theme.white};

@@ -47,7 +47,7 @@ const selectedProducts = products.map((item, index) => ({
       key={index}
       hideDetailsButton
       width={'20vw'}
-      height={'57vh'}
+      height={window.innerWidth < 965 ? '55vh' : '57vh'}
     />
   ),
 }));
