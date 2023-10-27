@@ -14,7 +14,7 @@ RUN yarn dev
 
 FROM nginx:1.22.1-alpine
 
-COPY --from=builder /build /var/www/naso/html
+COPY --from=builder /build /var/www/whitelabel/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
