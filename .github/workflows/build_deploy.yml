@@ -2,7 +2,7 @@ name: Build and Deploy to Amazon ECS
 
 on:
   push:
-    branches: [yuriy22]
+    branches: [yuriy]
   workflow_dispatch:
 
 env:
