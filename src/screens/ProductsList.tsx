@@ -78,7 +78,7 @@ export const ProductsList: FC = () => {
   useEffect(() => {
     window.addEventListener('resize', listenWidth);
     return () => window.removeEventListener('resize', listenWidth);
-  }, []);
+  }, [listenWidth]);
 
   return (
     <StyledProductScreens>
