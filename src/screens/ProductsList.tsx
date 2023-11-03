@@ -1,12 +1,15 @@
 import React, { FC, useEffect, useState } from 'react';
-
-import { StyledProductScreens } from '../styles/screens/ProductScreens';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination } from 'swiper/modules';
-import { Button } from '../components/Button';
 import { CarouselRef } from 'react-round-carousel';
+import { Button } from '../components/Button';
+import RoundedSlider from '../components/RoundedSlider';
+
+import { StyledProductScreens } from '../styles/screens/ProductScreens';
 import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
-// import 'react-round-carousel/src/index.css';
+import { Close } from '../assets/svg';
+
 import Sizes from '../assets/images/Sizes.png';
 import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
@@ -15,10 +18,6 @@ import Image_4 from '../assets/images/joshua/product_4_1.png';
 import Image_6 from '../assets/images/joshua/product_1_3.png';
 import Image_7 from '../assets/images/joshua/product_1_4.png';
 import Image_8 from '../assets/images/joshua/product_1_5.png';
-
-import { Close } from '../assets/svg';
-import RoundedSlider from '../components/RoundedSlider';
-import { useNavigate } from 'react-router-dom';
 
 const items = [
   {
@@ -109,19 +108,16 @@ export const ProductsList: FC = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={Image_1} />
-          </SwiperSlide>
-          {/* <SwiperSlide>
-            <img src={Image_5} />
-          </SwiperSlide> */}
-          <SwiperSlide>
-            <img src={Image_6} />
+            <img src={Image_1} alt="image_1" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={Image_7} />
+            <img src={Image_6} alt="image_2" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={Image_8} />
+            <img src={Image_7} alt="image_3" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Image_8} alt="image_4" />
           </SwiperSlide>
         </Swiper>
       </div>

@@ -41,10 +41,10 @@ export const StyledProductSizingChart = Modal.styled`
         cursor: pointer;
     
         svg {
-          stroke:  ${({ theme }: any) => theme.white};
+          stroke:  #ffffff;
     
           &:hover {
-              stroke:  ${({ theme }: any) => theme.grey};
+              stroke: #AFAFB6;
           }
         }
       }

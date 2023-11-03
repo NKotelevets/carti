@@ -57,6 +57,15 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
     }: CarouselProps,
     CarouselRef,
   ) => {
+    const len = useMemo(() => data.length, [data?.length]);
+    const theta = useMemo(() => 360 / len, [len]);
+
+    const radius = useMemo(() => Math.round(itemWidth / 2 / Math.tan(Math.PI / len)), [itemWidth, len]);
+
+    const ref = useRef<HTMLDivElement>(null);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [currentAngle, setCurrentAngle] = useState(0);
+
     const data: DecoratedCarouselItem[] = useMemo(
       () =>
         items.map((item) => ({
@@ -67,17 +76,6 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
         })),
       [items],
     );
-    console.log(itemWidth);
-
-    const len = useMemo(() => data.length, [data.length]);
-    const theta = useMemo(() => 360 / len, [len]);
-
-    const radius = useMemo(() => Math.round(itemWidth / 2 / Math.tan(Math.PI / len)), [itemWidth, len]);
-
-    const ref = useRef<HTMLDivElement>(null);
-    const [prevSelectedIndex, setPrevSelectedIndex] = useState(0);
-    const [selectedIndex, setSelectedIndex] = useState(0);
-    const [currentAngle, setCurrentAngle] = useState(0);
 
     useEffect(() => {
       onChangeSlide && onChangeSlide(selectedIndex);
@@ -108,10 +106,8 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
       },
       [len, radius, theta, selectedIndex],
     );
-    console.log(currentAngle);
 
     const getItemStyle = useCallback((): CSSProperties => {
-      //   const angle = theta * selectedIndex * -1
       return {
         transform: `translateZ(${-1 * radius}px) rotateY(${currentAngle}deg)`,
       };
@@ -126,7 +122,6 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
     );
 
     const prev = useCallback(() => {
-      setPrevSelectedIndex(selectedIndex);
       setSelectedIndex((prev) => {
         if (prev === 0) {
           return len - 1;
@@ -138,7 +133,6 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
     }, [selectedIndex, theta, len]);
 
     const next = useCallback(() => {
-      setPrevSelectedIndex(selectedIndex);
       setSelectedIndex((prev) => {
         if (prev === len - 1) {
           return 0;
@@ -185,27 +179,9 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
                 style={getSlideStyle(index)}
                 onClick={() => {
                   if (item.onClick) item.onClick();
-                  setPrevSelectedIndex(selectedIndex);
 
                   if (slideOnClick) {
-                    console.log(prevSelectedIndex);
-
-                    // if (
-                    //   prevSelectedIndex + 1 === index ||
-                    //   (prevSelectedIndex === len - 1 && index === 0) ||
-                    //   (index > selectedIndex && index !== 0 && index !== len - 1)
-                    // ) {
-                    //   setCurrentAngle((prev) => prev + -theta);
-                    // } else if (
-                    //   prevSelectedIndex - 1 === index ||
-                    //   (prevSelectedIndex === 0 && index === len - 1) ||
-                    //   (index < selectedIndex && index !== 0 && index !== len - 1)
-                    // ) {
-                    //   setCurrentAngle((prev) => prev + theta);
-                    // } else {
                     setCurrentAngle(theta * index * -1);
-                    // }
-
                     setSelectedIndex(index);
                   }
                 }}

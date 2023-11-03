@@ -14,7 +14,7 @@ export const MyCardItem: FC<MyCardItemProps> = ({ name, price, sizes, image }) =
   const [count, setCount] = useState(1);
   return (
     <StyledMyCardItem>
-      <img src={image} alt={'image'} className="image" />
+      <img src={image} alt="image" className="image" />
       <div className="description-container">
         <p className="title">{name}</p>
         <p className="sizes">
@@ -28,7 +28,7 @@ export const MyCardItem: FC<MyCardItemProps> = ({ name, price, sizes, image }) =
             </Button>
             <span className="counter">{count}</span>
             <Button onClick={() => setCount((prev) => prev + 1)} textButton width="auto">
-              <img src={PlusIcon} alt="minus" />
+              <img src={PlusIcon} alt="plus" />
             </Button>
           </div>
           <img src={TrashIcon} alt="remove" className="trash" />

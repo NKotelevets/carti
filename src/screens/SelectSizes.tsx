@@ -1,13 +1,16 @@
 import { FC, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-
-import { StyledProductScreens } from '../styles/screens/ProductScreens';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination } from 'swiper/modules';
-import { Button } from '../components/Button';
-// import { CarouselRef } from 'react-round-carousel';
-import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
+import Slider from 'react-slick';
 import 'react-round-carousel/src/index.css';
+
+import { Button } from '../components/Button';
+import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
+import { StyledProductScreens } from '../styles/screens/ProductScreens';
+import { Close } from '../assets/svg';
+
 import Sizes from '../assets/images/Sizes.png';
 import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
@@ -16,12 +19,6 @@ import Image_4 from '../assets/images/joshua/product_4_1.png';
 import Image_6 from '../assets/images/joshua/product_1_3.png';
 import Image_7 from '../assets/images/joshua/product_1_4.png';
 import Image_8 from '../assets/images/joshua/product_1_5.png';
-import Slider from 'react-slick';
-
-import { Close } from '../assets/svg';
-import { useNavigate } from 'react-router-dom';
-// import RoundedSlider from '../components/RoundedSlider';
-// import Carroussel from '../components/Carousel';
 
 const sizes = [
   {
@@ -77,7 +74,6 @@ const items = [
 ];
 
 export const SelectSizes: FC = () => {
-  // const carouselRef = React.createRef<CarouselRef>();
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [selectedSize, setSelectedSize] = useState('');
   const navigate = useNavigate();
@@ -92,8 +88,7 @@ export const SelectSizes: FC = () => {
     const width = window.innerWidth;
 
     if (width < 965) {
-      !isMobile && // to limit setting state only the first time
-        setIsMobile(true);
+      !isMobile && setIsMobile(true);
     } else {
       setIsMobile(false);
     }
@@ -102,7 +97,7 @@ export const SelectSizes: FC = () => {
   useEffect(() => {
     window.addEventListener('resize', listenWidth);
     return () => window.removeEventListener('resize', listenWidth);
-  }, []);
+  }, [listenWidth]);
 
   const handleSelectSizesModal = () => {
     setIsOpenModal(!isOpenModal);
@@ -142,15 +137,6 @@ export const SelectSizes: FC = () => {
     ],
   };
 
-  // const selectedProducts = items.map((item, index) => ({
-  //   key: uuidv4(),
-  //   content: (
-  //     <>
-  //       <img src={item.image} alt={item.alt} />
-  //     </>
-  //   ),
-  // }));
-
   const templateImages = items.map((item: any, idx: number) => {
     return (
       <div className={idx === imageIndex ? 'activeSlide' : 'slide'} key={uuidv4()}>
@@ -176,7 +162,7 @@ export const SelectSizes: FC = () => {
         className="mySwiper"
       >
         {sizes.map((sizes) => (
-          <SwiperSlide>
+          <SwiperSlide key={uuidv4()}>
             <label
               className={`select-size-options ${
                 selectedSize && selectedSize === sizes.label && 'selected-size-effect'
@@ -212,19 +198,16 @@ export const SelectSizes: FC = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={Image_1} />
-          </SwiperSlide>
-          {/* <SwiperSlide>
-            <img src={Image_5} />
-          </SwiperSlide> */}
-          <SwiperSlide>
-            <img src={Image_6} />
+            <img src={Image_1} alt="image_1" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={Image_7} />
+            <img src={Image_6} alt="image_2" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={Image_8} />
+            <img src={Image_7} alt="image_3" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Image_8} alt="image_4" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -235,7 +218,7 @@ export const SelectSizes: FC = () => {
           slideOnClick
           itemWidth={210}
           onChangeSlide={(index) => {
-            console.log('122112', index);
+            console.log('test', index);
           }}
         /> */}
         {!isMobile && (

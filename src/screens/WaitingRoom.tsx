@@ -68,7 +68,7 @@ export const WaitingRoom: FC = () => {
         }));
       }
     }, 1000);
-  }, [currentYear]);
+  }, [currentYear, timer.isEvent]);
 
   const handleAddToCalendar = () => {
     console.log('handleAddToCalendar');
@@ -173,7 +173,7 @@ export const WaitingRoom: FC = () => {
           <Close />
         </button>
         <h2>INVITE A FRIEND</h2>
-        <label>enter friend’s phone number</label>
+        <label htmlFor="#phone">enter friend’s phone number</label>
         <PhoneInput
           international
           placeholder="Enter phone number"
@@ -181,10 +181,11 @@ export const WaitingRoom: FC = () => {
           value={value}
           onChange={() => setValue}
           smartCaret={false}
+          id="phone"
         />
-        <label>Comment (optional)</label>
+        <label htmlFor="#comment">Comment (optional)</label>
 
-        <textarea></textarea>
+        <textarea id="comment"></textarea>
         <p>Max 120 symbols</p>
 
         <Button onClick={handleSelectSizesModal}>send invitation</Button>

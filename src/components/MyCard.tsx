@@ -1,14 +1,17 @@
-import { StyledMyCard } from '../styles/components/MyCard';
 import { FC, HTMLProps } from 'react';
+import { v4 as uuid } from 'uuid';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import { Button } from './Button';
 import { MyCardItem } from './MyCardItem';
-import { useNavigate } from 'react-router-dom';
+import { StyledMyCard } from '../styles/components/MyCard';
+import { setStatusCard } from '../redux/reducers/mainReducer';
+
 import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
 import Image_3 from '../assets/images/joshua/product_3_1.png';
 import Image_4 from '../assets/images/joshua/product_4_1.png';
-import { setStatusCard } from '../redux/reducers/mainReducer';
-import { useDispatch } from 'react-redux';
 
 interface MyCardProps extends HTMLProps<HTMLElement> {
   showMyCard?: boolean;
@@ -55,6 +58,7 @@ export const MyCard: FC<MyCardProps> = ({ showMyCard }) => {
               price={product.price}
               image={product.image}
               sizes={product.size.toString()}
+              key={uuid()}
             />
           ))}
           <div className="bottom-nav">
