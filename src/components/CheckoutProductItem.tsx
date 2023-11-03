@@ -11,7 +11,7 @@ interface CheckoutProductItemProps extends HTMLProps<HTMLElement> {
 export const CheckoutProductItem: FC<CheckoutProductItemProps> = ({ name, price, size, image }) => {
   return (
     <StyledCheckoutProductItem>
-      <img src={image} alt={'image'} className="image" />
+      <img src={image} alt="image" className="image" />
       <div className="description-container">
         <div className="name-container">
           <p className="title">{name}</p>

@@ -79,7 +79,7 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
 
     useEffect(() => {
       onChangeSlide && onChangeSlide(selectedIndex);
-    }, [selectedIndex]);
+    }, [selectedIndex, onChangeSlide]);
 
     const getSlideStyle = useCallback(
       (index: number): CSSProperties => {
@@ -130,7 +130,7 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
         }
       });
       setCurrentAngle((prev) => prev + theta);
-    }, [selectedIndex, theta, len]);
+    }, [theta, len]);
 
     const next = useCallback(() => {
       setSelectedIndex((prev) => {
@@ -141,7 +141,7 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
         }
       });
       setCurrentAngle((prev) => prev - theta);
-    }, [selectedIndex, theta]);
+    }, [selectedIndex, theta, len]);
 
     useEffect(() => {
       const area = ref?.current;

@@ -14,7 +14,7 @@ export const MyCardItem: FC<MyCardItemProps> = ({ name, price, sizes, image }) =
   const [count, setCount] = useState(1);
   return (
     <StyledMyCardItem>
-      <img src={image} alt="image" className="image" />
+      <img src={image} alt="image_1" className="image" />
       <div className="description-container">
         <p className="title">{name}</p>
         <p className="sizes">
