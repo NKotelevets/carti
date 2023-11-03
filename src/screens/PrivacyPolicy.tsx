@@ -11,9 +11,9 @@ export const PrivacyPolicy: FC = () => {
       <h2 className="title">privacy policy</h2>
       <p className="sub-title">Last updated April 01, 2023</p>
       <ul className="list">
-        This privacy notice for NASO™️ Technologies Inc. (doing business as NASO)("NASO," "we," "us," or "our"),
-        describes how and why we might collect, store, use, and/or share ("process") your information when you use our
-        services ("Services"), such as when you:
+        This privacy notice for NASO™️ Technologies Inc. (doing business as NASO)(&quot;NASO,&quot; &quot;we,&quot;
+        &quot;us,&quot; or &quot;our&quot;), describes how and why we might collect, store, use, and/or share
+        (&quot;process&quot;) your information when you use our services (&quot;Services&quot;), such as when you:
         <li>
           Visit our website at <a href="https://naso.io/">https://naso.io/</a>, or any website of ours that links to
           this privacy notice
@@ -172,8 +172,8 @@ export const PrivacyPolicy: FC = () => {
         <span>Social Media Login Data. </span>
         We may provide you with the option to register with us using your existing social media account details, like
         your Facebook, Twitter, or other social media account. If you choose to register in this way, we will collect
-        the information described in the section called "
-        <a href="https://naso.io/">HOW DO WE HANDLE YOUR SOCIAL LOGINS?</a>" below.
+        the information described in the section called &quot;
+        <a href="https://naso.io/">HOW DO WE HANDLE YOUR SOCIAL LOGINS?</a>&quot; below.
       </p>
 
       <ul className="list">
@@ -183,27 +183,27 @@ export const PrivacyPolicy: FC = () => {
         <li>
           Geolocation Information. We may request access or permission to track location-based information from your
           mobile device, either continuously or while you are using our mobile application(s), to provide certain
-          location-based services. If you wish to change our access or permissions, you may do so in your device's
+          location-based services. If you wish to change our access or permissions, you may do so in your device&lsquo;s
           settings.
         </li>
         <li>
           Mobile Device Access. We may request access or permission to certain features from your mobile device,
-          including your mobile device's calendar, reminders, and other features. If you wish to change our access or
-          permissions, you may do so in your device's settings.
+          including your mobile device&lsquo;s calendar, reminders, and other features. If you wish to change our access
+          or permissions, you may do so in your device&lsquo;s settings.
         </li>
         <li>
           Mobile Device Data. We automatically collect device information (such as your mobile device ID, model, and
           manufacturer), operating system, version information and system configuration information, device and
           application identification numbers, browser type and version, hardware model Internet service provider and/or
           mobile carrier, and Internet Protocol (IP) address (or proxy server). If you are using our application(s), we
-          may also collect information about the phone network associated with your mobile device, your mobile device’s
-          operating system or platform, the type of mobile device you use, your mobile device’s unique device ID, and
-          information about the features of our application(s) you accessed.
+          may also collect information about the phone network associated with your mobile device, your mobile
+          device&lsquo;s operating system or platform, the type of mobile device you use, your mobile device&lsquo;s
+          unique device ID, and information about the features of our application(s) you accessed.
         </li>
         <li>
           Push Notifications. We may request to send you push notifications regarding your account or certain features
           of the application(s). If you wish to opt out from receiving these types of communications, you may turn them
-          off in your device's settings.
+          off in your device&lsquo;s settings.
         </li>
         This information is primarily needed to maintain the security and operation of our application(s), for
         troubleshooting, and for our internal analytics and reporting purposes.
@@ -233,8 +233,8 @@ export const PrivacyPolicy: FC = () => {
           on how you interact with us, this log data may include your IP address, device information, browser type, and
           settings and information about your activity in the Services (such as the date/time stamps associated with
           your usage, pages and files viewed, searches, and other actions you take such as which features you use),
-          device event information (such as system activity, error reports (sometimes called "crash dumps"), and
-          hardware settings).
+          device event information (such as system activity, error reports (sometimes called &quot;crash dumps&quot;),
+          and hardware settings).
         </li>
         <li>
           Device Data. We collect device data such as information about your computer, phone, tablet, or other device
@@ -244,10 +244,10 @@ export const PrivacyPolicy: FC = () => {
           information.
         </li>
         <li>
-          Location Data. We collect location data such as information about your device's location, which can be either
-          precise or imprecise. How much information we collect depends on the type and settings of the device you use
-          to access the Services. For example, we may use GPS and other technologies to collect geolocation data that
-          tells us your current location (based on your IP address). You can opt out of allowing us to collect this
+          Location Data. We collect location data such as information about your device&lsquo;s location, which can be
+          either precise or imprecise. How much information we collect depends on the type and settings of the device
+          you use to access the Services. For example, we may use GPS and other technologies to collect geolocation data
+          that tells us your current location (based on your IP address). You can opt out of allowing us to collect this
           information either by refusing access to the information or by disabling your Location setting on your device.
           However, if you choose to opt out, you may not be able to use certain aspects of the Services.
         </li>

@@ -27,8 +27,7 @@ export default function Carroussel({ cards }: any) {
       {
         breakpoint: 820,
         settings: {
-          slidesToScroll: 1,
-          // centerPadding: '60px',
+          slidesToScroll: 2,
           slidesToShow: 1,
           centerMode: true,
         },

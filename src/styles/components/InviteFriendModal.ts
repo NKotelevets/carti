@@ -14,7 +14,7 @@ export const StyledInviteFriendModal = Modal.styled`
     z-index: 1000000;
 
     h2 {
-        color: ${({ theme }: any) => theme.white};
+        color: #ffffff;
         text-align: center;
         font-size: 26px;
         font-style: normal;
@@ -32,27 +32,27 @@ export const StyledInviteFriendModal = Modal.styled`
     .PhoneInputCountry {
       margin: 0;
       padding: 5px 10px;
-      border: 1px solid ${({ theme }: any) => theme.white};
+      border: 1px solid #ffffff;
       border-right: none;
       background: rgba(25, 25, 27, 0.5);
       backdrop-filter: blur(7.5px);
 
       .PhoneInputCountrySelectArrow {
-        border-color: ${({ theme }: any) => theme.white};
+        border-color: #ffffff;
         opacity: 1;
       }
     }
 
     .PhoneInputInput {
       padding: 11px 15px;
-      border: 1px solid ${({ theme }: any) => theme.white};
+      border: 1px solid #ffffff;
       background: transparent;
       font-size: 12px;
       font-style: normal;
       font-weight: 600;
       line-height: 17px;
       letter-spacing: 0.12px;
-      color: ${({ theme }: any) => theme.white};
+      color: #ffffff;
       background: rgba(25, 25, 27, 0.5);
       backdrop-filter: blur(7.5px);
 
@@ -63,10 +63,9 @@ export const StyledInviteFriendModal = Modal.styled`
   }
 
   label{ 
-      color: ${({ theme }: any) => theme.white};
+    color: #ffffff;
     text-align: left;
     margin-bottom: 8px;
-
     font-size: 12px;
     width: 100%;
     font-style: normal;
@@ -85,10 +84,10 @@ export const StyledInviteFriendModal = Modal.styled`
         cursor: pointer;
     
         svg {
-          stroke:  ${({ theme }: any) => theme.white};
+          stroke: #ffffff;
     
           &:hover {
-              stroke:  ${({ theme }: any) => theme.grey};
+              stroke:  #AFAFB6;
           }
         }
       }
@@ -103,10 +102,10 @@ export const StyledInviteFriendModal = Modal.styled`
     font-weight: 600;
     line-height: 17px;
     letter-spacing: 0.12px;
-    color: ${({ theme }: any) => theme.white};
+    color: #ffffff;
     padding: 10px;
     outline: none;
-    border: 1px solid ${({ theme }: any) => theme.white};
+    border: 1px solid #ffffff;
     box-sizing: border-box;
     margin-bottom: 6px;
   }

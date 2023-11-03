@@ -12,7 +12,7 @@ export const StyledSelectSizesModal = Modal.styled`
     width: 30vw;
 
 h3{
-    color: ${({ theme }: any) => theme.white};
+    color: #ffffff;
 
     text-align: center;
     font-size: 24px;
@@ -24,11 +24,11 @@ h3{
 }
 
 .text-button {
-    color: ${({ theme }: any) => theme.white};
+    color: #ffffff;
     font-size: 12px;
     font-weight: 400;
     padding-bottom: 4px;
-    border-bottom: 1px solid ${({ theme }: any) => theme.white};
+    border-bottom: 1px solid #ffffff;
     width: fit-content;
     margin: 0 auto;
     margin-bottom: 34px;
@@ -44,7 +44,7 @@ h3{
   }
   
   .swiper-slide {
-    color: ${({ theme }: any) => theme.white};
+    color: #ffffff;
     text-align: center;
     font-size: 14px;
     font-style: normal;

@@ -1,4 +1,4 @@
-import { FC, useCallback, useRef, useState } from 'react';
+import { FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import { StyledCheckoutScreens } from '../styles/screens/Checkout';
@@ -8,7 +8,6 @@ import { Close, Fedex, Ups } from '../assets/svg';
 import { Button } from '../components/Button';
 import { CheckoutProductItem } from '../components/CheckoutProductItem';
 import { StyledSelectAdressModal } from '../styles/components/SelectAdressModal';
-// import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
 import Image_3 from '../assets/images/joshua/product_3_1.png';
@@ -42,43 +41,27 @@ const products = [
   },
 ];
 
-// const libraries: 'places'[] = ['places'];
-
 export const googleMapsApiKey: string = import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY;
 
 export const Checkout: FC = () => {
   const [value, setValue] = useState();
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
-  // const { isLoaded } = useJsApiLoader({
-  //   id: '8d4d3f6d6171c09d',
-  //   googleMapsApiKey: googleMapsApiKey ?? '',
-  //   libraries,
-  // });
   const [isOpenModal, setIsOpenModal] = useState(false);
-  // const [isMobile, setIsMobile] = useState(window.innerWidth < 965);
 
   function handleSelectAddressModal() {
     setIsOpenModal(!isOpenModal);
   }
 
-  const mapRef = useRef<google.maps.Map>();
-  // const options = useMemo(
-  //   () => ({
-  //     mapId: '8d4d3f6d6171c09d',
-  //     disableDefaultUI: false,
-  //     clickableIcons: false,
-  //   }),
-  //   [],
+  // const mapRef = useRef<google.maps.Map>();
+
+  // const onLoad = useCallback(
+  //   (map: google.maps.Map): void | Promise<void> => {
+  //     setIsLoaded(true);
+  //     mapRef.current = map;
+  //   },
+  //   [setIsLoaded],
   // );
-  console.log(isLoaded);
-  const onLoad = useCallback(
-    (map: google.maps.Map): void | Promise<void> => {
-      setIsLoaded(true);
-      mapRef.current = map;
-    },
-    [setIsLoaded],
-  );
 
   const defaultProps = {
     center: {
@@ -87,22 +70,6 @@ export const Checkout: FC = () => {
     },
     zoom: 11,
   };
-
-  // const listenWidth = () => {
-  //   const width = window.innerWidth;
-
-  //   if (width < 965) {
-  //     !isMobile && // to limit setting state only the first time
-  //       setIsMobile(true);
-  //   } else {
-  //     setIsMobile(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('resize', listenWidth);
-  //   return () => window.removeEventListener('resize', listenWidth);
-  // }, []);
 
   return (
     <StyledCheckoutScreens>
@@ -115,11 +82,11 @@ export const Checkout: FC = () => {
               <Form className="form">
                 <div className="row">
                   <div className="column label-sender">
-                    <label>SENDER NAME</label>
-                    <Field name="sender" type="text" className="input-text" placeholder="SENDER NAME" />
+                    <label htmlFor="#sender">SENDER NAME</label>
+                    <Field id="sender" name="sender" type="text" className="input-text" placeholder="SENDER NAME" />
                   </div>
                   <div className="column label-sender">
-                    <label>PHONE NUMBER</label>
+                    <label htmlFor="#phone">PHONE NUMBER</label>
                     <PhoneInput
                       international
                       placeholder="Phone number"
@@ -128,11 +95,12 @@ export const Checkout: FC = () => {
                       onChange={() => setValue}
                       smartCaret={false}
                       className="input-text-phone input-text"
+                      id="phone"
                     />
                   </div>
                 </div>
                 <div className="column">
-                  <label>ADDRESS 1</label>
+                  <label htmlFor="#address_1">ADDRESS 1</label>
                   <Field
                     name="address_1"
                     type="text"
@@ -141,11 +109,13 @@ export const Checkout: FC = () => {
                     onFocus={handleSelectAddressModal}
                     autoComplete="off"
                     aria-autocomplete="none"
+                    id="address_1"
                   />
                 </div>
                 <div className="column">
-                  <label>ADDRESS 2</label>
-                  <Field name="address_2" type="text" className="input-text" placeholder="ADDRESS 2" />
+                  <label htmlFor="#address_2">ADDRESS 2</label>
+
+                  <Field id="address_2" name="address_2" type="text" className="input-text" placeholder="ADDRESS 2" />
                 </div>
 
                 <h2 className="subtitle-form">SHIPPING METHOD</h2>
@@ -168,7 +138,6 @@ export const Checkout: FC = () => {
           </Formik>
         </div>
         <div className="products-container">
-          {/* {!isMobile && ( */}
           <div className="products-list ">
             {products.map((product: any) => (
               <CheckoutProductItem
@@ -180,7 +149,6 @@ export const Checkout: FC = () => {
               />
             ))}
           </div>
-          {/* )} */}
 
           <div className="bottom-container">
             <div className="prices">
@@ -216,13 +184,12 @@ export const Checkout: FC = () => {
         <p className="description">
           Choose your location by clicking on the map or entering the address in the search field
         </p>
-        {/* {isLoaded && <GoogleMap zoom={10} options={options} mapContainerClassName="map-container" onLoad={onLoad} />} */}
         <div className="map-container">
           <GoogleMapReact
             bootstrapURLKeys={{ key: googleMapsApiKey }}
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}
-            onGoogleApiLoaded={({ map }: { map: google.maps.Map }) => onLoad(map)}
+            // onGoogleApiLoaded={({ map }: { map: google.maps.Map }) => onLoad(map)}
           ></GoogleMapReact>
         </div>
         <Button type="button" onClick={() => console.log('do ')} width={'400px'} className="button">

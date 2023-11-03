@@ -6,6 +6,8 @@ type IImageProps = {
   loader?: 'circle' | 'skeleton';
   containerClassName?: string;
   skeletonClassName?: string;
+  src: string;
+  alt: string;
 } & React.ComponentProps<'img'>;
 
 export const Image = ({

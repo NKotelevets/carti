@@ -26,11 +26,11 @@ export const StyledMyCard = styled.div<StyledMyCardProps>`
     animation-fill-mode: forwards;
     width: 350px;
     position: fixed;
-    background-color: ${({ theme }: any) => theme.dark};
+    background-color: ${({ theme }) => theme.dark};
     height: calc(100vh - 56px);
     right: -350px;
     top: 56px;
-    border-left: 1px solid ${({ theme }: any) => theme.white};
+    border-left: 1px solid ${({ theme }) => theme.white};
     padding: 40px 30px;
     box-sizing: border-box;
     overflow-y: scroll;
@@ -45,9 +45,7 @@ export const StyledMyCard = styled.div<StyledMyCardProps>`
   .bottom-nav {
     position: sticky;
     bottom: -40px;
-    // width: calc(100% - 80px);
-    background: ${({ theme }: any) => theme.dark};
-    // backdrop-filter: blur(5px);
+    background: ${({ theme }) => theme.dark};
     padding: 40px 0;
 
     .button-action-first {
@@ -60,7 +58,7 @@ export const StyledMyCard = styled.div<StyledMyCardProps>`
       margin-bottom: 24px;
 
       span {
-        color: ${({ theme }: any) => theme.white};
+        color: ${({ theme }) => theme.white};
         text-align: center;
         font-size: 14px;
         font-style: normal;

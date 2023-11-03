@@ -1,27 +1,30 @@
 import { FC, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { Tooltip } from 'react-tooltip';
+import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+
+import { HomePageProductItem } from '../components/HomePageProductItem';
+import { MyCard } from '../components/MyCard';
+import { Button } from '../components/Button';
+import { setStatusCard } from '../redux/reducers/mainReducer';
+import { RootState } from '../redux/store';
+
+import { StyledSelectSizesModal } from '../styles/components/SelectSizesModal';
 import { StyledMissedItemsScreens } from '../styles/screens/MissedItemsScreen';
+import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
+
 import HelperIcon from '../assets/images/question-mark-circle.png';
 import Image_1 from '../assets/images/joshua/product_1_1.png';
 import Image_2 from '../assets/images/joshua/product_2_1.png';
 import Image_3 from '../assets/images/joshua/product_3_1.png';
 import Image_4 from '../assets/images/joshua/product_4_1.png';
-import { HomePageProductItem } from '../components/HomePageProductItem';
-import { Button } from '../components/Button';
-import { StyledSelectSizesModal } from '../styles/components/SelectSizesModal';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import { useSelector } from 'react-redux';
 import Sizes from '../assets/images/Sizes.png';
-
-import 'swiper/css';
-import { setStatusCard } from '../redux/reducers/mainReducer';
-import { MyCard } from '../components/MyCard';
-import { RootState } from '../redux/store';
-import { useNavigate } from 'react-router-dom';
-import { StyledProductSizingChart } from '../styles/components/ProductSizingChartModal';
 import { Close } from '../assets/svg';
-import { Tooltip } from 'react-tooltip';
-import { useDispatch } from 'react-redux';
+
 const products = [
   {
     image: Image_1,
@@ -77,27 +80,28 @@ const sizes = [
 
 export const MissedItems: FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [selectedSize, setSelectedSize] = useState('');
+  const [isOpenModalSizes, setIsOpenModalSizes] = useState(false);
 
   const { myCardActive } = useSelector((state: RootState) => state.main);
-  const navigate = useNavigate();
 
   // const goToCard = () => {
   //   navigate('/checkout');
   //   // console.log('goToCard');
   //   // dispatch(setStatusCard(true));
   // };
+
   const addItemToCard = () => {
     console.log('addItemToCard');
     setIsOpenModal(true);
   };
 
-  function handleSelectSizesModal() {
+  const handleSelectSizesModal = () => {
     setIsOpenModal(!isOpenModal);
-  }
-
-  const [isOpenModalSizes, setIsOpenModalSizes] = useState(false);
+  };
 
   const handleSelectSizesChartModal = () => {
     setIsOpenModalSizes(!isOpenModalSizes);
@@ -164,7 +168,7 @@ export const MissedItems: FC = () => {
           className="mySwiper"
         >
           {sizes.map((sizes) => (
-            <SwiperSlide>
+            <SwiperSlide key={uuidv4()}>
               <label
                 className={`select-size-options ${
                   selectedSize && selectedSize === sizes.label && 'selected-size-effect'

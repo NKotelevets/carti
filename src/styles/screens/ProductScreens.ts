@@ -147,7 +147,7 @@ export const StyledProductScreens = styled.div`
     }
 
     .swiper-slide {
-      color: ${({ theme }: any) => theme.white};
+      color: ${({ theme }) => theme.white};
       text-align: center;
       font-size: 14px;
       font-style: normal;
@@ -203,7 +203,7 @@ export const StyledProductScreens = styled.div`
     }
 
     p {
-      color: ${({ theme }: any) => theme.white};
+      color: ${({ theme }) => theme.white};
       text-align: center;
       font-size: 14px;
       font-style: normal;

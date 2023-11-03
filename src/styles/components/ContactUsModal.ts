@@ -40,12 +40,12 @@ export const ContactUsModal = Modal.styled`
         }
     
         .label {
-          color: ${({ theme }: any) => theme.white};
+          color: #ffffff;
           text-transform: uppercase;
         }
     
         .error {
-          color: ${({ theme }: any) => theme.red};
+          color: #F32837;
         }
       }
     
@@ -55,7 +55,7 @@ export const ContactUsModal = Modal.styled`
         .input-text {
           width: 100%;
           padding: 11px 15px;
-          border: 1px solid ${({ theme }: any) => theme.white};
+          border: 1px solid #ffffff;
           font-family: 'Manrope', sans-serif;
           font-size: 12px;
           font-style: normal;
@@ -63,7 +63,7 @@ export const ContactUsModal = Modal.styled`
           line-height: 17px;
           letter-spacing: 0.12px;
           text-transform: uppercase;
-          color: ${({ theme }: any) => theme.white};
+          color: #ffffff;
           box-sizing: border-box;
           margin-bottom: 24px;
           background: rgba(25, 25, 27, 0.5);
@@ -78,19 +78,19 @@ export const ContactUsModal = Modal.styled`
       .agreement-wrapper {
         margin-bottom: 24px;
         .agreement-text {
-          color: ${({ theme }: any) => theme.grey};
+          color: #AFAFB6;
           font-size: 12px;
           font-style: normal;
           font-weight: 400;
           line-height: 150%;
     
           a {
-            color: ${({ theme }: any) => theme.white};
+            color: #ffffff;
             font-weight: 500;
             text-decoration: none;
     
             &:hover {
-              color: ${({ theme }: any) => theme.grey};
+              color: #AFAFB6;
               text-decoration: underline;
             }
           }
@@ -106,7 +106,7 @@ export const ContactUsModal = Modal.styled`
         .tile {
           width: 30px;
           height: 8px;
-          border: 1px solid ${({ theme }: any) => theme.grey};
+          border: 1px solid #AFAFB6;
           background: transparent;
           background: linear-gradient(to right, white 50%, transparent 50%);
           background-size: 200% 100%;
@@ -115,7 +115,7 @@ export const ContactUsModal = Modal.styled`
     
           &.active {
             background-position: left bottom;
-            border-color: ${({ theme }: any) => theme.white};
+            border-color: #ffffff;
           }
         }
       }
@@ -124,7 +124,7 @@ export const ContactUsModal = Modal.styled`
         margin-top: 16px;
     
         &:hover {
-          color: ${({ theme }: any) => theme.grey};
+          color: #AFAFB6;
           text-decoration: underline;
         }
       }
@@ -139,10 +139,10 @@ export const ContactUsModal = Modal.styled`
         font-weight: 600;
         line-height: 17px;
         letter-spacing: 0.12px;
-        color: ${({ theme }: any) => theme.white};
+        color: #ffffff;
         padding: 10px;
         outline: none;
-        border: 1px solid ${({ theme }: any) => theme.white};
+        border: 1px solid #ffffff;
         box-sizing: border-box;
         margin-bottom: 50px;
     }
@@ -156,10 +156,10 @@ export const ContactUsModal = Modal.styled`
         cursor: pointer;
     
         svg {
-          stroke:  ${({ theme }: any) => theme.white};
+          stroke:  #ffffff;
     
           &:hover {
-              stroke:  ${({ theme }: any) => theme.grey};
+              stroke: #AFAFB6;
           }
         }
       }

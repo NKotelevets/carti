@@ -53,10 +53,10 @@ export const StyledSelectAdressModal = Modal.styled`
     cursor: pointer;
 
     svg {
-      stroke:  ${({ theme }: any) => theme.white};
+      stroke: #FFFFFF;
 
       &:hover {
-          stroke:  ${({ theme }: any) => theme.grey};
+          stroke: #AFAFB6;
       }
     }
   }
