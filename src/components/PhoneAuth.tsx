@@ -36,7 +36,7 @@ const genderList = [
 ];
 
 export const PhoneAuth: FC<Props> = ({ title, subtitle, subtitleLinkText, subtitleLinkPath, stepsCount }) => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState<string | undefined>();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [startDate, setStartDate] = useState<Date | null>();
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -90,7 +90,8 @@ export const PhoneAuth: FC<Props> = ({ title, subtitle, subtitleLinkText, subtit
             placeholder="Enter phone number"
             defaultCountry="US"
             value={value}
-            onChange={() => setValue}
+            limitMaxLength={true}
+            onChange={setValue}
             smartCaret={false}
           />
           {stepsCount === 3 && (
