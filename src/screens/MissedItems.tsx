@@ -159,13 +159,18 @@ export const MissedItems: FC = () => {
         <h3>SELECT SIZE</h3>
 
         <Swiper
-          slidesPerView={6}
+          slidesPerView={1}
           spaceBetween={30}
           pagination={{
             clickable: true,
           }}
           modules={[Pagination]}
           className="mySwiper"
+          breakpoints={{
+            640: {
+              slidesPerView: 6,
+            }
+          }}
         >
           {sizes.map((sizes) => (
             <SwiperSlide key={uuidv4()}>
