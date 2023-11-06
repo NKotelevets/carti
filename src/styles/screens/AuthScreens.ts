@@ -22,7 +22,7 @@ export const StyledAuthScreens = styled.div<StyledProps>`
     width: 100%;
     height: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
-    z-index: 20;
+    z-index: 10001;
 
     .form-wrapper {
       display: flex;
