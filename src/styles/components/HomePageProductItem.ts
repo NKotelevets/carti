@@ -22,6 +22,7 @@ export const StyledHomePageProductItem = styled.div<StyledHomePageProductItemPro
     width: 100%;
     margin-bottom: 40px;
     object-fit: contain !important;
+    height: -webkit-fill-available;
   }
 
   .description-container {
