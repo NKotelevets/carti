@@ -10,7 +10,7 @@ import { useInView } from 'react-intersection-observer';
 import Image_1 from '../assets/images/carti/product_1_1.png';
 import Image_2 from '../assets/images/carti/product_2_1.png';
 import Image_3 from '../assets/images/carti/product_3_1.png';
-import Image_4 from '../assets/images/carti/product_4_1.jpg';
+import Image_4 from '../assets/images/carti/product_4_1.png';
 import { useNavigate } from 'react-router-dom';
 
 const products = [
