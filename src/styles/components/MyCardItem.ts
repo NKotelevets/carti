@@ -47,8 +47,9 @@ export const StyledMyCardItem = styled.div`
   }
 
   .image {
-    height: 100px;
+    height: auto;
     // margin-bottom: 20px;
+    width: 30%;
   }
 
   .price {
