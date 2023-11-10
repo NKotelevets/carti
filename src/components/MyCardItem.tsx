@@ -16,7 +16,7 @@ export const MyCardItem: FC<MyCardItemProps> = ({ name, price, sizes, image }) =
     <StyledMyCardItem>
       <img src={image} alt="image_1" className="image" />
       <div className="description-container">
-        <p className="title">{name}</p>
+        <p className="title-my-card">{name}</p>
         <p className="sizes">
           size: <span>{sizes}</span>
         </p>

@@ -12,6 +12,7 @@ interface HomePageProductItemProps extends HTMLProps<HTMLElement> {
   actionButtonText?: string;
   width?: string;
   height?: string;
+  minheight?: string;
 }
 
 export const HomePageProductItem: FC<HomePageProductItemProps> = ({
@@ -23,11 +24,12 @@ export const HomePageProductItem: FC<HomePageProductItemProps> = ({
   actionButtonText,
   width,
   height,
+  minheight,
 }) => {
   const navigate = useNavigate();
 
   return (
-    <StyledHomePageProductItem width={width} height={height}>
+    <StyledHomePageProductItem width={width} height={height} minheight={minheight}>
       <img src={image} alt={name} />
       <div className="description-container">
         <p className="name">{name}</p>

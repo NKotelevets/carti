@@ -18,7 +18,7 @@ const cards = [
     height: 0.3819697761126822,
     offsetLeft: 0.67633587786259542,
     offsetTop: 0.33574660633484162,
-    start: 2,
+    start: 53,
     duration: 10,
     player_width: 786,
     player_height: 442,

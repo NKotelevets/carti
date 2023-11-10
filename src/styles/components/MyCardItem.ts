@@ -35,7 +35,7 @@ export const StyledMyCardItem = styled.div`
     margin: 0 10px;
     cursor: pointer;
   }
-  .title {
+  .title-my-card {
     color: ${({ theme }) => theme.white};
     text-align: left;
     font-size: 12px;

@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { HomePageProductItem } from '../components/HomePageProductItem';
 import Carroussel from '../components/Carousel';
-import Image_1 from '../assets/images/joshua/product_1_1.png';
-import Image_2 from '../assets/images/joshua/product_2_1.png';
-import Image_3 from '../assets/images/joshua/product_3_1.png';
-import Image_4 from '../assets/images/joshua/product_4_1.png';
+import Image_1 from '../assets/images/carti/product_1_1.png';
+import Image_2 from '../assets/images/carti/product_2_1.png';
+import Image_3 from '../assets/images/carti/product_3_1.png';
+import Image_4 from '../assets/images/carti/product_4_1.jpg';
 
 import { Button } from '../components/Button';
 import HelperIcon from '../assets/images/question-mark-circle.png';
@@ -17,23 +17,23 @@ import HelperIcon from '../assets/images/question-mark-circle.png';
 const products = [
   {
     image: Image_1,
-    name: 'AJBXNG Olympic Jacket',
-    price: '$ 169.00',
+    name: 'Playboi Carti Black Cat Hoodie',
+    price: '$ 359.00',
   },
   {
     image: Image_2,
-    name: 'Elite ESG10 Hustle Sparring Glove 16oz',
-    price: '$ 155.00',
+    name: 'Playboi Carti Burn Tee',
+    price: '$ 129.00',
   },
   {
     image: Image_3,
-    name: 'Dark Earth Hoodie',
-    price: '$ 75.00',
+    name: 'Playboi Carti x CPFM 4 WLR King Vamp T-shirt',
+    price: '$ 99.00',
   },
   {
     image: Image_4,
-    name: 'Sketch Tee White',
-    price: '$ 25.00',
+    name: 'Playboi Carti Fuck Off Tee',
+    price: '$ 109.00',
   },
 ];
 

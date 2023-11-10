@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 interface StyledHomePageProductItemProps extends HTMLProps<HTMLElement> {
   width?: string;
   height?: string;
+  minheight?: string;
 }
 
 export const StyledHomePageProductItem = styled.div<StyledHomePageProductItemProps>`
@@ -15,6 +16,7 @@ export const StyledHomePageProductItem = styled.div<StyledHomePageProductItemPro
   flex-direction: column;
   align-items: center;
   position: relative;
+  ${({ minheight }) => (minheight ? `min-height: ${minheight}` : '')};
 
   img {
     // height: ${({ height }) => (height ? '80%' : '220px')};
