@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 
 import { StyledFooter } from '../styles/components/Footer';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo2.svg';
+import logo from '../assets/images/carti/Logo.png';
 import { Button } from './Button';
 import { Field, Form, Formik } from 'formik';
 import { ContactUsModal } from '../styles/components/ContactUsModal';

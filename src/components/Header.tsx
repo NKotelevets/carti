@@ -2,7 +2,7 @@ import { FC, HTMLProps, useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { StyledHeader } from '../styles/components/Header';
 
-import logo from '../assets/images/logo2.svg';
+import logo from '../assets/images/carti/Logo.png';
 import ShoppingCard from '../assets/svg/ShoppingCard.svg';
 import { LeftArrow } from '../assets/svg';
 import { Button } from './Button';

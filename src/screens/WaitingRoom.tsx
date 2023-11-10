@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Button } from '../components/Button';
 import { ClockIcon, CameraIcon, InviteFriendIcon, Mute, Close } from '../assets/svg';
-import WaitingRoomVideo from '../assets/video/AJWaitingRoom.mp4';
+import WaitingRoomVideo from '../assets/video/CartiWR.mp4';
 import { StyledWaitingRoomScreens } from '../styles/screens/WaitingRoomScreens';
 import Countdown from '../components/CountDown';
 import { useNavigate } from 'react-router-dom';
@@ -112,7 +112,7 @@ export const WaitingRoom: FC = () => {
           </div>
           <div className="event-info">
             <div className="event-name-container event-info-block">
-              <span className="event-name">Genesis</span>
+              <span className="event-name">Antagonist</span>
               <div className="event-date">
                 <div>
                   <img src={CameraIcon} alt="camera" />
@@ -124,9 +124,7 @@ export const WaitingRoom: FC = () => {
                 </div>
               </div>
               <span className="event-description">
-                Discover the genesis of Anthony Joshua’s career and uncover the untold story behind his gold medal
-                Olympic win. Immerse yourself in this exclusive, interactive short film, and shop exclusive AJBXNG
-                products during the experience.
+                Opium presents Antagonist. Ken Carson, Destroy Lonely, Homixide Gang
               </span>
             </div>
             <div className="event-info-block event-info-block-center">

@@ -57,7 +57,7 @@ export const RoundedSlider: FC<CarouselProps> = forwardRef(
     }: CarouselProps,
     CarouselRef,
   ) => {
-    const len = useMemo(() => data.length, [data?.length]);
+    const len = useMemo(() => items.length, [items?.length]);
     const theta = useMemo(() => 360 / len, [len]);
 
     const radius = useMemo(() => Math.round(itemWidth / 2 / Math.tan(Math.PI / len)), [itemWidth, len]);

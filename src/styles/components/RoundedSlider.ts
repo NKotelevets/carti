@@ -29,6 +29,7 @@ export const RoundedSliderStyles = styled.div`
     top: 0.625rem;
     border: 1px solid;
     cursor: pointer;
+    overflow: hidden;
     transition:
       transform 1s,
       opacity 1s;

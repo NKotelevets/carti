@@ -11,13 +11,11 @@ import { StyledProductSizingChart } from '../styles/components/ProductSizingChar
 import { Close } from '../assets/svg';
 
 import Sizes from '../assets/images/Sizes.png';
-import Image_1 from '../assets/images/joshua/product_1_1.png';
-import Image_2 from '../assets/images/joshua/product_2_1.png';
-import Image_3 from '../assets/images/joshua/product_3_1.png';
-import Image_4 from '../assets/images/joshua/product_4_1.png';
-import Image_6 from '../assets/images/joshua/product_1_3.png';
-import Image_7 from '../assets/images/joshua/product_1_4.png';
-import Image_8 from '../assets/images/joshua/product_1_5.png';
+import Image_1 from '../assets/images/carti/product_1_1.png';
+import Image_2 from '../assets/images/carti/product_2_1.png';
+import Image_3 from '../assets/images/carti/product_3_1.png';
+import Image_4 from '../assets/images/carti/product_4_1.jpg';
+import Image_6 from '../assets/images/carti/product_1_2.png';
 
 const items = [
   {
@@ -113,12 +111,12 @@ export const ProductsList: FC = () => {
           <SwiperSlide>
             <img src={Image_6} alt="image_2" />
           </SwiperSlide>
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <img src={Image_7} alt="image_3" />
           </SwiperSlide>
           <SwiperSlide>
             <img src={Image_8} alt="image_4" />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
       <div className="column description-product">
@@ -134,10 +132,12 @@ export const ProductsList: FC = () => {
           />
         )}
         <div className="description-container">
-          <h2 className="name-product">AJBXNG Olympic Jacket</h2>
-          <p className="price-product">$169</p>
+          <h2 className="name-product">Playboi Carti Black Cat Hoodie</h2>
+          <p className="price-product">$359</p>
           <p className="description-product">
-            Description: Adidas 2012 Olympic Mens Large Track Jacket Team GB Great Britain London Games
+            Description: The Playboi Carti x CPFM 4 WLR King Vamp T-Shirt White became available from a collaboration
+            between Cactus Plant Free Market (CPFM), an urban brand of Playboi Carti, the rapper. The design showcases a
+            white color.
           </p>
           <Button flat textButton type="button" className="text-button" onClick={handleSelectSizesModal}>
             View sizing chart
