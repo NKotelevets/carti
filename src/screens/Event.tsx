@@ -77,7 +77,7 @@ export const Event: FC = () => {
         currentSeek={currentSeek}
         onEnded={() => {
           setIsPlay(false);
-          // navigate('/picked-items');
+          navigate('/picked-items');
         }}
         ref={ref}
         onDuration={handleGetDuration}
